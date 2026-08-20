@@ -2276,10 +2276,22 @@ button {
 
 /* ===== 响应式 ===== */
 @media (max-width: 968px) {
-    :root { --section-pad: 60px; }
+    :root { --section-pad: 50px; }
 
+    /* 容器边距优化 */
+    .container { padding: 0 16px; }
+
+    /* Topbar 简化 */
     .topbar-meta { display: none; }
 
+    /* Logo 缩小 */
+    .logo-mark { width: 32px; height: 32px; }
+    .logo-cn { font-size: 16px; }
+    .logo-en { font-size: 10px; letter-spacing: 1.5px; }
+
+    /* Nav 汉堡菜单 */
+    .navbar { padding: 12px 0; }
+    .nav-container { gap: 12px; }
     .nav-menu {
         position: fixed;
         top: 0;
@@ -2288,64 +2300,200 @@ button {
         height: 100vh;
         background: var(--bg-dark);
         flex-direction: column;
-        padding: 80px 24px 30px;
+        padding: 90px 24px 30px;
         align-items: stretch;
         gap: 0;
         border-left: 1px solid var(--border-light);
         transition: right 0.3s;
         overflow-y: auto;
+        z-index: 99;
+        box-shadow: -8px 0 30px rgba(0,0,0,0.5);
     }
-
     .nav-menu.open { right: 0; }
-
     .nav-link {
         padding: 14px 16px;
         border-bottom: 1px solid var(--border-light);
         border-radius: 0;
+        font-size: 15px;
     }
-
     .nav-cta {
         margin-left: 0;
         margin-top: 16px;
         text-align: center;
+        padding: 12px 18px;
     }
-
-    .nav-right { margin-left: auto; gap: 14px; }
-
+    .nav-right { margin-left: auto; gap: 10px; }
     .lang-switch { padding: 5px 6px; gap: 2px; }
     .lang-btn { padding: 6px 10px; font-size: 11px; }
     .lang-globe { font-size: 14px; }
-
-    .menu-toggle { display: flex; }
-
-    .hero-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
+    .menu-toggle {
+        display: flex;
+        background: rgba(26, 31, 43, 0.85);
+        border: 1px solid var(--border);
+        border-radius: 6px;
     }
 
-    .hero-stats { grid-template-columns: repeat(2, 1fr); }
-
-    .hero-visual { order: -1; }
-    .bolt-art { transform: rotate(0deg) scale(0.7); margin: 0 auto; }
+    /* Hero 大幅压缩 */
+    .hero {
+        min-height: auto;
+        padding: 40px 0 30px;
+    }
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    .hero-badges { margin-bottom: 16px; }
+    .badge { padding: 4px 10px; font-size: 11px; }
+    .hero-title { font-size: clamp(28px, 8vw, 40px); margin-bottom: 14px; }
+    .hero-subtitle { font-size: 14px; margin-bottom: 20px; line-height: 1.6; }
+    .hero-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        margin-bottom: 24px;
+        padding: 16px 0;
+    }
+    .stat-number { font-size: 24px; }
+    .stat-label { font-size: 11px; }
+    .hero-buttons { gap: 10px; }
+    .hero-buttons .btn { padding: 12px 18px; font-size: 14px; }
+    .hero-visual { order: -1; display: none; }
+    .bolt-art { transform: rotate(0deg) scale(0.6); margin: 0 auto; }
     .bolt-specs { display: none; }
 
+    /* Section 标题 */
+    .section-title { font-size: 24px; }
+    .section-subtitle { font-size: 14px; }
+
+    /* 产品网格 → 单列布局 */
     .product-line-grid { grid-template-columns: 1fr; }
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 10px;
+    }
+    .product-card { padding: 10px; }
+    .pc-image { height: 110px; }
+    .pc-icon { font-size: 32px; }
+    .pc-name { font-size: 13px; min-height: 36px; }
+    .pc-info { display: none; }
+    .pc-action { padding-top: 8px; }
+    .pc-btn { padding: 7px 10px; font-size: 11px; }
+
+    /* 计算器面板 */
+    .calc-tabs {
+        overflow-x: auto;
+        scrollbar-width: thin;
+        -webkit-overflow-scrolling: touch;
+    }
+    .calc-tab {
+        min-width: 110px;
+        font-size: 13px;
+        padding: 12px 14px;
+        flex-shrink: 0;
+    }
+    .calc-panel { padding: 20px 16px; }
+    .calc-form-row { grid-template-columns: 1fr; gap: 14px; }
+    .calc-btn { width: 100%; padding: 14px; font-size: 14px; }
+
+    /* 规格表 */
     .mat-grid { grid-template-columns: 1fr; }
     .mat-strength { grid-column: span 1; }
-    .grade-table { grid-template-columns: repeat(2, 1fr); }
-    .cap-grid { grid-template-columns: repeat(2, 1fr); }
-    .cert-grid { grid-template-columns: repeat(2, 1fr); }
-    .industry-grid { grid-template-columns: repeat(2, 1fr); }
-    .about-container { grid-template-columns: 1fr; }
-    .rfq-card { grid-template-columns: 1fr; padding: 32px; gap: 32px; }
-    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .grade-table { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .cap-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .cert-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .industry-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+    .about-container { grid-template-columns: 1fr; gap: 24px; }
+
+    /* RFQ 卡片 */
+    .rfq-card { grid-template-columns: 1fr; padding: 24px; gap: 24px; }
+    .rfq-card .form-row { grid-template-columns: 1fr; }
+
+    /* Footer */
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
 }
 
 @media (max-width: 640px) {
-    .hero-buttons { flex-direction: column; width: 100%; }
-    .hero-buttons .btn { width: 100%; }
-    .hero-stats { grid-template-columns: 1fr 1fr; }
-    .form-row { grid-template-columns: 1fr; }
-    .footer-grid { grid-template-columns: 1fr; }
-    .rfq-card { padding: 24px; }
+    :root { --section-pad: 40px; }
+
+    .container { padding: 0 14px; }
+
+    /* Logo 更小 */
+    .logo-cn { font-size: 14px; }
+    .logo-en { display: none; }
+
+    /* Hero */
+    .hero { padding: 30px 0 24px; }
+    .hero-title { font-size: 26px; line-height: 1.15; }
+    .hero-subtitle { font-size: 13px; line-height: 1.55; margin-bottom: 16px; }
+    .hero-badges { gap: 6px; margin-bottom: 12px; }
+    .badge { padding: 3px 8px; font-size: 10px; }
+    .hero-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+        padding: 12px 0;
+        margin-bottom: 18px;
+    }
+    .stat-number { font-size: 20px; }
+    .stat-label { font-size: 10px; }
+    .hero-buttons { flex-direction: column; gap: 10px; }
+    .hero-buttons .btn { width: 100%; padding: 13px 16px; font-size: 14px; }
+
+    /* Section 标题 */
+    .section-title { font-size: 22px; }
+    .section-subtitle { font-size: 13px; }
+
+    /* 产品网格 → 单列，更舒适 */
+    .product-grid { grid-template-columns: 1fr; gap: 12px; }
+    .product-card { padding: 14px; }
+    .pc-image { height: 140px; }
+    .pc-name { font-size: 14px; min-height: auto; }
+    .pc-info { display: flex; gap: 8px; }
+    .pc-spec-row { font-size: 12px; }
+    .pc-action { padding-top: 10px; }
+    .pc-btn { padding: 10px 14px; font-size: 12px; }
+
+    /* 工具栏 */
+    .toolbar { flex-direction: column; align-items: stretch; gap: 12px; }
+    .toolbar-search { max-width: none; }
+    .toolbar-info { justify-content: space-between; }
+    .toolbar-sort { width: 100%; }
+
+    /* 计算器 */
+    .calc-tabs { gap: 0; }
+    .calc-tab { min-width: 95px; font-size: 12px; padding: 10px 12px; }
+    .calc-panel { padding: 16px 12px; }
+    .calc-field { padding: 12px 14px; }
+    .calc-field label { font-size: 12px; }
+    .calc-field input, .calc-field select { font-size: 14px; }
+    .calc-btn { padding: 12px; font-size: 13px; }
+    .result-section { padding: 14px; }
+    .result-grid { grid-template-columns: 1fr; gap: 8px; }
+
+    /* 表格规格 */
+    .grade-table { grid-template-columns: 1fr; gap: 8px; }
+    .cap-grid { grid-template-columns: 1fr; gap: 12px; }
+    .cert-grid { grid-template-columns: 1fr; gap: 12px; }
+    .industry-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+
+    /* RFQ */
+    .rfq-card { padding: 18px 14px; }
+    .rfq-card .form-field { padding: 12px 14px; }
+    .rfq-card .form-field input,
+    .rfq-card .form-field select,
+    .rfq-card .form-field textarea { font-size: 14px; }
+
+    /* Footer */
+    .footer-grid { grid-template-columns: 1fr; gap: 28px; text-align: center; }
+    .footer-col h4::before { left: 50%; transform: translateX(-50%); }
+
+    /* 顶部条 */
+    .topbar { font-size: 11px; }
+    .topbar-left { font-size: 11px; }
+}
+
+@media (max-width: 380px) {
+    /* iPhone SE 等极小屏 */
+    .nav-container { gap: 8px; }
+    .lang-btn { padding: 4px 8px; font-size: 10px; }
+    .hero-title { font-size: 22px; }
+    .stat-number { font-size: 18px; }
 }
