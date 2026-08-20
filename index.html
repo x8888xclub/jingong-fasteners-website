@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="page.title">精工固件 Jingong - 专业英美标螺丝螺帽螺杆制造商</title>
+    <meta name="description" data-i18n="page.desc" content="精工固件 - 专业生产符合英式 BSW/BSF、美式 UNC/UNF/UNEF 规格的螺丝、螺帽、螺杆。ISO 9001 / IATF 16949 认证工厂，支持 OEM/ODM。">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 顶部公告栏 -->
+    <div class="topbar">
+        <div class="container topbar-inner">
+            <span data-i18n="topbar.text">📦 工厂直供 · 支持 OEM/ODM · 全球发货</span>
+            <span class="topbar-meta">
+                <span data-i18n="topbar.hotline">销售热线:</span>
+                <strong>+86 138-XXXX-XXXX</strong>
+            </span>
+        </div>
+    </div>
+
+    <!-- 导航栏 -->
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#home" class="logo">
+                <svg class="logo-mark" viewBox="0 0 40 40" fill="none">
+                    <circle cx="20" cy="20" r="17" stroke="currentColor" stroke-width="2.5"/>
+                    <path d="M14 20l4 4 8-8" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="logo-text">
+                    <span class="logo-cn">精工固件</span>
+                    <span class="logo-en">Jingong</span>
+                </span>
+            </a>
+            <nav class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active" data-i18n="nav.home">首页</a>
+                <a href="#products" class="nav-link" data-i18n="nav.products">产品中心</a>
+                <a href="#specs" class="nav-link" data-i18n="nav.specs">规格标准</a>
+                <a href="#material" class="nav-link" data-i18n="nav.material">材质工艺</a>
+                <a href="#capacity" class="nav-link" data-i18n="nav.capacity">生产能力</a>
+                <a href="#cert" class="nav-link" data-i18n="nav.cert">认证资质</a>
+                <a href="#about" class="nav-link" data-i18n="nav.about">关于我们</a>
+                <a href="#rfq" class="nav-link nav-cta" data-i18n="nav.rfq">立即询价</a>
+            </nav>
+            <div class="nav-right">
+                <div class="lang-switch" id="langSwitch" title="切换语言 / Switch Language">
+                    <span class="lang-globe" aria-hidden="true">🌐</span>
+                    <button class="lang-btn active" data-lang="zh">中</button>
+                    <span class="lang-divider"></span>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                </div>
+                <button class="menu-toggle" id="menuToggle" aria-label="菜单">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 首屏 Hero -->
+    <section class="hero" id="home">
+        <div class="hero-bg">
+            <div class="grid-overlay"></div>
+            <div class="hero-glow hero-glow-1"></div>
+            <div class="hero-glow hero-glow-2"></div>
+        </div>
+        <div class="container hero-content">
+            <div class="hero-grid">
+                <div class="hero-text">
+                    <div class="hero-badges">
+                        <span class="badge badge-iso">ISO 9001:2015</span>
+                        <span class="badge badge-iatf">IATF 16949</span>
+                        <span class="badge badge-ce">CE / RoHS</span>
+                    </div>
+                    <h1 class="hero-title">
+                        <span data-i18n="hero.title.l1">英美标紧固件</span><br>
+                        <span class="text-gradient" data-i18n="hero.title.l2">专业制造商</span>
+                    </h1>
+                    <p class="hero-subtitle" data-i18n-html="hero.subtitle">BSW · BSF · UNC · UNF · UNEF 全规格覆盖<br>从 M2 到 M64，从 #0 到 4" — 完整公制 + 英制螺纹解决方案</p>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <div class="stat-number">22<span class="stat-unit">年</span></div>
+                            <div class="stat-label" data-i18n="hero.stat.exp">行业经验</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">45<span class="stat-unit">+</span></div>
+                            <div class="stat-label" data-i18n="hero.stat.country">出口国家</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">8000<span class="stat-unit">+</span></div>
+                            <div class="stat-label" data-i18n="hero.stat.sku">SKU 现货</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">98.5<span class="stat-unit">%</span></div>
+                            <div class="stat-label" data-i18n="hero.stat.qa">合格率</div>
+                        </div>
+                    </div>
+                    <div class="hero-buttons">
+                        <a href="#rfq" class="btn btn-primary" data-i18n="hero.cta.rfq">📋 立即询价（RFQ）→</a>
+                        <a href="#specs" class="btn btn-outline" data-i18n="hero.cta.specs">查看规格表</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="bolt-art">
+                        <div class="bolt-shank"></div>
+                        <div class="bolt-thread"></div>
+                        <div class="bolt-head">
+                            <span class="hex-mark"></span>
+                            <span class="hex-mark hex-mark-h"></span>
+                        </div>
+                        <div class="bolt-specs">
+                            <div class="spec-line"><span class="spec-key">M10</span> × <span class="spec-val">1.5</span></div>
+                            <div class="spec-line"><span class="spec-key">8.8</span> <span class="spec-val">Grade</span></div>
+                            <div class="spec-line"><span class="spec-key">DIN 933</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 产品中心 -->
+    <section class="section products-section" id="products">
+        <div class="container">
+            <div class="section-head">
+                <p class="section-tag" data-i18n="products.tag">产品中心</p>
+                <h2 class="section-title">
+                    <span data-i18n="products.title.l1">三大产品线</span> ·
+                    <span class="text-gradient" data-i18n="products.title.l2">8000+ SKU 现货</span>
+                </h2>
+                <p class="section-desc" data-i18n="products.desc">从基础标准件到定制非标件，覆盖螺栓、螺母、螺杆全系列，支持来图来样定制。</p>
+            </div>
+            <div class="product-line-grid">
+                <!-- 螺丝 -->
+                <article class="line-card line-screws">
+                    <div class="line-icon">
+                        <svg viewBox="0 0 80 80" fill="none">
+                            <rect x="22" y="8" width="36" height="20" rx="2" fill="currentColor" opacity="0.15"/>
+                            <rect x="22" y="8" width="36" height="20" rx="2" stroke="currentColor" stroke-width="2.5" fill="none"/>
+                            <path d="M40 28v44M34 36h12M34 44h12M34 52h12M34 60h12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                            <path d="M28 72l4-4M40 72v-4M52 72l-4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div class="line-info">
+                        <h3 data-i18n="line.screws.name">六角螺栓 / Hex Bolts</h3>
+                        <p data-i18n="line.screws.desc">DIN 933 / ISO 4017 / UNC / UNF 全规格，强度等级 4.8-12.9</p>
+                        <div class="line-tags">
+                            <span class="tag">DIN 933</span>
+                            <span class="tag">ISO 4017</span>
+                            <span class="tag">UNC</span>
+                            <span class="tag">UNF</span>
+                        </div>
+                        <a href="#specs" class="line-link" data-i18n="line.view">查看规格 →</a>
+                    </div>
+                </article>
+
+                <!-- 螺帽 -->
+                <article class="line-card line-nuts">
+                    <div class="line-icon">
+                        <svg viewBox="0 0 80 80" fill="none">
+                            <polygon points="40,8 67,24 67,56 40,72 13,56 13,24" stroke="currentColor" stroke-width="2.5" fill="currentColor" fill-opacity="0.15"/>
+                            <polygon points="40,18 57,28 57,52 40,62 23,52 23,28" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <circle cx="40" cy="40" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <path d="M40 30v20M30 40h20" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 2"/>
+                        </svg>
+                    </div>
+                    <div class="line-info">
+                        <h3 data-i18n="line.nuts.name">六角螺母 / Hex Nuts</h3>
+                        <p data-i18n="line.nuts.desc">DIN 934 / ISO 4032 / 美制 / 英制全规格，含自锁 / 法兰 / 盖帽系列</p>
+                        <div class="line-tags">
+                            <span class="tag">DIN 934</span>
+                            <span class="tag">ISO 4032</span>
+                            <span class="tag">Nylock</span>
+                            <span class="tag">Flange</span>
+                        </div>
+                        <a href="#specs" class="line-link" data-i18n="line.view">查看规格 →</a>
+                    </div>
+                </article>
+
+                <!-- 螺杆 -->
+                <article class="line-card line-studs">
+                    <div class="line-icon">
+                        <svg viewBox="0 0 80 80" fill="none">
+                            <rect x="10" y="34" width="60" height="12" rx="2" stroke="currentColor" stroke-width="2.5" fill="currentColor" fill-opacity="0.15"/>
+                            <path d="M10 40h4M18 40h4M26 40h4M34 40h4M42 40h4M50 40h4M58 40h4M66 40h4" stroke="currentColor" stroke-width="1.5"/>
+                            <circle cx="14" cy="40" r="1.5" fill="currentColor"/>
+                            <circle cx="22" cy="40" r="1.5" fill="currentColor"/>
+                            <circle cx="30" cy="40" r="1.5" fill="currentColor"/>
+                            <circle cx="38" cy="40" r="1.5" fill="currentColor"/>
+                            <circle cx="46" cy="40" r="1.5" fill="currentColor"/>
+                            <circle cx="54" cy="40" r="1.5" fill="currentColor"/>
+                            <circle cx="62" cy="40" r="1.5" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <div class="line-info">
+                        <h3 data-i18n="line.studs.name">双头螺杆 / Threaded Rods</h3>
+                        <p data-i18n="line.studs.desc">DIN 976 / ASTM A193 B7/B8 全规格，长度可定制 50mm-3000mm</p>
+                        <div class="line-tags">
+                            <span class="tag">DIN 976</span>
+                            <span class="tag">ASTM A193</span>
+                            <span class="tag">B7</span>
+                            <span class="tag">B8</span>
+                        </div>
+                        <a href="#specs" class="line-link" data-i18n="line.view">查看规格 →</a>
+                    </div>
+                </article>
+
+                <!-- 自定义 -->
+                <article class="line-card line-custom">
+                    <div class="line-icon">
+                        <svg viewBox="0 0 80 80" fill="none">
+                            <path d="M20 30L40 12L60 30L40 48Z" stroke="currentColor" stroke-width="2.5" fill="currentColor" fill-opacity="0.15"/>
+                            <path d="M20 50L40 32L60 50L40 68Z" stroke="currentColor" stroke-width="2.5" fill="currentColor" fill-opacity="0.2"/>
+                            <path d="M40 32v36" stroke="currentColor" stroke-width="2" stroke-dasharray="3 3"/>
+                        </svg>
+                    </div>
+                    <div class="line-info">
+                        <h3 data-i18n="line.custom.name">非标定制 / Custom Parts</h3>
+                        <p data-i18n="line.custom.desc">来图来样定制，特殊材质 / 特殊规格 / 特殊表面处理均可定制</p>
+                        <div class="line-tags">
+                            <span class="tag" data-i18n="line.custom.tag1">CAD / STEP</span>
+                            <span class="tag" data-i18n="line.custom.tag2">小批量起订</span>
+                            <span class="tag" data-i18n="line.custom.tag3">15 天交付</span>
+                        </div>
+                        <a href="#rfq" class="line-link" data-i18n="line.custom.cta">立即定制 →</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- 规格标准（核心卖点） -->
+    <section class="section specs-section" id="specs">
+        <div class="container">
+            <div class="section-head">
+                <p class="section-tag" data-i18n="specs.tag">规格标准</p>
+                <h2 class="section-title">
+                    <span data-i18n="specs.title.l1">英美标</span> <span class="text-gradient" data-i18n="specs.title.l2">速查表</span>
+                </h2>
+                <p class="section-desc" data-i18n="specs.desc">覆盖 BS / ANSI / ASME / ISO / DIN 全系列标准，紧固件规格一站查询。</p>
+            </div>
+            <div class="spec-tabs" id="specTabs">
+                <button class="spec-tab active" data-tab="bs">
+                    <span class="tab-flag">🇬🇧</span>
+                    <span data-i18n="specs.tab.bs">英式 BS 系列</span>
+                </button>
+                <button class="spec-tab" data-tab="unc">
+                    <span class="tab-flag">🇺�</span>
+                    <span data-i18n="specs.tab.unc">美式 UNC 粗牙</span>
+                </button>
+                <button class="spec-tab" data-tab="unf">
+                    <span class="tab-flag">🇺🇸</span>
+                    <span data-i18n="specs.tab.unf">美式 UNF 细牙</span>
+                </button>
+                <button class="spec-tab" data-tab="metric">
+                    <span class="tab-flag">�</span>
+                    <span data-i18n="specs.tab.metric">公制 ISO/DIN</span>
+                </button>
+            </div>
+            <div class="spec-table-wrap">
+                <table class="spec-table" id="specTable">
+                    <thead>
+                        <tr>
+                            <th data-i18n="specs.th.size">规格</th>
+                            <th data-i18n="specs.th.tpi">牙数/TPI</th>
+                            <th data-i18n="specs.th.major">大径 (mm)</th>
+                            <th data-i18n="specs.th.pitch">螺距 (mm)</th>
+                            <th data-i18n="specs.th.tap">攻丝 (mm)</th>
+                            <th data-i18n="specs.th.strength">推荐强度</th>
+                        </tr>
+                    </thead>
+                    <tbody id="specTableBody">
+                        <!-- 由 JS 动态填充 -->
+                    </tbody>
+                </table>
+            </div>
+            <p class="spec-note" data-i18n="specs.note">�️ 所有规格均符合 GB / ISO / BS / ANSI 标准，可提供材质证明 (MTC) 与第三方检测报告</p>
+        </div>
+    </section>
+
+    <!-- 材质与表面处理 -->
+    <section class="section material-section" id="material">
+        <div class="container">
+            <div class="section-head">
+                <p class="section-tag" data-i18n="mat.tag">材质与工艺</p>
+                <h2 class="section-title">
+                    <span data-i18n="mat.title.l1">从原材料到表面处理</span><br>
+                    <span class="text-gradient" data-i18n="mat.title.l2">全流程自主把控</span>
+                </h2>
+            </div>
+            <div class="mat-grid">
+                <div class="mat-card">
+                    <h3 data-i18n="mat.materials.title">材质 / Materials</h3>
+                    <ul class="mat-list">
+                        <li><strong data-i18n="mat.m.1.k">碳钢</strong><span data-i18n="mat.m.1.v">C1022 / C1045 / C1018</span></li>
+                        <li><strong data-i18n="mat.m.2.k">合金钢</strong><span data-i18n="mat.m.2.v">SCM435 / 40Cr / 35CrMo</span></li>
+                        <li><strong data-i18n="mat.m.3.k">不锈钢</strong><span data-i18n="mat.m.3.v">304 (A2) / 316 (A4) / 316L</span></li>
+                        <li><strong data-i18n="mat.m.4.k">高强度钢</strong><span data-i18n="mat.m.4.v">10.9 / 12.9 / ASTM A325 / A490</span></li>
+                        <li><strong data-i18n="mat.m.5.k">有色金属</strong><span data-i18n="mat.m.5.v">H62 黄铜 / 紫铜 / 铝 6061</span></li>
+                    </ul>
+                </div>
+                <div class="mat-card">
+                    <h3 data-i18n="mat.surface.title">表面处理 / Finishes</h3>
+                    <ul class="mat-list">
+                        <li><strong data-i18n="mat.s.1.k">镀锌</strong><span data-i18n="mat.s.1.v">蓝白锌 / 彩锌 / 黄锌 / 黑锌</span></li>
+                        <li><strong data-i18n="mat.s.2.k">达克罗</strong><span data-i18n="mat.s.2.v">Dacromet / Geomet — 盐雾 1000h+</span></li>
+                        <li><strong data-i18n="mat.s.3.k">发黑</strong><span data-i18n="mat.s.3.v">Black Oxide — 装饰 + 防锈</span></li>
+                        <li><strong data-i18n="mat.s.4.k">磷化</strong><span data-i18n="mat.s.4.v">Phosphating — 涂装前处理</span></li>
+                        <li><strong data-i18n="mat.s.5.k">热浸镀锌</strong><span data-i18n="mat.s.5.v">HDG — 户外防腐 50 年+</span></li>
+                    </ul>
+                </div>
+                <div class="mat-card mat-strength">
+                    <h3 data-i18n="mat.grade.title">机械性能等级 / Strength Grades</h3>
+                    <div class="grade-table">
+                        <div class="grade-row">
+                            <div class="grade-tag">4.8</div>
+                            <div class="grade-info"><span data-i18n="mat.g.4.t">普通强度</span><span>~400 MPa</span></div>
+                        </div>
+                        <div class="grade-row">
+                            <div class="grade-tag">8.8</div>
+                            <div class="grade-info"><span data-i18n="mat.g.8.t">高强度</span><span>~800 MPa</span></div>
+                        </div>
+                        <div class="grade-row">
+                            <div class="grade-tag">10.9</div>
+                            <div class="grade-info"><span data-i18n="mat.g.10.t">结构连接</span><span>~1000 MPa</span></div>
+                        </div>
+                        <div class="grade-row">
+                            <div class="grade-tag">12.9</div>
+                            <div class="grade-info"><span data-i18n="mat.g.12.t">超高强度</span><span>~1200 MPa</span></div>
+                        </div>
+                        <div class="grade-row">
+                            <div class="grade-tag">A2-70</div>
+                            <div class="grade-info"><span data-i18n="mat.g.a2.t">不锈钢</span><span>~700 MPa</span></div>
+                        </div>
+                        <div class="grade-row">
+                            <div class="grade-tag">A4-80</div>
+                            <div class="grade-info"><span data-i18n="mat.g.a4.t">耐腐蚀</span><span>~800 MPa</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 生产能力 -->
+    <section class="section capacity-section" id="capacity">
+        <div class="container">
+            <div class="section-head">
+                <p class="section-tag" data-i18n="cap.tag">生产能力</p>
+                <h2 class="section-title">
+                    <span data-i18n="cap.title.l1">从一根线材</span> →
+                    <span class="text-gradient" data-i18n="cap.title.l2">一颗成品</span>
+                </h2>
+            </div>
+            <div class="cap-grid">
+                <div class="cap-card">
+                    <div class="cap-num">12,000<span class="cap-unit">㎡</span></div>
+                    <h3 data-i18n="cap.area.t">厂房面积</h3>
+                    <p data-i18n="cap.area.d">自有产权现代化厂房，含冷�车间、热处理车间、表面处理车间。</p>
+                </div>
+                <div class="cap-card">
+                    <div class="cap-num">180<span class="cap-unit">+</span></div>
+                    <h3 data-i18n="cap.machine.t">生产设备</h3>
+                    <p data-i18n="cap.machine.d">多工位冷镦机、台湾 CNC 数控车床、全自动搓丝机、热处理炉。</p>
+                </div>
+                <div class="cap-card">
+                    <div class="cap-num">3,500<span class="cap-unit">T/月</span></div>
+                    <h3 data-i18n="cap.output.t">月产能</h3>
+                    <p data-i18n="cap.output.d">3 条全自动生产线 + 5 条半自动产线，旺季可弹性扩展 50%。</p>
+                </div>
+                <div class="cap-card">
+                    <div class="cap-num">15<span class="cap-unit">天</span></div>
+                    <h3 data-i18n="cap.lead.t">标准交期</h3>
+                    <p data-i18n="cap.lead.d">常规订单 7-15 天，定制订单 15-25 天，加急订单最快 5 天。</p>
+                </div>
+            </div>
+            <div class="cap-process">
+                <h3 data-i18n="cap.process.t">生产流程 / Production Process</h3>
+                <div class="process-flow">
+                    <div class="proc-step"><span class="proc-num">01</span><span data-i18n="cap.p.1">盘条采购</span></div>
+                    <span class="proc-arrow">→</span>
+                    <div class="proc-step"><span class="proc-num">02</span><span data-i18n="cap.p.2">冷镦成型</span></div>
+                    <span class="proc-arrow">→</span>
+                    <div class="proc-step"><span class="proc-num">03</span><span data-i18n="cap.p.3">搓丝滚牙</span></div>
+                    <span class="proc-arrow">→</span>
+                    <div class="proc-step"><span class="proc-num">04</span><span data-i18n="cap.p.4">热处理</span></div>
+                    <span class="proc-arrow">→</span>
+                    <div class="proc-step"><span class="proc-num">05</span><span data-i18n="cap.p.5">表面处理</span></div>
+                    <span class="proc-arrow">→</span>
+                    <div class="proc-step"><span class="proc-num">06</span><span data-i18n="cap.p.6">全检包装</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 认证资质 -->
+    <section class="section cert-section" id="cert">
+        <div class="container">
+            <div class="section-head">
+                <p class="section-tag" data-i18n="cert.tag">认证资质</p>
+                <h2 class="section-title">
+                    <span data-i18n="cert.title.l1">权威认证</span> ·
+                    <span class="text-gradient" data-i18n="cert.title.l2">质量保证</span>
+                </h2>
+            </div>
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <div class="cert-icon">🏅</div>
+                    <h3>ISO 9001:2015</h3>
+                    <p data-i18n="cert.1.d">质量管理体系认证 — 全流程标准化作业</p>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon">�</div>
+                    <h3>IATF 16949</h3>
+                    <p data-i18n="cert.2.d">汽车行业质量管理体系 — 主机厂供应商资质</p>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon">�</div>
+                    <h3>ISO 14001</h3>
+                    <p data-i18n="cert.3.d">环境管理体系 — 绿色生产合规</p>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon">�</div>
+                    <h3>CE / RoHS</h3>
+                    <p data-i18n="cert.4.d">欧盟合规认证 — 出口欧洲市场通行证</p>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon">�</div>
+                    <h3>ASTM / ASME</h3>
+                    <p data-i18n="cert.5.d">美标合规 — 北美市场出口资质</p>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon">🏅</div>
+                    <h3>SGS / BV</h3>
+                    <p data-i18n="cert.6.d">第三方检测报告 — 每年定期送检</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 应用行业 -->
+    <section class="section industry-section">
+        <div class="container">
+            <div class="section-head">
+                <p class="section-tag" data-i18n="ind.tag">应用领域</p>
+                <h2 class="section-title">
+                    <span data-i18n="ind.title.l1">服务全球</span>
+                    <span class="text-gradient" data-i18n="ind.title.l2">8 大行业</span>
+                </h2>
+            </div>
+            <div class="industry-grid">
+                <div class="ind-card">
+                    <div class="ind-icon">🚗</div>
+                    <h3 data-i18n="ind.1.t">汽车制造</h3>
+                    <p data-i18n="ind.1.d">底盘、发动机、变速箱紧固件</p>
+                </div>
+                <div class="ind-card">
+                    <div class="ind-icon">�️</div>
+                    <h3 data-i18n="ind.2.t">建筑钢结构</h3>
+                    <p data-i18n="ind.2.d">高强螺栓、地脚螺栓、锚栓</p>
+                </div>
+                <div class="ind-card">
+                    <div class="ind-icon">⚙️</div>
+                    <h3 data-i18n="ind.3.t">机械装备</h3>
+                    <p data-i18n="ind.3.d">机床、工程机械、农业机械</p>
+                </div>
+                <div class="ind-card">
+                    <div class="ind-icon">⚡</div>
+                    <h3 data-i18n="ind.4.t">电力能源</h3>
+                    <p data-i18n="ind.4.d">风电、光伏、输变电紧固件</p>
+                </div>
+                <div class="ind-card">
+                    <div class="ind-icon">🚂</div>
+                    <h3 data-i18n="ind.5.t">轨道交通</h3>
+                    <p data-i18n="ind.5.d">高铁、地铁紧固件，符合 TB/T 标准</p>
+                </div>
+                <div class="ind-card">
+                    <div class="ind-icon">🌉</div>
+                    <h3 data-i18n="ind.6.t">桥梁工程</h3>
+                    <p data-i18n="ind.6.d">10.9S / 12.9S 高强螺栓</p>
+                </div>
+                <div class="ind-card">
+                    <div class="ind-icon">🛢️</div>
+                    <h3 data-i18n="ind.7.t">石油化工</h3>
+                    <p data-i18n="ind.7.d">耐高温、耐腐蚀特殊紧固件</p>
+                </div>
+                <div class="ind-card">
+                    <div class="ind-icon">🏠</div>
+                    <h3 data-i18n="ind.8.t">家具家电</h3>
+                    <p data-i18n="ind.8.d">内六角、自攻钉、组合螺丝</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于我们 -->
+    <section class="section about-section" id="about">
+        <div class="container about-container">
+            <div class="about-text">
+                <p class="section-tag" data-i18n="about.tag">关于我们</p>
+                <h2 class="section-title">
+                    <span data-i18n="about.title.l1">22 年专注</span>
+                    <span class="text-gradient" data-i18n="about.title.l2">紧固件制造</span>
+                </h2>
+                <p data-i18n="about.p1">精工固件成立于 2003 年，位于浙江嘉兴，紧邻上海港 — 全球紧固件制造的核心区域。我们专注于英式、美式、公制全规格紧固件的研发、生产与出口。</p>
+                <p data-i18n="about.p2">从一根盘条到一颗成品，我们拥有完整的冷镦、热处理、表面处理、检测能力，年产能 4 万吨以上。产品远销北美、欧洲、东南亚、中东等 45+ 国家与地区。</p>
+                <div class="about-features">
+                    <div class="about-feature">
+                        <span class="feature-num">45+</span>
+                        <span class="feature-label" data-i18n="about.f.1">出口国家</span>
+                    </div>
+                    <div class="about-feature">
+                        <span class="feature-num">200+</span>
+                        <span class="feature-label" data-i18n="about.f.2">企业客户</span>
+                    </div>
+                    <div class="about-feature">
+                        <span class="feature-num">$25M</span>
+                        <span class="feature-label" data-i18n="about.f.3">年出口额</span>
+                    </div>
+                </div>
+            </div>
+            <div class="about-visual">
+                <div class="factory-card">
+                    <div class="fc-line"><span class="fc-label">EST.</span><span class="fc-val">2003</span></div>
+                    <div class="fc-line"><span class="fc-label" data-i18n="about.fc.loc">LOCATION</span><span class="fc-val" data-i18n="about.fc.loc.v">浙江 · 嘉兴</span></div>
+                    <div class="fc-line"><span class="fc-label" data-i18n="about.fc.size">FACTORY</span><span class="fc-val" data-i18n="about.fc.size.v">12,000 ㎡</span></div>
+                    <div class="fc-line"><span class="fc-label" data-i18n="about.fc.staff">STAFF</span><span class="fc-val" data-i18n="about.fc.staff.v">220+ 人</span></div>
+                    <div class="fc-line"><span class="fc-label" data-i18n="about.fc.port">PORT</span><span class="fc-val" data-i18n="about.fc.port.v">上海港 90km</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RFQ 询价表单 -->
+    <section class="section rfq-section" id="rfq">
+        <div class="container">
+            <div class="rfq-card">
+                <div class="rfq-info">
+                    <p class="section-tag" data-i18n="rfq.tag">立即询价</p>
+                    <h2 class="section-title light">
+                        <span data-i18n="rfq.title.l1">获取报价</span> <span class="text-gradient" data-i18n="rfq.title.l2">24 小时响应</span>
+                    </h2>
+                    <p data-i18n="rfq.desc">无论您是需要标准件现货、小批量试产、还是大批量 OEM — 我们的工程师团队都会在 24 小时内为您提供详细报价与技术支持。</p>
+                    <ul class="rfq-perks">
+                        <li><span class="check">✓</span><span data-i18n="rfq.b.1">免费样品（标准件）</span></li>
+                        <li><span class="check">✓</span><span data-i18n="rfq.b.2">免费材质证明 (MTC)</span></li>
+                        <li><span class="check">✓</span><span data-i18n="rfq.b.3">第三方检测报告（按需）</span></li>
+                        <li><span class="check">✓</span><span data-i18n="rfq.b.4">DDP / FOB / CIF 多贸易条款</span></li>
+                        <li><span class="check">✓</span><span data-i18n="rfq.b.5">支持 OEM/ODM 定制包装</span></li>
+                    </ul>
+                </div>
+                <form class="rfq-form" id="rfqForm">
+                    <h3 class="rfq-form-title" data-i18n="rfq.form.t">提交 RFQ</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label data-i18n="rfq.f.name">联系人 *</label>
+                            <input type="text" name="name" required data-i18n-placeholder="rfq.f.name.ph" placeholder="您的姓名">
+                        </div>
+                        <div class="form-group">
+                            <label data-i18n="rfq.f.company">公司名 *</label>
+                            <input type="text" name="company" required data-i18n-placeholder="rfq.f.company.ph" placeholder="您的公司">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label data-i18n="rfq.f.email">邮箱 *</label>
+                            <input type="email" name="email" required data-i18n-placeholder="rfq.f.email.ph" placeholder="business@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label data-i18n="rfq.f.phone">电话 / WhatsApp *</label>
+                            <input type="tel" name="phone" required data-i18n-placeholder="rfq.f.phone.ph" placeholder="+86 ...">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label data-i18n="rfq.f.type">需求类型</label>
+                            <select name="type">
+                                <option data-i18n-option="rfq.f.type.std" selected>标准件现货</option>
+                                <option data-i18n-option="rfq.f.type.oem">OEM 贴牌</option>
+                                <option data-i18n-option="rfq.f.type.odm">ODM 定制</option>
+                                <option data-i18n-option="rfq.f.type.sample">样品申请</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label data-i18n="rfq.f.spec">规格标准</label>
+                            <select name="spec">
+                                <option data-i18n-option="rfq.f.spec.bsw">BSW (英式粗牙)</option>
+                                <option data-i18n-option="rfq.f.spec.bsf">BSF (英式细牙)</option>
+                                <option data-i18n-option="rfq.f.spec.unc">UNC (美式粗牙)</option>
+                                <option data-i18n-option="rfq.f.spec.unf">UNF (美式细牙)</option>
+                                <option data-i18n-option="rfq.f.spec.iso">ISO / DIN (公制)</option>
+                                <option data-i18n-option="rfq.f.spec.other">其它 / 定制</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label data-i18n="rfq.f.desc">需求描述 *</label>
+                        <textarea name="desc" rows="4" required data-i18n-placeholder="rfq.f.desc.ph" placeholder="例如：六角螺栓 M10x40 8.8级 镀锌，每月 50000 件，FOB 上海..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block" data-i18n="rfq.f.submit">提交询价 →</button>
+                    <p class="form-tip" data-i18n="rfq.f.tip">提交后 24 小时内通过邮件 / WhatsApp 与您联系</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#home" class="logo">
+                        <svg class="logo-mark" viewBox="0 0 40 40" fill="none">
+                            <circle cx="20" cy="20" r="17" stroke="currentColor" stroke-width="2.5"/>
+                            <path d="M14 20l4 4 8-8" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span class="logo-text">
+                            <span class="logo-cn">精工固件</span>
+                            <span class="logo-en">Jingong</span>
+                        </span>
+                    </a>
+                    <p data-i18n="footer.tagline">英美标紧固件专业制造商 · 全球出口</p>
+                    <div class="footer-cert">
+                        <span class="cert-mini">ISO 9001</span>
+                        <span class="cert-mini">IATF 16949</span>
+                        <span class="cert-mini">CE</span>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4 data-i18n="footer.col1.t">产品</h4>
+                    <a href="#products" data-i18n="footer.col1.l1">六角螺栓</a>
+                    <a href="#products" data-i18n="footer.col1.l2">六角螺母</a>
+                    <a href="#products" data-i18n="footer.col1.l3">双头螺杆</a>
+                    <a href="#products" data-i18n="footer.col1.l4">非标定制</a>
+                </div>
+                <div class="footer-col">
+                    <h4 data-i18n="footer.col2.t">规格</h4>
+                    <a href="#specs" data-i18n="footer.col2.l1">BSW / BSF 英式</a>
+                    <a href="#specs" data-i18n="footer.col2.l2">UNC / UNF 美式</a>
+                    <a href="#specs" data-i18n="footer.col2.l3">ISO / DIN 公制</a>
+                    <a href="#material" data-i18n="footer.col2.l4">材质等级</a>
+                </div>
+                <div class="footer-col">
+                    <h4 data-i18n="footer.col3.t">联系</h4>
+                    <p class="footer-line">📞 +86 138-XXXX-XXXX</p>
+                    <p class="footer-line">�️ sales@jingong-fasteners.com</p>
+                    <p class="footer-line">📍 浙江省嘉兴市秀洲区</p>
+                    <p class="footer-line">💬 WhatsApp / WeChat</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-i18n="footer.copyright">© 2026 精工固件 Jingong Fasteners. All rights reserved. · 浙ICP备XXXXXXXX号</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/specs-data.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

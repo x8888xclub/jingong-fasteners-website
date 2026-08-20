@@ -1,0 +1,2950 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="page.title">精工固件 Jingong - 专业英美标螺丝螺帽螺杆制造商</title>
+    <meta name="description" data-i18n="page.desc" content="精工固件 - 专业生产符合英式 BSW/BSF、美式 UNC/UNF/UNEF 规格的螺丝、螺帽、螺杆。ISO 9001 / IATF 16949 认证工厂，支持 OEM/ODM。">
+    <style>
+/* ===== 全局重置 ===== */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* 颜色 - 深色工业风 */
+    --bg-deep: #0a0d14;
+    --bg-dark: #11151d;
+    --bg-card: #1a1f2b;
+    --bg-card-hover: #232938;
+    --bg-elevated: #2a3140;
+    --text-primary: #e8ecf3;
+    --text-secondary: #a8b0c0;
+    --text-muted: #6b7385;
+    --accent-orange: #f7811a;
+    --accent-amber: #ff8c42;
+    --accent-blue: #4d92e8;
+    --accent-steel: #6ba4cf;
+    --accent-green: #3fb950;
+    --accent-red: #f85149;
+    --border: rgba(247, 129, 26, 0.18);
+    --border-light: rgba(255, 255, 255, 0.06);
+    --gradient: linear-gradient(135deg, #f7811a 0%, #ff8c42 50%, #ffb366 100%);
+    --gradient-cool: linear-gradient(135deg, #4d92e8 0%, #6ba4cf 100%);
+    --font-cn: 'Noto Sans SC', system-ui, -apple-system, sans-serif;
+    --font-en: 'Inter', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+    --container: 1280px;
+    --section-pad: 90px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-cn);
+    background: var(--bg-deep);
+    color: var(--text-primary);
+    line-height: 1.7;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: "tnum";
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; transition: color 0.2s; }
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    background: none;
+    color: inherit;
+}
+
+.container {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ===== 通用 ===== */
+.section {
+    padding: var(--section-pad) 0;
+    position: relative;
+}
+
+.section-head {
+    text-align: center;
+    margin-bottom: 56px;
+}
+
+.section-tag {
+    color: var(--accent-orange);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    display: inline-block;
+    padding: 6px 14px;
+    border: 1px solid rgba(247, 129, 26, 0.3);
+    border-radius: 4px;
+    background: rgba(247, 129, 26, 0.06);
+    font-family: var(--font-en);
+}
+
+.section-title {
+    font-size: clamp(30px, 4.5vw, 44px);
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 18px;
+    letter-spacing: -0.01em;
+}
+
+.section-title.light { color: var(--text-primary); }
+
+.section-desc {
+    font-size: 16px;
+    color: var(--text-secondary);
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.text-gradient {
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ===== 按钮 ===== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 28px;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 700;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    cursor: pointer;
+    letter-spacing: 0.3px;
+}
+
+.btn-primary {
+    background: var(--gradient);
+    color: #0a0d14;
+    box-shadow: 0 6px 24px rgba(247, 129, 26, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 32px rgba(247, 129, 26, 0.5);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--text-primary);
+    border: 1.5px solid var(--border-light);
+}
+
+.btn-outline:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: var(--accent-orange);
+    color: var(--accent-orange);
+}
+
+.btn-block { width: 100%; }
+
+/* ===== 顶部公告栏 ===== */
+.topbar {
+    background: var(--bg-dark);
+    border-bottom: 1px solid var(--border-light);
+    padding: 8px 0;
+    font-size: 13px;
+}
+
+.topbar-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-secondary);
+}
+
+.topbar-meta strong {
+    color: var(--accent-orange);
+    margin-left: 6px;
+    font-family: var(--font-mono);
+}
+
+/* ===== 导航栏 ===== */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 14px 0;
+    background: rgba(10, 13, 20, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-mark {
+    width: 38px;
+    height: 38px;
+    color: var(--accent-orange);
+    flex-shrink: 0;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+.logo-cn {
+    font-size: 18px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.logo-en {
+    font-family: var(--font-en);
+    font-size: 11px;
+    color: var(--accent-orange);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 3px;
+    font-weight: 600;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.nav-link {
+    padding: 8px 14px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.nav-link:hover { color: var(--text-primary); }
+.nav-link.active { color: var(--accent-orange); }
+
+.nav-cta {
+    background: var(--gradient);
+    color: #0a0d14 !important;
+    padding: 10px 18px;
+    margin-left: 8px;
+    font-weight: 800;
+}
+
+.nav-cta:hover { transform: translateY(-2px); }
+
+/* ===== 语言切换器 ===== */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.lang-switch {
+    display: inline-flex;
+    gap: 4px;
+    padding: 6px 8px;
+    background: rgba(26, 31, 43, 0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    align-items: center;
+    transition: all 0.3s;
+}
+
+.lang-switch:hover {
+    border-color: var(--accent-orange);
+    box-shadow: 0 0 18px rgba(247, 129, 26, 0.25);
+}
+
+.lang-globe {
+    font-size: 15px;
+    margin-right: 2px;
+    filter: drop-shadow(0 0 4px rgba(247, 129, 26, 0.5));
+}
+
+.lang-btn {
+    padding: 5px 12px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-muted);
+    border-radius: 4px;
+    transition: all 0.25s;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    font-family: var(--font-en);
+}
+
+.lang-btn:hover:not(.active) {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.lang-btn.active {
+    background: var(--accent-orange);
+    color: #0a0d14;
+}
+
+.lang-divider {
+    width: 1px;
+    height: 12px;
+    background: var(--border-light);
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    padding: 8px;
+}
+
+.menu-toggle span {
+    width: 22px;
+    height: 2px;
+    background: var(--text-primary);
+    border-radius: 1px;
+}
+
+/* ===== Hero ===== */
+.hero {
+    position: relative;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding: 80px 0 60px;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.grid-overlay {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(247, 129, 26, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(247, 129, 26, 0.04) 1px, transparent 1px);
+    background-size: 50px 50px;
+    opacity: 0.5;
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
+}
+
+.hero-glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.18;
+}
+
+.hero-glow-1 {
+    width: 500px;
+    height: 500px;
+    background: var(--accent-orange);
+    top: -100px;
+    left: -100px;
+}
+
+.hero-glow-2 {
+    width: 600px;
+    height: 600px;
+    background: var(--accent-blue);
+    bottom: -200px;
+    right: -100px;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.hero-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 24px;
+}
+
+.badge {
+    padding: 5px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    font-family: var(--font-en);
+    border: 1px solid;
+}
+
+.badge-iso {
+    color: var(--accent-green);
+    background: rgba(63, 185, 80, 0.08);
+    border-color: rgba(63, 185, 80, 0.3);
+}
+
+.badge-iatf {
+    color: var(--accent-orange);
+    background: rgba(247, 129, 26, 0.08);
+    border-color: rgba(247, 129, 26, 0.3);
+}
+
+.badge-ce {
+    color: var(--accent-blue);
+    background: rgba(77, 146, 232, 0.08);
+    border-color: rgba(77, 146, 232, 0.3);
+}
+
+.hero-title {
+    font-size: clamp(40px, 6vw, 64px);
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+    font-size: clamp(15px, 1.6vw, 18px);
+    color: var(--text-secondary);
+    margin-bottom: 32px;
+    line-height: 1.6;
+}
+
+.hero-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 32px;
+    padding: 20px 0;
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-number {
+    font-family: var(--font-en);
+    font-size: clamp(22px, 2.8vw, 32px);
+    font-weight: 900;
+    color: var(--accent-orange);
+    line-height: 1;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 2px;
+}
+
+.stat-unit {
+    font-size: 0.5em;
+    color: var(--text-muted);
+}
+
+.stat-label {
+    color: var(--text-muted);
+    font-size: 12px;
+    letter-spacing: 0.5px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+/* Hero 螺栓视觉 */
+.hero-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bolt-art {
+    width: 280px;
+    height: 320px;
+    position: relative;
+    transform: rotate(-8deg);
+}
+
+.bolt-head {
+    width: 140px;
+    height: 56px;
+    background: linear-gradient(180deg, #4a5568 0%, #2d3748 100%);
+    border: 2px solid #1a202c;
+    border-radius: 4px;
+    margin: 0 auto;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.hex-mark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    height: 60%;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    border-radius: 6px;
+}
+
+.hex-mark-h {
+    width: 50%;
+    height: 40%;
+    border-color: rgba(247, 129, 26, 0.4);
+}
+
+.bolt-shank {
+    width: 60px;
+    height: 30px;
+    background: linear-gradient(90deg, #4a5568, #6b7280, #4a5568);
+    margin: 0 auto;
+    border-left: 1px solid #1a202c;
+    border-right: 1px solid #1a202c;
+}
+
+.bolt-thread {
+    width: 70px;
+    margin: 0 auto;
+    height: 220px;
+    background:
+        repeating-linear-gradient(0deg,
+            transparent 0,
+            transparent 5px,
+            rgba(0, 0, 0, 0.3) 5px,
+            rgba(0, 0, 0, 0.3) 7px,
+            transparent 7px,
+            transparent 12px),
+        linear-gradient(90deg, #4a5568 0%, #9ca3af 50%, #4a5568 100%);
+    border-left: 2px solid #1a202c;
+    border-right: 2px solid #1a202c;
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.bolt-specs {
+    position: absolute;
+    top: 20px;
+    right: -160px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent-orange);
+    border-radius: 4px;
+    padding: 12px 16px;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--text-secondary);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.spec-line { padding: 4px 0; }
+
+.spec-key {
+    color: var(--accent-orange);
+    font-weight: 700;
+}
+
+.spec-val { color: var(--text-muted); }
+
+/* ===== 产品中心 ===== */
+.products-section { background: var(--bg-dark); }
+
+.product-line-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.line-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    padding: 32px;
+    display: flex;
+    gap: 24px;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.line-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--gradient);
+    transform: scaleY(0);
+    transition: transform 0.3s;
+}
+
+.line-card:hover {
+    border-color: var(--border);
+    background: var(--bg-card-hover);
+    transform: translateY(-3px);
+}
+
+.line-card:hover::before { transform: scaleY(1); }
+
+.line-icon {
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+    background: rgba(247, 129, 26, 0.06);
+    border: 1px solid rgba(247, 129, 26, 0.2);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-orange);
+}
+
+.line-icon svg { width: 50px; height: 50px; }
+
+.line-info { flex: 1; }
+
+.line-info h3 {
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.line-info p {
+    color: var(--text-secondary);
+    font-size: 14px;
+    margin-bottom: 14px;
+    line-height: 1.6;
+}
+
+.line-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 16px;
+}
+
+.tag {
+    padding: 3px 10px;
+    background: rgba(77, 146, 232, 0.08);
+    border: 1px solid rgba(77, 146, 232, 0.2);
+    color: var(--accent-steel);
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: 700;
+    font-family: var(--font-mono);
+    letter-spacing: 0.3px;
+}
+
+.line-link {
+    color: var(--accent-orange);
+    font-weight: 700;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.line-link:hover { letter-spacing: 1px; }
+
+/* ===== 规格表 ===== */
+.specs-section {
+    background: var(--bg-deep);
+}
+
+.spec-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.spec-tab {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.spec-tab:hover {
+    border-color: var(--accent-orange);
+    color: var(--text-primary);
+}
+
+.spec-tab.active {
+    background: rgba(247, 129, 26, 0.1);
+    border-color: var(--accent-orange);
+    color: var(--accent-orange);
+}
+
+.tab-flag { font-size: 18px; }
+
+.spec-table-wrap {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    overflow: hidden;
+    overflow-x: auto;
+}
+
+.spec-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+}
+
+.spec-table th,
+.spec-table td {
+    font-family: var(--font-mono);
+}
+
+.spec-table th {
+    background: var(--bg-elevated);
+    color: var(--accent-orange);
+    font-weight: 700;
+    padding: 14px 16px;
+    text-align: left;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--border);
+    font-family: var(--font-en);
+}
+
+.spec-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border-light);
+    color: var(--text-secondary);
+}
+
+.spec-table tr:hover td {
+    background: rgba(247, 129, 26, 0.04);
+    color: var(--text-primary);
+}
+
+.spec-table tr:last-child td { border-bottom: none; }
+
+.spec-table .size-cell {
+    color: var(--accent-orange);
+    font-weight: 700;
+}
+
+.spec-note {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 13px;
+    margin-top: 16px;
+    padding: 12px;
+    background: rgba(247, 129, 26, 0.04);
+    border: 1px dashed rgba(247, 129, 26, 0.2);
+    border-radius: 4px;
+}
+
+/* ===== 材质与工艺 ===== */
+.material-section { background: var(--bg-dark); }
+
+.mat-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.mat-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    padding: 32px;
+}
+
+.mat-card h3 {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--accent-orange);
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.mat-list {
+    list-style: none;
+}
+
+.mat-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--border-light);
+    font-size: 14px;
+}
+
+.mat-list li:last-child { border-bottom: none; }
+
+.mat-list strong {
+    color: var(--text-primary);
+    font-weight: 700;
+    min-width: 100px;
+}
+
+.mat-list span {
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+    font-size: 13px;
+    text-align: right;
+}
+
+.mat-strength {
+    grid-column: span 2;
+}
+
+.grade-table {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.grade-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px;
+    background: var(--bg-deep);
+    border: 1px solid var(--border-light);
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.grade-row:hover {
+    border-color: var(--accent-orange);
+    background: rgba(247, 129, 26, 0.05);
+}
+
+.grade-tag {
+    font-family: var(--font-mono);
+    font-weight: 900;
+    font-size: 16px;
+    color: var(--accent-orange);
+    min-width: 60px;
+    text-align: center;
+    padding: 6px 0;
+    background: rgba(247, 129, 26, 0.08);
+    border-radius: 3px;
+    border: 1px solid rgba(247, 129, 26, 0.25);
+}
+
+.grade-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.grade-info span:first-child {
+    color: var(--text-primary);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.grade-info span:last-child {
+    color: var(--text-muted);
+    font-size: 11px;
+    font-family: var(--font-mono);
+}
+
+/* ===== 生产能力 ===== */
+.capacity-section { background: var(--bg-deep); }
+
+.cap-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 48px;
+}
+
+.cap-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    padding: 28px 20px;
+    text-align: center;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.cap-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradient);
+    transform: scaleX(0);
+    transition: transform 0.3s;
+}
+
+.cap-card:hover { transform: translateY(-4px); border-color: var(--border); }
+.cap-card:hover::after { transform: scaleX(1); }
+
+.cap-num {
+    font-family: var(--font-en);
+    font-size: clamp(28px, 3vw, 40px);
+    font-weight: 900;
+    color: var(--accent-orange);
+    margin-bottom: 8px;
+    line-height: 1;
+}
+
+.cap-unit {
+    font-size: 0.5em;
+    color: var(--text-muted);
+}
+
+.cap-card h3 {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.cap-card p {
+    color: var(--text-secondary);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.cap-process {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    padding: 32px;
+}
+
+.cap-process h3 {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--accent-orange);
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.process-flow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.proc-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 14px 18px;
+    background: var(--bg-deep);
+    border: 1px solid var(--border-light);
+    border-radius: 6px;
+    min-width: 120px;
+    transition: all 0.3s;
+}
+
+.proc-step:hover {
+    border-color: var(--accent-orange);
+    transform: translateY(-2px);
+}
+
+.proc-num {
+    font-family: var(--font-mono);
+    color: var(--accent-orange);
+    font-weight: 900;
+    font-size: 14px;
+}
+
+.proc-step span:last-child {
+    color: var(--text-primary);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.proc-arrow {
+    color: var(--accent-orange);
+    font-size: 18px;
+    font-weight: 900;
+}
+
+/* ===== 认证 ===== */
+.cert-section { background: var(--bg-dark); }
+
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.cert-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    padding: 28px 24px;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.cert-card:hover {
+    border-color: var(--border);
+    background: var(--bg-card-hover);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
+}
+
+.cert-icon {
+    font-size: 36px;
+    margin-bottom: 12px;
+}
+
+.cert-card h3 {
+    font-family: var(--font-en);
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--accent-orange);
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.cert-card p {
+    color: var(--text-secondary);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* ===== 应用行业 ===== */
+.industry-section { background: var(--bg-deep); }
+
+.industry-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.ind-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    padding: 24px 20px;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.ind-card:hover {
+    border-color: var(--accent-blue);
+    background: rgba(77, 146, 232, 0.05);
+    transform: translateY(-3px);
+}
+
+.ind-icon {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.ind-card h3 {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.ind-card p {
+    color: var(--text-muted);
+    font-size: 12px;
+}
+
+/* ===== 关于 ===== */
+.about-section { background: var(--bg-dark); }
+
+.about-container {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.about-text .section-title { text-align: left; }
+
+.about-text p {
+    color: var(--text-secondary);
+    margin-bottom: 14px;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.about-features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 32px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border-light);
+}
+
+.about-feature {
+    text-align: center;
+}
+
+.feature-num {
+    font-family: var(--font-en);
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--accent-orange);
+    display: block;
+    margin-bottom: 4px;
+    line-height: 1;
+}
+
+.feature-label {
+    color: var(--text-muted);
+    font-size: 13px;
+}
+
+.about-visual { display: flex; justify-content: center; }
+
+.factory-card {
+    width: 100%;
+    max-width: 360px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.fc-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--border-light);
+    font-family: var(--font-mono);
+}
+
+.fc-line:last-child { border-bottom: none; }
+
+.fc-label {
+    color: var(--text-muted);
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+}
+
+.fc-val {
+    color: var(--text-primary);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.fc-line:first-child .fc-val {
+    color: var(--accent-orange);
+    font-size: 20px;
+}
+
+/* ===== RFQ ===== */
+.rfq-section {
+    background: var(--bg-deep);
+}
+
+.rfq-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 48px;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 48px;
+    position: relative;
+    overflow: hidden;
+}
+
+.rfq-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 3px;
+    background: var(--gradient);
+}
+
+.rfq-info .section-title { text-align: left; }
+
+.rfq-info p {
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+    font-size: 15px;
+}
+
+.rfq-perks {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.rfq-perks li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 0;
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.check {
+    color: var(--accent-green);
+    font-weight: 900;
+    font-size: 16px;
+}
+
+.rfq-form {
+    background: var(--bg-deep);
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    padding: 28px;
+}
+
+.rfq-form-title {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--accent-orange);
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.form-group { margin-bottom: 14px; }
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 14px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: 4px;
+    color: var(--text-primary);
+    font-size: 13px;
+    font-family: inherit;
+    transition: all 0.2s;
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-orange);
+    background: rgba(247, 129, 26, 0.04);
+    box-shadow: 0 0 0 2px rgba(247, 129, 26, 0.15);
+}
+
+.form-group select {
+    cursor: pointer;
+}
+
+.form-group select option {
+    background: var(--bg-dark);
+    color: var(--text-primary);
+}
+
+.form-tip {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+/* ===== Footer ===== */
+.footer {
+    background: var(--bg-dark);
+    padding: 50px 0 24px;
+    border-top: 1px solid var(--border-light);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr repeat(3, 1fr);
+    gap: 40px;
+    margin-bottom: 32px;
+}
+
+.footer-brand p {
+    color: var(--text-secondary);
+    margin-top: 16px;
+    font-size: 13px;
+    margin-bottom: 16px;
+}
+
+.footer-cert {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.cert-mini {
+    padding: 4px 10px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: 3px;
+    font-size: 11px;
+    color: var(--accent-orange);
+    font-weight: 700;
+    font-family: var(--font-en);
+}
+
+.footer-col h4 {
+    font-size: 14px;
+    margin-bottom: 14px;
+    color: var(--text-primary);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.footer-col a {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 13px;
+    padding: 5px 0;
+    transition: color 0.2s;
+}
+
+.footer-col a:hover { color: var(--accent-orange); }
+
+.footer-line {
+    color: var(--text-secondary);
+    font-size: 13px;
+    padding: 4px 0;
+}
+
+.footer-bottom {
+    padding-top: 24px;
+    border-top: 1px solid var(--border-light);
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 12px;
+}
+
+/* ===== 滚动揭示 ===== */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== 响应式 ===== */
+@media (max-width: 968px) {
+    :root { --section-pad: 60px; }
+
+    .topbar-meta { display: none; }
+
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        height: 100vh;
+        background: var(--bg-dark);
+        flex-direction: column;
+        padding: 80px 24px 30px;
+        align-items: stretch;
+        gap: 0;
+        border-left: 1px solid var(--border-light);
+        transition: right 0.3s;
+        overflow-y: auto;
+    }
+
+    .nav-menu.open { right: 0; }
+
+    .nav-link {
+        padding: 14px 16px;
+        border-bottom: 1px solid var(--border-light);
+        border-radius: 0;
+    }
+
+    .nav-cta {
+        margin-left: 0;
+        margin-top: 16px;
+        text-align: center;
+    }
+
+    .nav-right { margin-left: auto; gap: 14px; }
+
+    .lang-switch { padding: 5px 6px; gap: 2px; }
+    .lang-btn { padding: 6px 10px; font-size: 11px; }
+    .lang-globe { font-size: 14px; }
+
+    .menu-toggle { display: flex; }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .hero-stats { grid-template-columns: repeat(2, 1fr); }
+
+    .hero-visual { order: -1; }
+    .bolt-art { transform: rotate(0deg) scale(0.7); margin: 0 auto; }
+    .bolt-specs { display: none; }
+
+    .product-line-grid { grid-template-columns: 1fr; }
+    .mat-grid { grid-template-columns: 1fr; }
+    .mat-strength { grid-column: span 1; }
+    .grade-table { grid-template-columns: repeat(2, 1fr); }
+    .cap-grid { grid-template-columns: repeat(2, 1fr); }
+    .cert-grid { grid-template-columns: repeat(2, 1fr); }
+    .industry-grid { grid-template-columns: repeat(2, 1fr); }
+    .about-container { grid-template-columns: 1fr; }
+    .rfq-card { grid-template-columns: 1fr; padding: 32px; gap: 32px; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 640px) {
+    .hero-buttons { flex-direction: column; width: 100%; }
+    .hero-buttons .btn { width: 100%; }
+    .hero-stats { grid-template-columns: 1fr 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .rfq-card { padding: 24px; }
+}
+
+</style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 顶部公告栏 -->
+    <div class="topbar">
+        <div class="container topbar-inner">
+            <span data-i18n="topbar.text">📦 工厂直供 · 支持 OEM/ODM · 全球发货</span>
+            <span class="topbar-meta">
+                <span data-i18n="topbar.hotline">销售热线:</span>
+                <strong>+86 138-XXXX-XXXX</strong>
+            </span>
+        </div>
+    </div>
+
+    <!-- 导航栏 -->
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#home" class="logo">
+                <svg class="logo-mark" viewBox="0 0 40 40" fill="none">
+                    <circle cx="20" cy="20" r="17" stroke="currentColor" stroke-width="2.5"/>
+                    <path d="M14 20l4 4 8-8" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="logo-text">
+                    <span class="logo-cn">精工固件</span>
+                    <span class="logo-en">Jingong</span>
+                </span>
+            </a>
+            <nav class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active" data-i18n="nav.home">首页</a>
+                <a href="#products" class="nav-link" data-i18n="nav.products">产品中心</a>
+                <a href="#specs" class="nav-link" data-i18n="nav.specs">规格标准</a>
+                <a href="#material" class="nav-link" data-i18n="nav.material">材质工艺</a>
+                <a href="#capacity" class="nav-link" data-i18n="nav.capacity">生产能力</a>
+                <a href="#cert" class="nav-link" data-i18n="nav.cert">认证资质</a>
+                <a href="#about" class="nav-link" data-i18n="nav.about">关于我们</a>
+                <a href="#rfq" class="nav-link nav-cta" data-i18n="nav.rfq">立即询价</a>
+            </nav>
+            <div class="nav-right">
+                <div class="lang-switch" id="langSwitch" title="切换语言 / Switch Language">
+                    <span class="lang-globe" aria-hidden="true">🌐</span>
+                    <button class="lang-btn active" data-lang="zh">中</button>
+                    <span class="lang-divider"></span>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                </div>
+                <button class="menu-toggle" id="menuToggle" aria-label="菜单">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 首屏 Hero -->
+    <section class="hero" id="home">
+        <div class="hero-bg">
+            <div class="grid-overlay"></div>
+            <div class="hero-glow hero-glow-1"></div>
+            <div class="hero-glow hero-glow-2"></div>
+        </div>
+        <div class="container hero-content">
+            <div class="hero-grid">
+                <div class="hero-text">
+                    <div class="hero-badges">
+                        <span class="badge badge-iso">ISO 9001:2015</span>
+                        <span class="badge badge-iatf">IATF 16949</span>
+                        <span class="badge badge-ce">CE / RoHS</span>
+                    </div>
+                    <h1 class="hero-title">
+                        <span data-i18n="hero.title.l1">英美标紧固件</span><br>
+                        <span class="text-gradient" data-i18n="hero.title.l2">专业制造商</span>
+                    </h1>
+                    <p class="hero-subtitle" data-i18n-html="hero.subtitle">BSW · BSF · UNC · UNF · UNEF 全规格覆盖<br>从 M2 到 M64，从 #0 到 4" — 完整公制 + 英制螺纹解决方案</p>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <div class="stat-number">22<span class="stat-unit">年</span></div>
+                            <div class="stat-label" data-i18n="hero.stat.exp">行业经验</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">45<span class="stat-unit">+</span></div>
+                            <div class="stat-label" data-i18n="hero.stat.country">出口国家</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">8000<span class="stat-unit">+</span></div>
+                            <div class="stat-label" data-i18n="hero.stat.sku">SKU 现货</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">98.5<span class="stat-unit">%</span></div>
+                            <div class="stat-label" data-i18n="hero.stat.qa">合格率</div>
+                        </div>
+                    </div>
+                    <div class="hero-buttons">
+                        <a href="#rfq" class="btn btn-primary" data-i18n="hero.cta.rfq">📋 立即询价（RFQ）→</a>
+                        <a href="#specs" class="btn btn-outline" data-i18n="hero.cta.specs">查看规格表</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="bolt-art">
+                        <div class="bolt-shank"></div>
+                        <div class="bolt-thread"></div>
+                        <div class="bolt-head">
+                            <span class="hex-mark"></span>
+                            <span class="hex-mark hex-mark-h"></span>
+                        </div>
+                        <div class="bolt-specs">
+                            <div class="spec-line"><span class="spec-key">M10</span> × <span class="spec-val">1.5</span></div>
+                            <div class="spec-line"><span class="spec-key">8.8</span> <span class="spec-val">Grade</span></div>
+                            <div class="spec-line"><span class="spec-key">DIN 933</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 产品中心 -->
+    <section class="section products-section" id="products">
+        <div class="container">
+            <div class="section-head">
+                <p class="section-tag" data-i18n="products.tag">产品中心</p>
+                <h2 class="section-title">
+                    <span data-i18n="products.title.l1">三大产品线</span> ·
+                    <span class="text-gradient" data-i18n="products.title.l2">8000+ SKU 现货</span>
+                </h2>
+                <p class="section-desc" data-i18n="products.desc">从基础标准件到定制非标件，覆盖螺栓、螺母、螺杆全系列，支持来图来样定制。</p>
+            </div>
+            <div class="product-line-grid">
+                <!-- 螺丝 -->
+                <article class="line-card line-screws">
+                    <div class="line-icon">
+                        <svg viewBox="0 0 80 80" fill="none">
+                            <rect x="22" y="8" width="36" height="20" rx="2" fill="currentColor" opacity="0.15"/>
+                            <rect x="22" y="8" width="36" height="20" rx="2" stroke="currentColor" stroke-width="2.5" fill="none"/>
+                            <path d="M40 28v44M34 36h12M34 44h12M34 52h12M34 60h12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                            <path d="M28 72l4-4M40 72v-4M52 72l-4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div class="line-info">
+                        <h3 data-i18n="line.screws.name">六角螺栓 / Hex Bolts</h3>
+                        <p data-i18n="line.screws.desc">DIN 933 / ISO 4017 / UNC / UNF 全规格，强度等级 4.8-12.9</p>
+                        <div class="line-tags">
+                            <span class="tag">DIN 933</span>
+                            <span class="tag">ISO 4017</span>
+                            <span class="tag">UNC</span>
+                            <span class="tag">UNF</span>
+                        </div>
+                        <a href="#specs" class="line-link" data-i18n="line.view">查看规格 →</a>
+                    </div>
+                </article>
+
+                <!-- 螺帽 -->
+                <article class="line-card line-nuts">
+                    <div class="line-icon">
+                        <svg viewBox="0 0 80 80" fill="none">
+                            <polygon points="40,8 67,24 67,56 40,72 13,56 13,24" stroke="currentColor" stroke-width="2.5" fill="currentColor" fill-opacity="0.15"/>
+                            <polygon points="40,18 57,28 57,52 40,62 23,52 23,28" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <circle cx="40" cy="40" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <path d="M40 30v20M30 40h20" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 2"/>
+                        </svg>
+                    </div>
+                    <div class="line-info">
+                        <h3 data-i18n="line.nuts.name">六角螺母 / Hex Nuts</h3>
+                        <p data-i18n="line.nuts.desc">DIN 934 / ISO 4032 / 美制 / 英制全规格，含自锁 / 法兰 / 盖帽系列</p>
+                        <div class="line-tags">
+                            <span class="tag">DIN 934</span>
+                            <span class="tag">ISO 4032</span>
+                            <span class="tag">Nylock</span>
+                            <span class="tag">Flange</span>
+                        </div>
+                        <a href="#specs" class="line-link" data-i18n="line.view">查看规格 →</a>
+                    </div>
+                </article>
+
+                <!-- 螺杆 -->
+                <article class="line-card line-studs">
+                    <div class="line-icon">
+                        <svg viewBox="0 0 80 80" fill="none">
+                            <rect x="10" y="34" width="60" height="12" rx="2" stroke="currentColor" stroke-width="2.5" fill="currentColor" fill-opacity="0.15"/>
+                            <path d="M10 40h4M18 40h4M26 40h4M34 40h4M42 40h4M50 40h4M58 40h4M66 40h4" stroke="currentColor" stroke-width="1.5"/>
+                            <circle cx="14" cy="40" r="1.5" fill="currentColor"/>
+                            <circle cx="22" cy="40" r="1.5" fill="currentColor"/>
+                            <circle cx="30" cy="40" r="1.5" fill="currentColor"/>
+                            <circle cx="38" cy="40" r="1.5" fill="currentColor"/>
+                            <circle cx="46" cy="40" r="1.5" fill="currentColor"/>
+                            <circle cx="54" cy="40" r="1.5" fill="currentColor"/>
+                            <circle cx="62" cy="40" r="1.5" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <div class="line-info">
+                        <h3 data-i18n="line.studs.name">双头螺杆 / Threaded Rods</h3>
+                        <p data-i18n="line.studs.desc">DIN 976 / ASTM A193 B7/B8 全规格，长度可定制 50mm-3000mm</p>
+                        <div class="line-tags">
+                            <span class="tag">DIN 976</span>
+                            <span class="tag">ASTM A193</span>
+                            <span class="tag">B7</span>
+                            <span class="tag">B8</span>
+                        </div>
+                        <a href="#specs" class="line-link" data-i18n="line.view">查看规格 →</a>
+                    </div>
+                </article>
+
+                <!-- 自定义 -->
+                <article class="line-card line-custom">
+                    <div class="line-icon">
+                        <svg viewBox="0 0 80 80" fill="none">
+                            <path d="M20 30L40 12L60 30L40 48Z" stroke="currentColor" stroke-width="2.5" fill="currentColor" fill-opacity="0.15"/>
+                            <path d="M20 50L40 32L60 50L40 68Z" stroke="currentColor" stroke-width="2.5" fill="currentColor" fill-opacity="0.2"/>
+                            <path d="M40 32v36" stroke="currentColor" stroke-width="2" stroke-dasharray="3 3"/>
+                        </svg>
+                    </div>
+                    <div class="line-info">
+                        <h3 data-i18n="line.custom.name">非标定制 / Custom Parts</h3>
+                        <p data-i18n="line.custom.desc">来图来样定制，特殊材质 / 特殊规格 / 特殊表面处理均可定制</p>
+                        <div class="line-tags">
+                            <span class="tag" data-i18n="line.custom.tag1">CAD / STEP</span>
+                            <span class="tag" data-i18n="line.custom.tag2">小批量起订</span>
+                            <span class="tag" data-i18n="line.custom.tag3">15 天交付</span>
+                        </div>
+                        <a href="#rfq" class="line-link" data-i18n="line.custom.cta">立即定制 →</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- 规格标准（核心卖点） -->
+    <section class="section specs-section" id="specs">
+        <div class="container">
+            <div class="section-head">
+                <p class="section-tag" data-i18n="specs.tag">规格标准</p>
+                <h2 class="section-title">
+                    <span data-i18n="specs.title.l1">英美标</span> <span class="text-gradient" data-i18n="specs.title.l2">速查表</span>
+                </h2>
+                <p class="section-desc" data-i18n="specs.desc">覆盖 BS / ANSI / ASME / ISO / DIN 全系列标准，紧固件规格一站查询。</p>
+            </div>
+            <div class="spec-tabs" id="specTabs">
+                <button class="spec-tab active" data-tab="bs">
+                    <span class="tab-flag">🇬🇧</span>
+                    <span data-i18n="specs.tab.bs">英式 BS 系列</span>
+                </button>
+                <button class="spec-tab" data-tab="unc">
+                    <span class="tab-flag">🇺�</span>
+                    <span data-i18n="specs.tab.unc">美式 UNC 粗牙</span>
+                </button>
+                <button class="spec-tab" data-tab="unf">
+                    <span class="tab-flag">🇺🇸</span>
+                    <span data-i18n="specs.tab.unf">美式 UNF 细牙</span>
+                </button>
+                <button class="spec-tab" data-tab="metric">
+                    <span class="tab-flag">�</span>
+                    <span data-i18n="specs.tab.metric">公制 ISO/DIN</span>
+                </button>
+            </div>
+            <div class="spec-table-wrap">
+                <table class="spec-table" id="specTable">
+                    <thead>
+                        <tr>
+                            <th data-i18n="specs.th.size">规格</th>
+                            <th data-i18n="specs.th.tpi">牙数/TPI</th>
+                            <th data-i18n="specs.th.major">大径 (mm)</th>
+                            <th data-i18n="specs.th.pitch">螺距 (mm)</th>
+                            <th data-i18n="specs.th.tap">攻丝 (mm)</th>
+                            <th data-i18n="specs.th.strength">推荐强度</th>
+                        </tr>
+                    </thead>
+                    <tbody id="specTableBody">
+                        <!-- 由 JS 动态填充 -->
+                    </tbody>
+                </table>
+            </div>
+            <p class="spec-note" data-i18n="specs.note">�️ 所有规格均符合 GB / ISO / BS / ANSI 标准，可提供材质证明 (MTC) 与第三方检测报告</p>
+        </div>
+    </section>
+
+    <!-- 材质与表面处理 -->
+    <section class="section material-section" id="material">
+        <div class="container">
+            <div class="section-head">
+                <p class="section-tag" data-i18n="mat.tag">材质与工艺</p>
+                <h2 class="section-title">
+                    <span data-i18n="mat.title.l1">从原材料到表面处理</span><br>
+                    <span class="text-gradient" data-i18n="mat.title.l2">全流程自主把控</span>
+                </h2>
+            </div>
+            <div class="mat-grid">
+                <div class="mat-card">
+                    <h3 data-i18n="mat.materials.title">材质 / Materials</h3>
+                    <ul class="mat-list">
+                        <li><strong data-i18n="mat.m.1.k">碳钢</strong><span data-i18n="mat.m.1.v">C1022 / C1045 / C1018</span></li>
+                        <li><strong data-i18n="mat.m.2.k">合金钢</strong><span data-i18n="mat.m.2.v">SCM435 / 40Cr / 35CrMo</span></li>
+                        <li><strong data-i18n="mat.m.3.k">不锈钢</strong><span data-i18n="mat.m.3.v">304 (A2) / 316 (A4) / 316L</span></li>
+                        <li><strong data-i18n="mat.m.4.k">高强度钢</strong><span data-i18n="mat.m.4.v">10.9 / 12.9 / ASTM A325 / A490</span></li>
+                        <li><strong data-i18n="mat.m.5.k">有色金属</strong><span data-i18n="mat.m.5.v">H62 黄铜 / 紫铜 / 铝 6061</span></li>
+                    </ul>
+                </div>
+                <div class="mat-card">
+                    <h3 data-i18n="mat.surface.title">表面处理 / Finishes</h3>
+                    <ul class="mat-list">
+                        <li><strong data-i18n="mat.s.1.k">镀锌</strong><span data-i18n="mat.s.1.v">蓝白锌 / 彩锌 / 黄锌 / 黑锌</span></li>
+                        <li><strong data-i18n="mat.s.2.k">达克罗</strong><span data-i18n="mat.s.2.v">Dacromet / Geomet — 盐雾 1000h+</span></li>
+                        <li><strong data-i18n="mat.s.3.k">发黑</strong><span data-i18n="mat.s.3.v">Black Oxide — 装饰 + 防锈</span></li>
+                        <li><strong data-i18n="mat.s.4.k">磷化</strong><span data-i18n="mat.s.4.v">Phosphating — 涂装前处理</span></li>
+                        <li><strong data-i18n="mat.s.5.k">热浸镀锌</strong><span data-i18n="mat.s.5.v">HDG — 户外防腐 50 年+</span></li>
+                    </ul>
+                </div>
+                <div class="mat-card mat-strength">
+                    <h3 data-i18n="mat.grade.title">机械性能等级 / Strength Grades</h3>
+                    <div class="grade-table">
+                        <div class="grade-row">
+                            <div class="grade-tag">4.8</div>
+                            <div class="grade-info"><span data-i18n="mat.g.4.t">普通强度</span><span>~400 MPa</span></div>
+                        </div>
+                        <div class="grade-row">
+                            <div class="grade-tag">8.8</div>
+                            <div class="grade-info"><span data-i18n="mat.g.8.t">高强度</span><span>~800 MPa</span></div>
+                        </div>
+                        <div class="grade-row">
+                            <div class="grade-tag">10.9</div>
+                            <div class="grade-info"><span data-i18n="mat.g.10.t">结构连接</span><span>~1000 MPa</span></div>
+                        </div>
+                        <div class="grade-row">
+                            <div class="grade-tag">12.9</div>
+                            <div class="grade-info"><span data-i18n="mat.g.12.t">超高强度</span><span>~1200 MPa</span></div>
+                        </div>
+                        <div class="grade-row">
+                            <div class="grade-tag">A2-70</div>
+                            <div class="grade-info"><span data-i18n="mat.g.a2.t">不锈钢</span><span>~700 MPa</span></div>
+                        </div>
+                        <div class="grade-row">
+                            <div class="grade-tag">A4-80</div>
+                            <div class="grade-info"><span data-i18n="mat.g.a4.t">耐腐蚀</span><span>~800 MPa</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 生产能力 -->
+    <section class="section capacity-section" id="capacity">
+        <div class="container">
+            <div class="section-head">
+                <p class="section-tag" data-i18n="cap.tag">生产能力</p>
+                <h2 class="section-title">
+                    <span data-i18n="cap.title.l1">从一根线材</span> →
+                    <span class="text-gradient" data-i18n="cap.title.l2">一颗成品</span>
+                </h2>
+            </div>
+            <div class="cap-grid">
+                <div class="cap-card">
+                    <div class="cap-num">12,000<span class="cap-unit">㎡</span></div>
+                    <h3 data-i18n="cap.area.t">厂房面积</h3>
+                    <p data-i18n="cap.area.d">自有产权现代化厂房，含冷�车间、热处理车间、表面处理车间。</p>
+                </div>
+                <div class="cap-card">
+                    <div class="cap-num">180<span class="cap-unit">+</span></div>
+                    <h3 data-i18n="cap.machine.t">生产设备</h3>
+                    <p data-i18n="cap.machine.d">多工位冷镦机、台湾 CNC 数控车床、全自动搓丝机、热处理炉。</p>
+                </div>
+                <div class="cap-card">
+                    <div class="cap-num">3,500<span class="cap-unit">T/月</span></div>
+                    <h3 data-i18n="cap.output.t">月产能</h3>
+                    <p data-i18n="cap.output.d">3 条全自动生产线 + 5 条半自动产线，旺季可弹性扩展 50%。</p>
+                </div>
+                <div class="cap-card">
+                    <div class="cap-num">15<span class="cap-unit">天</span></div>
+                    <h3 data-i18n="cap.lead.t">标准交期</h3>
+                    <p data-i18n="cap.lead.d">常规订单 7-15 天，定制订单 15-25 天，加急订单最快 5 天。</p>
+                </div>
+            </div>
+            <div class="cap-process">
+                <h3 data-i18n="cap.process.t">生产流程 / Production Process</h3>
+                <div class="process-flow">
+                    <div class="proc-step"><span class="proc-num">01</span><span data-i18n="cap.p.1">盘条采购</span></div>
+                    <span class="proc-arrow">→</span>
+                    <div class="proc-step"><span class="proc-num">02</span><span data-i18n="cap.p.2">冷镦成型</span></div>
+                    <span class="proc-arrow">→</span>
+                    <div class="proc-step"><span class="proc-num">03</span><span data-i18n="cap.p.3">搓丝滚牙</span></div>
+                    <span class="proc-arrow">→</span>
+                    <div class="proc-step"><span class="proc-num">04</span><span data-i18n="cap.p.4">热处理</span></div>
+                    <span class="proc-arrow">→</span>
+                    <div class="proc-step"><span class="proc-num">05</span><span data-i18n="cap.p.5">表面处理</span></div>
+                    <span class="proc-arrow">→</span>
+                    <div class="proc-step"><span class="proc-num">06</span><span data-i18n="cap.p.6">全检包装</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 认证资质 -->
+    <section class="section cert-section" id="cert">
+        <div class="container">
+            <div class="section-head">
+                <p class="section-tag" data-i18n="cert.tag">认证资质</p>
+                <h2 class="section-title">
+                    <span data-i18n="cert.title.l1">权威认证</span> ·
+                    <span class="text-gradient" data-i18n="cert.title.l2">质量保证</span>
+                </h2>
+            </div>
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <div class="cert-icon">🏅</div>
+                    <h3>ISO 9001:2015</h3>
+                    <p data-i18n="cert.1.d">质量管理体系认证 — 全流程标准化作业</p>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon">�</div>
+                    <h3>IATF 16949</h3>
+                    <p data-i18n="cert.2.d">汽车行业质量管理体系 — 主机厂供应商资质</p>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon">�</div>
+                    <h3>ISO 14001</h3>
+                    <p data-i18n="cert.3.d">环境管理体系 — 绿色生产合规</p>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon">�</div>
+                    <h3>CE / RoHS</h3>
+                    <p data-i18n="cert.4.d">欧盟合规认证 — 出口欧洲市场通行证</p>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon">�</div>
+                    <h3>ASTM / ASME</h3>
+                    <p data-i18n="cert.5.d">美标合规 — 北美市场出口资质</p>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon">🏅</div>
+                    <h3>SGS / BV</h3>
+                    <p data-i18n="cert.6.d">第三方检测报告 — 每年定期送检</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 应用行业 -->
+    <section class="section industry-section">
+        <div class="container">
+            <div class="section-head">
+                <p class="section-tag" data-i18n="ind.tag">应用领域</p>
+                <h2 class="section-title">
+                    <span data-i18n="ind.title.l1">服务全球</span>
+                    <span class="text-gradient" data-i18n="ind.title.l2">8 大行业</span>
+                </h2>
+            </div>
+            <div class="industry-grid">
+                <div class="ind-card">
+                    <div class="ind-icon">🚗</div>
+                    <h3 data-i18n="ind.1.t">汽车制造</h3>
+                    <p data-i18n="ind.1.d">底盘、发动机、变速箱紧固件</p>
+                </div>
+                <div class="ind-card">
+                    <div class="ind-icon">�️</div>
+                    <h3 data-i18n="ind.2.t">建筑钢结构</h3>
+                    <p data-i18n="ind.2.d">高强螺栓、地脚螺栓、锚栓</p>
+                </div>
+                <div class="ind-card">
+                    <div class="ind-icon">⚙️</div>
+                    <h3 data-i18n="ind.3.t">机械装备</h3>
+                    <p data-i18n="ind.3.d">机床、工程机械、农业机械</p>
+                </div>
+                <div class="ind-card">
+                    <div class="ind-icon">⚡</div>
+                    <h3 data-i18n="ind.4.t">电力能源</h3>
+                    <p data-i18n="ind.4.d">风电、光伏、输变电紧固件</p>
+                </div>
+                <div class="ind-card">
+                    <div class="ind-icon">🚂</div>
+                    <h3 data-i18n="ind.5.t">轨道交通</h3>
+                    <p data-i18n="ind.5.d">高铁、地铁紧固件，符合 TB/T 标准</p>
+                </div>
+                <div class="ind-card">
+                    <div class="ind-icon">🌉</div>
+                    <h3 data-i18n="ind.6.t">桥梁工程</h3>
+                    <p data-i18n="ind.6.d">10.9S / 12.9S 高强螺栓</p>
+                </div>
+                <div class="ind-card">
+                    <div class="ind-icon">🛢️</div>
+                    <h3 data-i18n="ind.7.t">石油化工</h3>
+                    <p data-i18n="ind.7.d">耐高温、耐腐蚀特殊紧固件</p>
+                </div>
+                <div class="ind-card">
+                    <div class="ind-icon">🏠</div>
+                    <h3 data-i18n="ind.8.t">家具家电</h3>
+                    <p data-i18n="ind.8.d">内六角、自攻钉、组合螺丝</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于我们 -->
+    <section class="section about-section" id="about">
+        <div class="container about-container">
+            <div class="about-text">
+                <p class="section-tag" data-i18n="about.tag">关于我们</p>
+                <h2 class="section-title">
+                    <span data-i18n="about.title.l1">22 年专注</span>
+                    <span class="text-gradient" data-i18n="about.title.l2">紧固件制造</span>
+                </h2>
+                <p data-i18n="about.p1">精工固件成立于 2003 年，位于浙江嘉兴，紧邻上海港 — 全球紧固件制造的核心区域。我们专注于英式、美式、公制全规格紧固件的研发、生产与出口。</p>
+                <p data-i18n="about.p2">从一根盘条到一颗成品，我们拥有完整的冷镦、热处理、表面处理、检测能力，年产能 4 万吨以上。产品远销北美、欧洲、东南亚、中东等 45+ 国家与地区。</p>
+                <div class="about-features">
+                    <div class="about-feature">
+                        <span class="feature-num">45+</span>
+                        <span class="feature-label" data-i18n="about.f.1">出口国家</span>
+                    </div>
+                    <div class="about-feature">
+                        <span class="feature-num">200+</span>
+                        <span class="feature-label" data-i18n="about.f.2">企业客户</span>
+                    </div>
+                    <div class="about-feature">
+                        <span class="feature-num">$25M</span>
+                        <span class="feature-label" data-i18n="about.f.3">年出口额</span>
+                    </div>
+                </div>
+            </div>
+            <div class="about-visual">
+                <div class="factory-card">
+                    <div class="fc-line"><span class="fc-label">EST.</span><span class="fc-val">2003</span></div>
+                    <div class="fc-line"><span class="fc-label" data-i18n="about.fc.loc">LOCATION</span><span class="fc-val" data-i18n="about.fc.loc.v">浙江 · 嘉兴</span></div>
+                    <div class="fc-line"><span class="fc-label" data-i18n="about.fc.size">FACTORY</span><span class="fc-val" data-i18n="about.fc.size.v">12,000 ㎡</span></div>
+                    <div class="fc-line"><span class="fc-label" data-i18n="about.fc.staff">STAFF</span><span class="fc-val" data-i18n="about.fc.staff.v">220+ 人</span></div>
+                    <div class="fc-line"><span class="fc-label" data-i18n="about.fc.port">PORT</span><span class="fc-val" data-i18n="about.fc.port.v">上海港 90km</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RFQ 询价表单 -->
+    <section class="section rfq-section" id="rfq">
+        <div class="container">
+            <div class="rfq-card">
+                <div class="rfq-info">
+                    <p class="section-tag" data-i18n="rfq.tag">立即询价</p>
+                    <h2 class="section-title light">
+                        <span data-i18n="rfq.title.l1">获取报价</span> <span class="text-gradient" data-i18n="rfq.title.l2">24 小时响应</span>
+                    </h2>
+                    <p data-i18n="rfq.desc">无论您是需要标准件现货、小批量试产、还是大批量 OEM — 我们的工程师团队都会在 24 小时内为您提供详细报价与技术支持。</p>
+                    <ul class="rfq-perks">
+                        <li><span class="check">✓</span><span data-i18n="rfq.b.1">免费样品（标准件）</span></li>
+                        <li><span class="check">✓</span><span data-i18n="rfq.b.2">免费材质证明 (MTC)</span></li>
+                        <li><span class="check">✓</span><span data-i18n="rfq.b.3">第三方检测报告（按需）</span></li>
+                        <li><span class="check">✓</span><span data-i18n="rfq.b.4">DDP / FOB / CIF 多贸易条款</span></li>
+                        <li><span class="check">✓</span><span data-i18n="rfq.b.5">支持 OEM/ODM 定制包装</span></li>
+                    </ul>
+                </div>
+                <form class="rfq-form" id="rfqForm">
+                    <h3 class="rfq-form-title" data-i18n="rfq.form.t">提交 RFQ</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label data-i18n="rfq.f.name">联系人 *</label>
+                            <input type="text" name="name" required data-i18n-placeholder="rfq.f.name.ph" placeholder="您的姓名">
+                        </div>
+                        <div class="form-group">
+                            <label data-i18n="rfq.f.company">公司名 *</label>
+                            <input type="text" name="company" required data-i18n-placeholder="rfq.f.company.ph" placeholder="您的公司">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label data-i18n="rfq.f.email">邮箱 *</label>
+                            <input type="email" name="email" required data-i18n-placeholder="rfq.f.email.ph" placeholder="business@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label data-i18n="rfq.f.phone">电话 / WhatsApp *</label>
+                            <input type="tel" name="phone" required data-i18n-placeholder="rfq.f.phone.ph" placeholder="+86 ...">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label data-i18n="rfq.f.type">需求类型</label>
+                            <select name="type">
+                                <option data-i18n-option="rfq.f.type.std" selected>标准件现货</option>
+                                <option data-i18n-option="rfq.f.type.oem">OEM 贴牌</option>
+                                <option data-i18n-option="rfq.f.type.odm">ODM 定制</option>
+                                <option data-i18n-option="rfq.f.type.sample">样品申请</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label data-i18n="rfq.f.spec">规格标准</label>
+                            <select name="spec">
+                                <option data-i18n-option="rfq.f.spec.bsw">BSW (英式粗牙)</option>
+                                <option data-i18n-option="rfq.f.spec.bsf">BSF (英式细牙)</option>
+                                <option data-i18n-option="rfq.f.spec.unc">UNC (美式粗牙)</option>
+                                <option data-i18n-option="rfq.f.spec.unf">UNF (美式细牙)</option>
+                                <option data-i18n-option="rfq.f.spec.iso">ISO / DIN (公制)</option>
+                                <option data-i18n-option="rfq.f.spec.other">其它 / 定制</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label data-i18n="rfq.f.desc">需求描述 *</label>
+                        <textarea name="desc" rows="4" required data-i18n-placeholder="rfq.f.desc.ph" placeholder="例如：六角螺栓 M10x40 8.8级 镀锌，每月 50000 件，FOB 上海..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block" data-i18n="rfq.f.submit">提交询价 →</button>
+                    <p class="form-tip" data-i18n="rfq.f.tip">提交后 24 小时内通过邮件 / WhatsApp 与您联系</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#home" class="logo">
+                        <svg class="logo-mark" viewBox="0 0 40 40" fill="none">
+                            <circle cx="20" cy="20" r="17" stroke="currentColor" stroke-width="2.5"/>
+                            <path d="M14 20l4 4 8-8" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span class="logo-text">
+                            <span class="logo-cn">精工固件</span>
+                            <span class="logo-en">Jingong</span>
+                        </span>
+                    </a>
+                    <p data-i18n="footer.tagline">英美标紧固件专业制造商 · 全球出口</p>
+                    <div class="footer-cert">
+                        <span class="cert-mini">ISO 9001</span>
+                        <span class="cert-mini">IATF 16949</span>
+                        <span class="cert-mini">CE</span>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4 data-i18n="footer.col1.t">产品</h4>
+                    <a href="#products" data-i18n="footer.col1.l1">六角螺栓</a>
+                    <a href="#products" data-i18n="footer.col1.l2">六角螺母</a>
+                    <a href="#products" data-i18n="footer.col1.l3">双头螺杆</a>
+                    <a href="#products" data-i18n="footer.col1.l4">非标定制</a>
+                </div>
+                <div class="footer-col">
+                    <h4 data-i18n="footer.col2.t">规格</h4>
+                    <a href="#specs" data-i18n="footer.col2.l1">BSW / BSF 英式</a>
+                    <a href="#specs" data-i18n="footer.col2.l2">UNC / UNF 美式</a>
+                    <a href="#specs" data-i18n="footer.col2.l3">ISO / DIN 公制</a>
+                    <a href="#material" data-i18n="footer.col2.l4">材质等级</a>
+                </div>
+                <div class="footer-col">
+                    <h4 data-i18n="footer.col3.t">联系</h4>
+                    <p class="footer-line">📞 +86 138-XXXX-XXXX</p>
+                    <p class="footer-line">�️ sales@jingong-fasteners.com</p>
+                    <p class="footer-line">📍 浙江省嘉兴市秀洲区</p>
+                    <p class="footer-line">💬 WhatsApp / WeChat</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-i18n="footer.copyright">© 2026 精工固件 Jingong Fasteners. All rights reserved. · 浙ICP备XXXXXXXX号</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+// ===== 紧固件规格数据 =====
+// 数据来源：BS 84 / BS 1083 / ANSI B1.1 / ISO 261 / ISO 724 / DIN 13
+// 真实工程数据，仅供参考。具体规格以官方标准为准。
+
+const specsData = {
+    // 英式 BSW (British Standard Whitworth) - 粗牙
+    bsw: [
+        { size: '1/8"', tpi: 40, major: 3.175, pitch: 0.635, tap: 2.55, strength: '4.8 / A2-70' },
+        { size: '3/16"', tpi: 24, major: 4.762, pitch: 1.058, tap: 3.86, strength: '4.8 / A2-70' },
+        { size: '1/4"', tpi: 20, major: 6.350, pitch: 1.270, tap: 5.10, strength: '4.8 / 8.8 / A2-70' },
+        { size: '5/16"', tpi: 18, major: 7.938, pitch: 1.411, tap: 6.56, strength: '4.8 / 8.8 / A2-70' },
+        { size: '3/8"', tpi: 16, major: 9.525, pitch: 1.588, tap: 7.90, strength: '8.8 / 10.9 / A2-70' },
+        { size: '7/16"', tpi: 14, major: 11.112, pitch: 1.814, tap: 9.30, strength: '8.8 / 10.9' },
+        { size: '1/2"', tpi: 12, major: 12.700, pitch: 2.117, tap: 10.60, strength: '8.8 / 10.9 / A4-80' },
+        { size: '9/16"', tpi: 12, major: 14.288, pitch: 2.117, tap: 12.20, strength: '8.8 / 10.9' },
+        { size: '5/8"', tpi: 11, major: 15.875, pitch: 2.309, tap: 13.50, strength: '8.8 / 10.9 / A4-80' },
+        { size: '3/4"', tpi: 10, major: 19.050, pitch: 2.540, tap: 16.50, strength: '10.9 / 12.9 / A4-80' },
+        { size: '7/8"', tpi: 9, major: 22.225, pitch: 2.822, tap: 19.50, strength: '10.9 / 12.9' },
+        { size: '1"', tpi: 8, major: 25.400, pitch: 3.175, tap: 22.25, strength: '10.9 / 12.9 / A4-80' },
+        { size: '1-1/8"', tpi: 7, major: 28.575, pitch: 3.629, tap: 25.00, strength: '12.9' },
+        { size: '1-1/4"', tpi: 7, major: 31.750, pitch: 3.629, tap: 28.00, strength: '12.9' },
+        { size: '1-1/2"', tpi: 6, major: 38.100, pitch: 4.233, tap: 33.50, strength: '12.9' },
+        { size: '2"', tpi: 4.5, major: 50.800, pitch: 5.644, tap: 44.50, strength: '12.9' }
+    ],
+
+    // 美式 UNC (Unified National Coarse) - 粗牙
+    unc: [
+        { size: '#4-40', tpi: 40, major: 2.845, pitch: 0.635, tap: 2.30, strength: '4.8 / A2-70' },
+        { size: '#6-32', tpi: 32, major: 3.505, pitch: 0.794, tap: 2.85, strength: '4.8 / A2-70' },
+        { size: '#8-32', tpi: 32, major: 4.166, pitch: 0.794, tap: 3.50, strength: '4.8 / A2-70' },
+        { size: '#10-24', tpi: 24, major: 4.826, pitch: 1.058, tap: 3.90, strength: '4.8 / 8.8 / A2-70' },
+        { size: '1/4"-20', tpi: 20, major: 6.350, pitch: 1.270, tap: 5.11, strength: '4.8 / 8.8 / A2-70' },
+        { size: '5/16"-18', tpi: 18, major: 7.938, pitch: 1.411, tap: 6.56, strength: '8.8 / 10.9 / A2-70' },
+        { size: '3/8"-16', tpi: 16, major: 9.525, pitch: 1.588, tap: 7.94, strength: '8.8 / 10.9 / A4-80' },
+        { size: '7/16"-14', tpi: 14, major: 11.112, pitch: 1.814, tap: 9.30, strength: '8.8 / 10.9' },
+        { size: '1/2"-13', tpi: 13, major: 12.700, pitch: 1.954, tap: 10.80, strength: '8.8 / 10.9 / A4-80' },
+        { size: '9/16"-12', tpi: 12, major: 14.288, pitch: 2.117, tap: 12.20, strength: '10.9 / 12.9' },
+        { size: '5/8"-11', tpi: 11, major: 15.875, pitch: 2.309, tap: 13.60, strength: '10.9 / 12.9 / A4-80' },
+        { size: '3/4"-10', tpi: 10, major: 19.050, pitch: 2.540, tap: 16.60, strength: '10.9 / 12.9 / A4-80' },
+        { size: '7/8"-9', tpi: 9, major: 22.225, pitch: 2.822, tap: 19.50, strength: '12.9' },
+        { size: '1"-8', tpi: 8, major: 25.400, pitch: 3.175, tap: 22.20, strength: '12.9 / A4-80' },
+        { size: '1-1/8"-7', tpi: 7, major: 28.575, pitch: 3.629, tap: 25.00, strength: '12.9' },
+        { size: '1-1/4"-7', tpi: 7, major: 31.750, pitch: 3.629, tap: 28.00, strength: '12.9' },
+        { size: '1-1/2"-6', tpi: 6, major: 38.100, pitch: 4.233, tap: 33.80, strength: '12.9' },
+        { size: '2"-4.5', tpi: 4.5, major: 50.800, pitch: 5.644, tap: 45.00, strength: '12.9' }
+    ],
+
+    // 美式 UNF (Unified National Fine) - 细牙
+    unf: [
+        { size: '#4-48', tpi: 48, major: 2.845, pitch: 0.529, tap: 2.40, strength: '4.8 / A2-70' },
+        { size: '#6-40', tpi: 40, major: 3.505, pitch: 0.635, tap: 3.00, strength: '4.8 / A2-70' },
+        { size: '#8-36', tpi: 36, major: 4.166, pitch: 0.706, tap: 3.60, strength: '4.8 / A2-70' },
+        { size: '#10-32', tpi: 32, major: 4.826, pitch: 0.794, tap: 4.10, strength: '4.8 / A2-70' },
+        { size: '1/4"-28', tpi: 28, major: 6.350, pitch: 0.907, tap: 5.50, strength: '8.8 / A2-70' },
+        { size: '5/16"-24', tpi: 24, major: 7.938, pitch: 1.058, tap: 7.00, strength: '8.8 / A2-70' },
+        { size: '3/8"-24', tpi: 24, major: 9.525, pitch: 1.058, tap: 8.50, strength: '8.8 / 10.9 / A4-80' },
+        { size: '7/16"-20', tpi: 20, major: 11.112, pitch: 1.270, tap: 9.90, strength: '8.8 / 10.9' },
+        { size: '1/2"-20', tpi: 20, major: 12.700, pitch: 1.270, tap: 11.50, strength: '8.8 / 10.9 / A4-80' },
+        { size: '9/16"-18', tpi: 18, major: 14.288, pitch: 1.411, tap: 13.00, strength: '10.9 / 12.9' },
+        { size: '5/8"-18', tpi: 18, major: 15.875, pitch: 1.411, tap: 14.50, strength: '10.9 / 12.9 / A4-80' },
+        { size: '3/4"-16', tpi: 16, major: 19.050, pitch: 1.588, tap: 17.50, strength: '10.9 / 12.9 / A4-80' },
+        { size: '7/8"-14', tpi: 14, major: 22.225, pitch: 1.814, tap: 20.50, strength: '12.9' },
+        { size: '1"-12', tpi: 12, major: 25.400, pitch: 2.117, tap: 23.50, strength: '12.9 / A4-80' },
+        { size: '1-1/8"-12', tpi: 12, major: 28.575, pitch: 2.117, tap: 26.50, strength: '12.9' },
+        { size: '1-1/4"-12', tpi: 12, major: 31.750, pitch: 2.117, tap: 29.50, strength: '12.9' },
+        { size: '1-1/2"-12', tpi: 12, major: 38.100, pitch: 2.117, tap: 36.00, strength: '12.9' }
+    ],
+
+    // 公制 ISO / DIN (Coarse + Fine)
+    metric: [
+        { size: 'M2', tpi: '0.4', major: 2.000, pitch: 0.40, tap: 1.60, strength: '4.8 / A2-70' },
+        { size: 'M2.5', tpi: '0.45', major: 2.500, pitch: 0.45, tap: 2.05, strength: '4.8 / A2-70' },
+        { size: 'M3', tpi: '0.5', major: 3.000, pitch: 0.50, tap: 2.50, strength: '4.8 / 8.8 / A2-70' },
+        { size: 'M4', tpi: '0.7', major: 4.000, pitch: 0.70, tap: 3.30, strength: '4.8 / 8.8 / A2-70' },
+        { size: 'M5', tpi: '0.8', major: 5.000, pitch: 0.80, tap: 4.20, strength: '8.8 / A2-70' },
+        { size: 'M6', tpi: '1.0', major: 6.000, pitch: 1.00, tap: 5.00, strength: '8.8 / 10.9 / A2-70' },
+        { size: 'M8', tpi: '1.25', major: 8.000, pitch: 1.25, tap: 6.80, strength: '8.8 / 10.9 / A4-80' },
+        { size: 'M10', tpi: '1.5', major: 10.000, pitch: 1.50, tap: 8.50, strength: '8.8 / 10.9 / A4-80' },
+        { size: 'M12', tpi: '1.75', major: 12.000, pitch: 1.75, tap: 10.20, strength: '10.9 / 12.9 / A4-80' },
+        { size: 'M14', tpi: '2.0', major: 14.000, pitch: 2.00, tap: 12.00, strength: '10.9 / 12.9' },
+        { size: 'M16', tpi: '2.0', major: 16.000, pitch: 2.00, tap: 14.00, strength: '10.9 / 12.9 / A4-80' },
+        { size: 'M18', tpi: '2.5', major: 18.000, pitch: 2.50, tap: 15.50, strength: '12.9' },
+        { size: 'M20', tpi: '2.5', major: 20.000, pitch: 2.50, tap: 17.50, strength: '12.9 / A4-80' },
+        { size: 'M24', tpi: '3.0', major: 24.000, pitch: 3.00, tap: 21.00, strength: '12.9' },
+        { size: 'M30', tpi: '3.5', major: 30.000, pitch: 3.50, tap: 26.50, strength: '12.9' },
+        { size: 'M36', tpi: '4.0', major: 36.000, pitch: 4.00, tap: 32.00, strength: '12.9' },
+        { size: 'M42', tpi: '4.5', major: 42.000, pitch: 4.50, tap: 37.50, strength: '12.9' },
+        { size: 'M48', tpi: '5.0', major: 48.000, pitch: 5.00, tap: 43.00, strength: '12.9' },
+        { size: 'M56', tpi: '5.5', major: 56.000, pitch: 5.50, tap: 50.50, strength: '12.9' },
+        { size: 'M64', tpi: '6.0', major: 64.000, pitch: 6.00, tap: 58.00, strength: '12.9' }
+    ]
+};
+
+// 表格列标题（多语言）
+const specTableHeaders = {
+    zh: {
+        size: '规格',
+        tpi: '牙数/TPI',
+        major: '大径 (mm)',
+        pitch: '螺距 (mm)',
+        tap: '攻丝 (mm)',
+        strength: '推荐强度'
+    },
+    en: {
+        size: 'Size',
+        tpi: 'TPI',
+        major: 'Major Dia (mm)',
+        pitch: 'Pitch (mm)',
+        tap: 'Tap Drill (mm)',
+        strength: 'Recommended Grade'
+    }
+};
+
+</script>
+    <script>
+// ===== Lumiq Hardware i18n 中英双语翻译 =====
+
+const translations = {
+    zh: {
+        // Meta
+        'page.title': '精工固件 Jingong - 专业英美标螺丝螺帽螺杆制造商',
+        'page.desc': '精工固件 - 专业生产符合英式 BSW/BSF、美式 UNC/UNF/UNEF 规格的螺丝、螺帽、螺杆。ISO 9001 / IATF 16949 认证工厂，支持 OEM/ODM。',
+
+        // Topbar
+        'topbar.text': '📦 工厂直供 · 支持 OEM/ODM · 全球发货',
+        'topbar.hotline': '销售热线:',
+
+        // Nav
+        'nav.home': '首页',
+        'nav.products': '产品中心',
+        'nav.specs': '规格标准',
+        'nav.material': '材质工艺',
+        'nav.capacity': '生产能力',
+        'nav.cert': '认证资质',
+        'nav.about': '关于我们',
+        'nav.rfq': '立即询价',
+
+        // Hero
+        'hero.title.l1': '英美标紧固件',
+        'hero.title.l2': '专业制造商',
+        'hero.subtitle': 'BSW · BSF · UNC · UNF · UNEF 全规格覆盖<br>从 M2 到 M64，从 #0 到 4" — 完整公制 + 英制螺纹解决方案',
+        'hero.stat.exp': '行业经验',
+        'hero.stat.country': '出口国家',
+        'hero.stat.sku': 'SKU 现货',
+        'hero.stat.qa': '合格率',
+        'hero.cta.rfq': '📋 立即询价（RFQ）→',
+        'hero.cta.specs': '查看规格表',
+
+        // Products
+        'products.tag': '产品中心',
+        'products.title.l1': '三大产品线',
+        'products.title.l2': '8000+ SKU 现货',
+        'products.desc': '从基础标准件到定制非标件，覆盖螺栓、螺母、螺杆全系列，支持来图来样定制。',
+        'line.screws.name': '六角螺栓 / Hex Bolts',
+        'line.screws.desc': 'DIN 933 / ISO 4017 / UNC / UNF 全规格，强度等级 4.8-12.9',
+        'line.nuts.name': '六角螺母 / Hex Nuts',
+        'line.nuts.desc': 'DIN 934 / ISO 4032 / 美制 / 英制全规格，含自锁 / 法兰 / 盖帽系列',
+        'line.studs.name': '双头螺杆 / Threaded Rods',
+        'line.studs.desc': 'DIN 976 / ASTM A193 B7/B8 全规格，长度可定制 50mm-3000mm',
+        'line.custom.name': '非标定制 / Custom Parts',
+        'line.custom.desc': '来图来样定制，特殊材质 / 特殊规格 / 特殊表面处理均可定制',
+        'line.custom.tag1': 'CAD / STEP',
+        'line.custom.tag2': '小批量起订',
+        'line.custom.tag3': '15 天交付',
+        'line.custom.cta': '立即定制 →',
+        'line.view': '查看规格 →',
+
+        // Specs
+        'specs.tag': '规格标准',
+        'specs.title.l1': '英美标',
+        'specs.title.l2': '速查表',
+        'specs.desc': '覆盖 BS / ANSI / ASME / ISO / DIN 全系列标准，紧固件规格一站查询。',
+        'specs.tab.bs': '英式 BS 系列',
+        'specs.tab.unc': '美式 UNC 粗牙',
+        'specs.tab.unf': '美式 UNF 细牙',
+        'specs.tab.metric': '公制 ISO/DIN',
+        'specs.th.size': '规格',
+        'specs.th.tpi': '牙数/TPI',
+        'specs.th.major': '大径 (mm)',
+        'specs.th.pitch': '螺距 (mm)',
+        'specs.th.tap': '攻丝 (mm)',
+        'specs.th.strength': '推荐强度',
+        'specs.note': '🛡️ 所有规格均符合 GB / ISO / BS / ANSI 标准，可提供材质证明 (MTC) 与第三方检测报告',
+
+        // Material
+        'mat.tag': '材质与工艺',
+        'mat.title.l1': '从原材料到表面处理',
+        'mat.title.l2': '全流程自主把控',
+        'mat.materials.title': '材质 / Materials',
+        'mat.m.1.k': '碳钢',
+        'mat.m.1.v': 'C1022 / C1045 / C1018',
+        'mat.m.2.k': '合金钢',
+        'mat.m.2.v': 'SCM435 / 40Cr / 35CrMo',
+        'mat.m.3.k': '不锈钢',
+        'mat.m.3.v': '304 (A2) / 316 (A4) / 316L',
+        'mat.m.4.k': '高强度钢',
+        'mat.m.4.v': '10.9 / 12.9 / ASTM A325 / A490',
+        'mat.m.5.k': '有色金属',
+        'mat.m.5.v': 'H62 黄铜 / 紫铜 / 铝 6061',
+        'mat.surface.title': '表面处理 / Finishes',
+        'mat.s.1.k': '镀锌',
+        'mat.s.1.v': '蓝白锌 / 彩锌 / 黄锌 / 黑锌',
+        'mat.s.2.k': '达克罗',
+        'mat.s.2.v': 'Dacromet / Geomet — 盐雾 1000h+',
+        'mat.s.3.k': '发黑',
+        'mat.s.3.v': 'Black Oxide — 装饰 + 防锈',
+        'mat.s.4.k': '磷化',
+        'mat.s.4.v': 'Phosphating — 涂装前处理',
+        'mat.s.5.k': '热浸镀锌',
+        'mat.s.5.v': 'HDG — 户外防腐 50 年+',
+        'mat.grade.title': '机械性能等级 / Strength Grades',
+        'mat.g.4.t': '普通强度',
+        'mat.g.8.t': '高强度',
+        'mat.g.10.t': '结构连接',
+        'mat.g.12.t': '超高强度',
+        'mat.g.a2.t': '不锈钢',
+        'mat.g.a4.t': '耐腐蚀',
+
+        // Capacity
+        'cap.tag': '生产能力',
+        'cap.title.l1': '从一根线材',
+        'cap.title.l2': '一颗成品',
+        'cap.area.t': '厂房面积',
+        'cap.area.d': '自有产权现代化厂房，含冷镦车间、热处理车间、表面处理车间。',
+        'cap.machine.t': '生产设备',
+        'cap.machine.d': '多工位冷�机、台湾 CNC 数控车床、全自动搓丝机、热处理炉。',
+        'cap.output.t': '月产能',
+        'cap.output.d': '3 条全自动生产线 + 5 条半自动产线，旺季可弹性扩展 50%。',
+        'cap.lead.t': '标准交期',
+        'cap.lead.d': '常规订单 7-15 天，定制订单 15-25 天，加急订单最快 5 天。',
+        'cap.process.t': '生产流程 / Production Process',
+        'cap.p.1': '盘条采购',
+        'cap.p.2': '冷镦成型',
+        'cap.p.3': '搓丝滚牙',
+        'cap.p.4': '热处理',
+        'cap.p.5': '表面处理',
+        'cap.p.6': '全检包装',
+
+        // Cert
+        'cert.tag': '认证资质',
+        'cert.title.l1': '权威认证',
+        'cert.title.l2': '质量保证',
+        'cert.1.d': '质量管理体系认证 — 全流程标准化作业',
+        'cert.2.d': '汽车行业质量管理体系 — 主机厂供应商资质',
+        'cert.3.d': '环境管理体系 — 绿色生产合规',
+        'cert.4.d': '欧盟合规认证 — 出口欧洲市场通行证',
+        'cert.5.d': '美标合规 — 北美市场出口资质',
+        'cert.6.d': '第三方检测报告 — 每年定期送检',
+
+        // Industry
+        'ind.tag': '应用领域',
+        'ind.title.l1': '服务全球',
+        'ind.title.l2': '8 大行业',
+        'ind.1.t': '汽车制造',
+        'ind.1.d': '底盘、发动机、变速箱紧固件',
+        'ind.2.t': '建筑钢结构',
+        'ind.2.d': '高强螺栓、地脚螺栓、锚栓',
+        'ind.3.t': '机械装备',
+        'ind.3.d': '机床、工程机械、农业机械',
+        'ind.4.t': '电力能源',
+        'ind.4.d': '风电、光伏、输变电紧固件',
+        'ind.5.t': '轨道交通',
+        'ind.5.d': '高铁、地铁紧固件，符合 TB/T 标准',
+        'ind.6.t': '桥梁工程',
+        'ind.6.d': '10.9S / 12.9S 高强螺栓',
+        'ind.7.t': '石油化工',
+        'ind.7.d': '耐高温、耐腐蚀特殊紧固件',
+        'ind.8.t': '家具家电',
+        'ind.8.d': '内六角、自攻钉、组合螺丝',
+
+        // About
+        'about.tag': '关于我们',
+        'about.title.l1': '22 年专注',
+        'about.title.l2': '紧固件制造',
+        'about.p1': '精工固件成立于 2003 年，位于浙江嘉兴，紧邻上海港 — 全球紧固件制造的核心区域。我们专注于英式、美式、公制全规格紧固件的研发、生产与出口。',
+        'about.p2': '从一根盘条到一颗成品，我们拥有完整的冷镦、热处理、表面处理、检测能力，年产能 4 万吨以上。产品远销北美、欧洲、东南亚、中东等 45+ 国家与地区。',
+        'about.f.1': '出口国家',
+        'about.f.2': '企业客户',
+        'about.f.3': '年出口额',
+        'about.fc.loc': 'LOCATION',
+        'about.fc.loc.v': '浙江 · 嘉兴',
+        'about.fc.size': 'FACTORY',
+        'about.fc.size.v': '12,000 ㎡',
+        'about.fc.staff': 'STAFF',
+        'about.fc.staff.v': '220+ 人',
+        'about.fc.port': 'PORT',
+        'about.fc.port.v': '上海港 90km',
+
+        // RFQ
+        'rfq.tag': '立即询价',
+        'rfq.title.l1': '获取报价',
+        'rfq.title.l2': '24 小时响应',
+        'rfq.desc': '无论您是需要标准件现货、小批量试产、还是大批量 OEM — 我们的工程师团队都会在 24 小时内为您提供详细报价与技术支持。',
+        'rfq.b.1': '免费样品（标准件）',
+        'rfq.b.2': '免费材质证明 (MTC)',
+        'rfq.b.3': '第三方检测报告（按需）',
+        'rfq.b.4': 'DDP / FOB / CIF 多贸易条款',
+        'rfq.b.5': '支持 OEM/ODM 定制包装',
+        'rfq.form.t': '提交 RFQ',
+        'rfq.f.name': '联系人 *',
+        'rfq.f.name.ph': '您的姓名',
+        'rfq.f.company': '公司名 *',
+        'rfq.f.company.ph': '您的公司',
+        'rfq.f.email': '邮箱 *',
+        'rfq.f.email.ph': 'business@email.com',
+        'rfq.f.phone': '电话 / WhatsApp *',
+        'rfq.f.phone.ph': '+86 ...',
+        'rfq.f.type': '需求类型',
+        'rfq.f.type.std': '标准件现货',
+        'rfq.f.type.oem': 'OEM 贴牌',
+        'rfq.f.type.odm': 'ODM 定制',
+        'rfq.f.type.sample': '样品申请',
+        'rfq.f.spec': '规格标准',
+        'rfq.f.spec.bsw': 'BSW (英式粗牙)',
+        'rfq.f.spec.bsf': 'BSF (英式细牙)',
+        'rfq.f.spec.unc': 'UNC (美式粗牙)',
+        'rfq.f.spec.unf': 'UNF (美式细牙)',
+        'rfq.f.spec.iso': 'ISO / DIN (公制)',
+        'rfq.f.spec.other': '其它 / 定制',
+        'rfq.f.desc': '需求描述 *',
+        'rfq.f.desc.ph': '例如：六角螺栓 M10x40 8.8级 镀锌，每月 50000 件，FOB 上海...',
+        'rfq.f.submit': '提交询价 →',
+        'rfq.f.tip': '提交后 24 小时内通过邮件 / WhatsApp 与您联系',
+
+        // Footer
+        'footer.tagline': '英美标紧固件专业制造商 · 全球出口',
+        'footer.col1.t': '产品',
+        'footer.col1.l1': '六角螺栓',
+        'footer.col1.l2': '六角螺母',
+        'footer.col1.l3': '双头螺杆',
+        'footer.col1.l4': '非标定制',
+        'footer.col2.t': '规格',
+        'footer.col2.l1': 'BSW / BSF 英式',
+        'footer.col2.l2': 'UNC / UNF 美式',
+        'footer.col2.l3': 'ISO / DIN 公制',
+        'footer.col2.l4': '材质等级',
+        'footer.col3.t': '联系',
+        'footer.copyright': '© 2026 精工固件 Jingong Fasteners. All rights reserved. · 浙ICP备XXXXXXXX号',
+    },
+
+    en: {
+        // Meta
+        'page.title': 'Jingong Fasteners - BS/ANSI Hex Bolts, Nuts & Threaded Rods Manufacturer',
+        'page.desc': 'Jingong - Professional manufacturer of BSW/BSF/UNC/UNF/UNEF standard fasteners. ISO 9001 & IATF 16949 certified factory. OEM/ODM supported.',
+
+        // Topbar
+        'topbar.text': '📦 Factory Direct · OEM/ODM Supported · Global Shipping',
+        'topbar.hotline': 'Sales Hotline:',
+
+        // Nav
+        'nav.home': 'Home',
+        'nav.products': 'Products',
+        'nav.specs': 'Specs',
+        'nav.material': 'Materials',
+        'nav.capacity': 'Capacity',
+        'nav.cert': 'Certifications',
+        'nav.about': 'About Us',
+        'nav.rfq': 'Request Quote',
+
+        // Hero
+        'hero.title.l1': 'BS / ANSI Standard',
+        'hero.title.l2': 'Fastener Manufacturer',
+        'hero.subtitle': 'Complete range of BSW · BSF · UNC · UNF · UNEF threads<br>From M2 to M64, from #0 to 4" — Full Metric & Imperial Threading Solutions',
+        'hero.stat.exp': 'Industry Experience',
+        'hero.stat.country': 'Export Countries',
+        'hero.stat.sku': 'SKUs in Stock',
+        'hero.stat.qa': 'Pass Rate',
+        'hero.cta.rfq': '📋 Request Quote (RFQ) →',
+        'hero.cta.specs': 'View Specifications',
+
+        // Products
+        'products.tag': 'PRODUCTS',
+        'products.title.l1': 'Three Product Lines',
+        'products.title.l2': '8,000+ SKUs in Stock',
+        'products.desc': 'From standard parts to custom specials — complete range of bolts, nuts, and threaded rods. Drawings & samples accepted for customization.',
+        'line.screws.name': 'Hex Bolts',
+        'line.screws.desc': 'DIN 933 / ISO 4017 / UNC / UNF full range, strength grades 4.8 to 12.9',
+        'line.nuts.name': 'Hex Nuts',
+        'line.nuts.desc': 'DIN 934 / ISO 4032 / Imperial / Metric full range, including nylon lock / flange / cap series',
+        'line.studs.name': 'Threaded Rods',
+        'line.studs.desc': 'DIN 976 / ASTM A193 B7/B8 full range, custom lengths 50mm to 3000mm',
+        'line.custom.name': 'Custom Parts',
+        'line.custom.desc': 'Custom per your drawings or samples. Special materials / specs / finishes all available.',
+        'line.custom.tag1': 'CAD / STEP',
+        'line.custom.tag2': 'Small MOQ',
+        'line.custom.tag3': '15-Day Delivery',
+        'line.custom.cta': 'Customize Now →',
+        'line.view': 'View Specs →',
+
+        // Specs
+        'specs.tag': 'SPECIFICATIONS',
+        'specs.title.l1': 'BS / ANSI',
+        'specs.title.l2': 'Quick Reference',
+        'specs.desc': 'Complete coverage of BS / ANSI / ASME / ISO / DIN standards — one-stop fastener specification lookup.',
+        'specs.tab.bs': 'British BS Series',
+        'specs.tab.unc': 'UNC (Coarse)',
+        'specs.tab.unf': 'UNF (Fine)',
+        'specs.tab.metric': 'Metric ISO/DIN',
+        'specs.th.size': 'Size',
+        'specs.th.tpi': 'TPI',
+        'specs.th.major': 'Major Ø (mm)',
+        'specs.th.pitch': 'Pitch (mm)',
+        'specs.th.tap': 'Tap Drill (mm)',
+        'specs.th.strength': 'Recommended Grade',
+        'specs.note': '🛡️ All specifications comply with GB / ISO / BS / ANSI. Mill Test Certificate (MTC) & third-party inspection reports available.',
+
+        // Material
+        'mat.tag': 'MATERIAL & FINISH',
+        'mat.title.l1': 'From Raw Material',
+        'mat.title.l2': 'to Surface Finish',
+        'mat.materials.title': 'Materials',
+        'mat.m.1.k': 'Carbon Steel',
+        'mat.m.1.v': 'C1022 / C1045 / C1018',
+        'mat.m.2.k': 'Alloy Steel',
+        'mat.m.2.v': 'SCM435 / 40Cr / 35CrMo',
+        'mat.m.3.k': 'Stainless Steel',
+        'mat.m.3.v': '304 (A2) / 316 (A4) / 316L',
+        'mat.m.4.k': 'High-Tensile',
+        'mat.m.4.v': '10.9 / 12.9 / ASTM A325 / A490',
+        'mat.m.5.k': 'Non-Ferrous',
+        'mat.m.5.v': 'H62 Brass / Copper / Aluminum 6061',
+        'mat.surface.title': 'Surface Finishes',
+        'mat.s.1.k': 'Zinc Plating',
+        'mat.s.1.v': 'Clear / Yellow / Black / Color Zinc',
+        'mat.s.2.k': 'Dacromet',
+        'mat.s.2.v': 'Dacromet / Geomet — 1000h+ salt spray',
+        'mat.s.3.k': 'Black Oxide',
+        'mat.s.3.v': 'Black Oxide — decorative + anti-rust',
+        'mat.s.4.k': 'Phosphating',
+        'mat.s.4.v': 'Phosphating — pre-coating treatment',
+        'mat.s.5.k': 'HDG',
+        'mat.s.5.v': 'Hot-Dip Galvanized — 50+ years outdoor',
+        'mat.grade.title': 'Mechanical Strength Grades',
+        'mat.g.4.t': 'Standard',
+        'mat.g.8.t': 'High-Tensile',
+        'mat.g.10.t': 'Structural',
+        'mat.g.12.t': 'Ultra High-Strength',
+        'mat.g.a2.t': 'Stainless',
+        'mat.g.a4.t': 'Corrosion-Resistant',
+
+        // Capacity
+        'cap.tag': 'CAPACITY',
+        'cap.title.l1': 'From Wire Rod',
+        'cap.title.l2': 'to Finished Part',
+        'cap.area.t': 'Factory Area',
+        'cap.area.d': 'Modern self-owned facility including cold heading, heat treatment, and surface finishing workshops.',
+        'cap.machine.t': 'Equipment',
+        'cap.machine.d': 'Multi-station cold headers, Taiwan CNC lathes, full-auto thread rollers, heat treatment furnaces.',
+        'cap.output.t': 'Monthly Output',
+        'cap.output.d': '3 fully-auto + 5 semi-auto production lines. Flexible 50% capacity expansion during peak season.',
+        'cap.lead.t': 'Lead Time',
+        'cap.lead.d': 'Standard orders 7-15 days, custom 15-25 days, rush orders as fast as 5 days.',
+        'cap.process.t': 'Production Process',
+        'cap.p.1': 'Wire Rod',
+        'cap.p.2': 'Cold Heading',
+        'cap.p.3': 'Thread Rolling',
+        'cap.p.4': 'Heat Treatment',
+        'cap.p.5': 'Surface Finish',
+        'cap.p.6': 'QC & Packing',
+
+        // Cert
+        'cert.tag': 'CERTIFICATIONS',
+        'cert.title.l1': 'Authoritative',
+        'cert.title.l2': 'Quality Assurance',
+        'cert.1.d': 'Quality Management System — fully standardized operations',
+        'cert.2.d': 'Automotive Quality Management — OEM supplier qualification',
+        'cert.3.d': 'Environmental Management — green production compliance',
+        'cert.4.d': 'EU Compliance — pass to enter European market',
+        'cert.5.d': 'US Standard Compliance — North America export qualification',
+        'cert.6.d': 'Third-party Test Reports — annual inspection by SGS/BV',
+
+        // Industry
+        'ind.tag': 'APPLICATIONS',
+        'ind.title.l1': 'Serving Global',
+        'ind.title.l2': '8 Industries',
+        'ind.1.t': 'Automotive',
+        'ind.1.d': 'Chassis, engine, transmission fasteners',
+        'ind.2.t': 'Steel Structures',
+        'ind.2.d': 'High-strength bolts, anchor bolts',
+        'ind.3.t': 'Machinery',
+        'ind.3.d': 'Machine tools, construction & agricultural equipment',
+        'ind.4.t': 'Power & Energy',
+        'ind.4.d': 'Wind, solar, transmission fasteners',
+        'ind.5.t': 'Rail Transit',
+        'ind.5.d': 'High-speed rail, subway per TB/T standard',
+        'ind.6.t': 'Bridge Engineering',
+        'ind.6.d': '10.9S / 12.9S high-strength bolts',
+        'ind.7.t': 'Oil & Chemical',
+        'ind.7.d': 'High-temp & corrosion-resistant specialty fasteners',
+        'ind.8.t': 'Furniture & Appliance',
+        'ind.8.d': 'Socket cap, self-tapping, combination screws',
+
+        // About
+        'about.tag': 'ABOUT US',
+        'about.title.l1': '22 Years Dedicated',
+        'about.title.l2': 'to Fastener Manufacturing',
+        'about.p1': 'Founded in 2003 in Jiaxing, Zhejiang — adjacent to Shanghai Port, the global hub of fastener manufacturing. We specialize in the R&D, production, and export of British, American, and metric standard fasteners.',
+        'about.p2': 'From wire rod to finished part, we have complete cold heading, heat treatment, surface finishing, and inspection capabilities, with annual capacity over 40,000 tons. Products exported to 45+ countries across North America, Europe, Southeast Asia, and the Middle East.',
+        'about.f.1': 'Export Countries',
+        'about.f.2': 'Enterprise Clients',
+        'about.f.3': 'Annual Export',
+        'about.fc.loc': 'LOCATION',
+        'about.fc.loc.v': 'Jiaxing, Zhejiang',
+        'about.fc.size': 'FACTORY',
+        'about.fc.size.v': '12,000 ㎡',
+        'about.fc.staff': 'STAFF',
+        'about.fc.staff.v': '220+ People',
+        'about.fc.port': 'PORT',
+        'about.fc.port.v': 'Shanghai 90km',
+
+        // RFQ
+        'rfq.tag': 'REQUEST QUOTE',
+        'rfq.title.l1': 'Get Your Quote',
+        'rfq.title.l2': 'within 24 Hours',
+        'rfq.desc': 'Whether you need standard parts in stock, small-batch trial production, or large-volume OEM — our engineering team will provide detailed quotations and technical support within 24 hours.',
+        'rfq.b.1': 'Free samples (standard parts)',
+        'rfq.b.2': 'Free Mill Test Certificate (MTC)',
+        'rfq.b.3': 'Third-party test reports (on demand)',
+        'rfq.b.4': 'DDP / FOB / CIF trade terms',
+        'rfq.b.5': 'OEM/ODM custom packaging supported',
+        'rfq.form.t': 'Submit RFQ',
+        'rfq.f.name': 'Contact Name *',
+        'rfq.f.name.ph': 'Your name',
+        'rfq.f.company': 'Company *',
+        'rfq.f.company.ph': 'Your company',
+        'rfq.f.email': 'Email *',
+        'rfq.f.email.ph': 'business@email.com',
+        'rfq.f.phone': 'Phone / WhatsApp *',
+        'rfq.f.phone.ph': '+86 ...',
+        'rfq.f.type': 'Inquiry Type',
+        'rfq.f.type.std': 'Standard parts in stock',
+        'rfq.f.type.oem': 'OEM branding',
+        'rfq.f.type.odm': 'ODM custom',
+        'rfq.f.type.sample': 'Sample request',
+        'rfq.f.spec': 'Specification Standard',
+        'rfq.f.spec.bsw': 'BSW (British Coarse)',
+        'rfq.f.spec.bsf': 'BSF (British Fine)',
+        'rfq.f.spec.unc': 'UNC (US Coarse)',
+        'rfq.f.spec.unf': 'UNF (US Fine)',
+        'rfq.f.spec.iso': 'ISO / DIN (Metric)',
+        'rfq.f.spec.other': 'Other / Custom',
+        'rfq.f.desc': 'Requirement Description *',
+        'rfq.f.desc.ph': 'e.g., Hex bolt M10x40 grade 8.8 zinc plated, 50,000 pcs/month, FOB Shanghai...',
+        'rfq.f.submit': 'Submit Quote Request →',
+        'rfq.f.tip': 'We will respond within 24 hours via email / WhatsApp',
+
+        // Footer
+        'footer.tagline': 'BS / ANSI Standard Fasteners Manufacturer · Global Export',
+        'footer.col1.t': 'Products',
+        'footer.col1.l1': 'Hex Bolts',
+        'footer.col1.l2': 'Hex Nuts',
+        'footer.col1.l3': 'Threaded Rods',
+        'footer.col1.l4': 'Custom Parts',
+        'footer.col2.t': 'Standards',
+        'footer.col2.l1': 'BSW / BSF (British)',
+        'footer.col2.l2': 'UNC / UNF (American)',
+        'footer.col2.l3': 'ISO / DIN (Metric)',
+        'footer.col2.l4': 'Strength Grades',
+        'footer.col3.t': 'Contact',
+        'footer.copyright': '© 2026 Jingong Fasteners. All rights reserved.',
+    }
+};
+
+let currentLang = localStorage.getItem('jingong-lang') || 'zh';
+
+function setLanguage(lang) {
+    if (!translations[lang]) return;
+    currentLang = lang;
+    localStorage.setItem('jingong-lang', lang);
+
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.dataset.i18n;
+        if (translations[lang][key]) {
+            el.textContent = translations[lang][key];
+        }
+    });
+
+    document.querySelectorAll('[data-i18n-html]').forEach(el => {
+        const key = el.dataset.i18nHtml;
+        if (translations[lang][key]) {
+            el.innerHTML = translations[lang][key];
+        }
+    });
+
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        const key = el.dataset.i18nPlaceholder;
+        if (translations[lang][key]) {
+            el.placeholder = translations[lang][key];
+        }
+    });
+
+    document.querySelectorAll('[data-i18n-option]').forEach(el => {
+        const key = el.dataset.i18nOption;
+        if (translations[lang][key]) {
+            el.textContent = translations[lang][key];
+        }
+    });
+
+    document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+
+    // 重新渲染规格表（含多语言表头）
+    if (typeof renderSpecTable === 'function') {
+        renderSpecTable(currentSpecTab);
+    }
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => setLanguage(currentLang));
+} else {
+    setLanguage(currentLang);
+}
+
+</script>
+    <script>
+// ===== 导航栏滚动效果 =====
+const navbar = document.getElementById('navbar');
+let lastScroll = 0;
+
+window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 30) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
+
+// ===== 移动端菜单 =====
+const menuToggle = document.getElementById('menuToggle');
+const navMenu = document.getElementById('navMenu');
+
+menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('open');
+});
+
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+    });
+});
+
+// ===== 当前导航高亮 =====
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-link');
+
+function highlightNav() {
+    const scrollPos = window.pageYOffset + 120;
+    sections.forEach(section => {
+        const top = section.offsetTop;
+        const height = section.offsetHeight;
+        const id = section.getAttribute('id');
+        if (scrollPos >= top && scrollPos < top + height) {
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${id}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+    });
+}
+
+window.addEventListener('scroll', highlightNav);
+
+// ===== 语言切换器 =====
+document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const targetLang = btn.dataset.lang;
+        if (targetLang === currentLang) return;
+        btn.classList.add('lang-switching');
+        setTimeout(() => btn.classList.remove('lang-switching'), 250);
+        setLanguage(targetLang);
+    });
+});
+
+// ===== 规格表渲染 =====
+let currentSpecTab = 'bsw';
+
+function renderSpecTable(tab) {
+    currentSpecTab = tab;
+    const tbody = document.getElementById('specTableBody');
+    const thead = document.querySelector('.spec-table thead tr');
+    if (!tbody) return;
+
+    // 表头（多语言）
+    const headers = specTableHeaders[currentLang] || specTableHeaders.zh;
+    thead.innerHTML = `
+        <th>${headers.size}</th>
+        <th>${headers.tpi}</th>
+        <th>${headers.major}</th>
+        <th>${headers.pitch}</th>
+        <th>${headers.tap}</th>
+        <th>${headers.strength}</th>
+    `;
+
+    // 表体
+    const data = specsData[tab];
+    if (!data || !data.length) {
+        tbody.innerHTML = '<tr><td colspan="6" style="text-align:center;padding:40px;">数据加载中...</td></tr>';
+        return;
+    }
+
+    tbody.innerHTML = data.map(row => `
+        <tr>
+            <td class="size-cell">${row.size}</td>
+            <td>${row.tpi}</td>
+            <td>${row.major.toFixed(3)}</td>
+            <td>${row.pitch.toFixed(3)}</td>
+            <td>${row.tap.toFixed(2)}</td>
+            <td>${row.strength}</td>
+        </tr>
+    `).join('');
+}
+
+// 规格标签切换
+document.querySelectorAll('.spec-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+        document.querySelectorAll('.spec-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        renderSpecTable(tab.dataset.tab);
+    });
+});
+
+// 初始渲染
+renderSpecTable('bsw');
+
+// ===== RFQ 表单提交 =====
+const rfqForm = document.getElementById('rfqForm');
+
+if (rfqForm) {
+    rfqForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const btn = rfqForm.querySelector('button[type="submit"]');
+        const tip = rfqForm.querySelector('.form-tip');
+        const originalText = btn.textContent;
+        const originalTip = tip.textContent;
+
+        const successMsg = currentLang === 'zh'
+            ? '✓ 询价已提交！我们将在 24 小时内与您联系'
+            : '✓ Quote request submitted! We will contact you within 24 hours';
+        const pendingMsg = currentLang === 'zh'
+            ? '正在提交...'
+            : 'Submitting...';
+
+        btn.textContent = pendingMsg;
+        btn.disabled = true;
+
+        setTimeout(() => {
+            btn.textContent = successMsg;
+            btn.style.background = 'linear-gradient(135deg, #3fb950 0%, #2ea043 100%)';
+            tip.style.color = 'var(--accent-green)';
+
+            setTimeout(() => {
+                rfqForm.reset();
+                btn.textContent = originalText;
+                btn.style.background = '';
+                btn.disabled = false;
+                tip.style.color = '';
+                tip.textContent = originalTip;
+            }, 4000);
+        }, 800);
+    });
+}
+
+// ===== 滚动揭示动画 =====
+const revealElements = document.querySelectorAll(
+    '.line-card, .mat-card, .cap-card, .cert-card, .ind-card, .spec-table-wrap, .about-features, .factory-card, .rfq-card'
+);
+revealElements.forEach(el => el.classList.add('reveal'));
+
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+            setTimeout(() => entry.target.classList.add('visible'), index * 50);
+            revealObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+
+revealElements.forEach(el => revealObserver.observe(el));
+
+// ===== 平滑滚动 =====
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href === '#' || href.length < 2) return;
+        const target = document.querySelector(href);
+        if (target) {
+            e.preventDefault();
+            const offset = 80;
+            const top = target.offsetTop - offset;
+            window.scrollTo({ top: top, behavior: 'smooth' });
+            navMenu.classList.remove('open');
+        }
+    });
+});
+
+// ===== 控制台彩蛋 =====
+console.log(
+    '%c✦ 精工固件 Jingong Fasteners · Bilingual Edition',
+    'font-family: Inter; font-size: 22px; font-weight: 900; color: #f7811a; padding: 12px 0;'
+);
+console.log(
+    '%c英美标紧固件专业制造商 · BS / ANSI Standard Fastener Manufacturer',
+    'color: #f7811a; font-size: 13px;'
+);
+
+</script>
+</body>
+</html>
