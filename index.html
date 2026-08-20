@@ -127,106 +127,81 @@
             <div class="section-head">
                 <p class="section-tag" data-i18n="products.tag">产品中心</p>
                 <h2 class="section-title">
-                    <span data-i18n="products.title.l1">三大产品线</span> ·
-                    <span class="text-gradient" data-i18n="products.title.l2">8000+ SKU 现货</span>
+                    <span data-i18n="products.title.l1">产品目录</span> ·
+                    <span class="text-gradient" data-i18n="products.title.l2">100 个 SKU</span>
                 </h2>
-                <p class="section-desc" data-i18n="products.desc">从基础标准件到定制非标件，覆盖螺栓、螺母、螺杆全系列，支持来图来样定制。</p>
+                <p class="section-desc" data-i18n="products.desc">从基础标准件到定制非标件，覆盖螺栓、螺母、螺杆、紧固件全系列，4 大类 · 8 子系列 · 100 SKU 现货，支持来图来样定制。</p>
             </div>
-            <div class="product-line-grid">
-                <!-- 螺丝 -->
-                <article class="line-card line-screws">
-                    <div class="line-icon">
-                        <svg viewBox="0 0 80 80" fill="none">
-                            <rect x="22" y="8" width="36" height="20" rx="2" fill="currentColor" opacity="0.15"/>
-                            <rect x="22" y="8" width="36" height="20" rx="2" stroke="currentColor" stroke-width="2.5" fill="none"/>
-                            <path d="M40 28v44M34 36h12M34 44h12M34 52h12M34 60h12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-                            <path d="M28 72l4-4M40 72v-4M52 72l-4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-                        </svg>
-                    </div>
-                    <div class="line-info">
-                        <h3 data-i18n="line.screws.name">六角螺栓 / Hex Bolts</h3>
-                        <p data-i18n="line.screws.desc">DIN 933 / ISO 4017 / UNC / UNF 全规格，强度等级 4.8-12.9</p>
-                        <div class="line-tags">
-                            <span class="tag">DIN 933</span>
-                            <span class="tag">ISO 4017</span>
-                            <span class="tag">UNC</span>
-                            <span class="tag">UNF</span>
-                        </div>
-                        <a href="#specs" class="line-link" data-i18n="line.view">查看规格 →</a>
-                    </div>
-                </article>
 
-                <!-- 螺帽 -->
-                <article class="line-card line-nuts">
-                    <div class="line-icon">
-                        <svg viewBox="0 0 80 80" fill="none">
-                            <polygon points="40,8 67,24 67,56 40,72 13,56 13,24" stroke="currentColor" stroke-width="2.5" fill="currentColor" fill-opacity="0.15"/>
-                            <polygon points="40,18 57,28 57,52 40,62 23,52 23,28" stroke="currentColor" stroke-width="2" fill="none"/>
-                            <circle cx="40" cy="40" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
-                            <path d="M40 30v20M30 40h20" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 2"/>
-                        </svg>
+            <!-- 目录布局：左侧筛选 + 右侧网格 -->
+            <button class="filter-toggle" id="filterToggle">
+                <span><span class="ft-icon">⚙️</span> <span data-i18n="filter.toggle">筛选</span><span class="ft-count" id="filterCount">100</span></span>
+                <span class="ft-arrow">▼</span>
+            </button>
+            <div class="catalog-layout">
+                <!-- 左侧筛选 -->
+                <aside class="catalog-filter">
+                    <div class="filter-block">
+                        <h4 class="filter-title" data-i18n="filter.cat">产品分类</h4>
+                        <ul class="filter-list" id="filterCat">
+                            <li><button class="filter-btn active" data-cat="all"><span class="filter-name" data-i18n="cat.all">全部产品</span><span class="filter-count">100</span></button></li>
+                            <li><button class="filter-btn" data-cat="bolts"><span class="filter-icon">🔩</span><span class="filter-name" data-i18n="cat.bolts">螺栓系列</span><span class="filter-count">30</span></button></li>
+                            <li><button class="filter-btn" data-cat="nuts"><span class="filter-icon">⬢</span><span class="filter-name" data-i18n="cat.nuts">螺母系列</span><span class="filter-count">28</span></button></li>
+                            <li><button class="filter-btn" data-cat="rods"><span class="filter-icon">📏</span><span class="filter-name" data-i18n="cat.rods">螺杆系列</span><span class="filter-count">12</span></button></li>
+                            <li><button class="filter-btn" data-cat="misc"><span class="filter-icon">⚙️</span><span class="filter-name" data-i18n="cat.misc">紧固件系列</span><span class="filter-count">30</span></button></li>
+                        </ul>
                     </div>
-                    <div class="line-info">
-                        <h3 data-i18n="line.nuts.name">六角螺母 / Hex Nuts</h3>
-                        <p data-i18n="line.nuts.desc">DIN 934 / ISO 4032 / 美制 / 英制全规格，含自锁 / 法兰 / 盖帽系列</p>
-                        <div class="line-tags">
-                            <span class="tag">DIN 934</span>
-                            <span class="tag">ISO 4032</span>
-                            <span class="tag">Nylock</span>
-                            <span class="tag">Flange</span>
-                        </div>
-                        <a href="#specs" class="line-link" data-i18n="line.view">查看规格 →</a>
-                    </div>
-                </article>
 
-                <!-- 螺杆 -->
-                <article class="line-card line-studs">
-                    <div class="line-icon">
-                        <svg viewBox="0 0 80 80" fill="none">
-                            <rect x="10" y="34" width="60" height="12" rx="2" stroke="currentColor" stroke-width="2.5" fill="currentColor" fill-opacity="0.15"/>
-                            <path d="M10 40h4M18 40h4M26 40h4M34 40h4M42 40h4M50 40h4M58 40h4M66 40h4" stroke="currentColor" stroke-width="1.5"/>
-                            <circle cx="14" cy="40" r="1.5" fill="currentColor"/>
-                            <circle cx="22" cy="40" r="1.5" fill="currentColor"/>
-                            <circle cx="30" cy="40" r="1.5" fill="currentColor"/>
-                            <circle cx="38" cy="40" r="1.5" fill="currentColor"/>
-                            <circle cx="46" cy="40" r="1.5" fill="currentColor"/>
-                            <circle cx="54" cy="40" r="1.5" fill="currentColor"/>
-                            <circle cx="62" cy="40" r="1.5" fill="currentColor"/>
-                        </svg>
+                    <div class="filter-block">
+                        <h4 class="filter-title" data-i18n="filter.std">标准体系</h4>
+                        <ul class="filter-list" id="filterStd">
+                            <li><button class="filter-btn active" data-std="all"><span class="filter-name" data-i18n="std.all">全部标准</span></button></li>
+                            <li><button class="filter-btn" data-std="DIN"><span class="filter-tag">DIN</span><span class="filter-name">DIN / ISO</span></button></li>
+                            <li><button class="filter-btn" data-std="ANSI"><span class="filter-tag">ANSI</span><span class="filter-name">ANSI / ASME</span></button></li>
+                            <li><button class="filter-btn" data-std="BS"><span class="filter-tag">BS</span><span class="filter-name">BS / BSW</span></button></li>
+                            <li><button class="filter-btn" data-std="GB"><span class="filter-tag">GB</span><span class="filter-name">GB / ASTM</span></button></li>
+                        </ul>
                     </div>
-                    <div class="line-info">
-                        <h3 data-i18n="line.studs.name">双头螺杆 / Threaded Rods</h3>
-                        <p data-i18n="line.studs.desc">DIN 976 / ASTM A193 B7/B8 全规格，长度可定制 50mm-3000mm</p>
-                        <div class="line-tags">
-                            <span class="tag">DIN 976</span>
-                            <span class="tag">ASTM A193</span>
-                            <span class="tag">B7</span>
-                            <span class="tag">B8</span>
-                        </div>
-                        <a href="#specs" class="line-link" data-i18n="line.view">查看规格 →</a>
-                    </div>
-                </article>
 
-                <!-- 自定义 -->
-                <article class="line-card line-custom">
-                    <div class="line-icon">
-                        <svg viewBox="0 0 80 80" fill="none">
-                            <path d="M20 30L40 12L60 30L40 48Z" stroke="currentColor" stroke-width="2.5" fill="currentColor" fill-opacity="0.15"/>
-                            <path d="M20 50L40 32L60 50L40 68Z" stroke="currentColor" stroke-width="2.5" fill="currentColor" fill-opacity="0.2"/>
-                            <path d="M40 32v36" stroke="currentColor" stroke-width="2" stroke-dasharray="3 3"/>
-                        </svg>
+                    <div class="filter-block">
+                        <h4 class="filter-title" data-i18n="filter.mat">材质</h4>
+                        <ul class="filter-list" id="filterMat">
+                            <li><button class="filter-btn active" data-mat="all"><span class="filter-name" data-i18n="mat.all">全部材质</span></button></li>
+                            <li><button class="filter-btn" data-mat="carbon"><span class="filter-name">碳钢</span></button></li>
+                            <li><button class="filter-btn" data-mat="alloy"><span class="filter-name">合金钢</span></button></li>
+                            <li><button class="filter-btn" data-mat="stainless"><span class="filter-name">不锈钢</span></button></li>
+                            <li><button class="filter-btn" data-mat="other"><span class="filter-name">其他</span></button></li>
+                        </ul>
                     </div>
-                    <div class="line-info">
-                        <h3 data-i18n="line.custom.name">非标定制 / Custom Parts</h3>
-                        <p data-i18n="line.custom.desc">来图来样定制，特殊材质 / 特殊规格 / 特殊表面处理均可定制</p>
-                        <div class="line-tags">
-                            <span class="tag" data-i18n="line.custom.tag1">CAD / STEP</span>
-                            <span class="tag" data-i18n="line.custom.tag2">小批量起订</span>
-                            <span class="tag" data-i18n="line.custom.tag3">15 天交付</span>
+
+                    <button class="filter-reset" id="filterReset" data-i18n="filter.reset">↻ 重置筛选</button>
+                </aside>
+
+                <!-- 右侧产品 -->
+                <div class="catalog-main">
+                    <div class="catalog-toolbar">
+                        <div class="toolbar-search">
+                            <span class="search-icon">🔍</span>
+                            <input type="text" id="productSearch" placeholder="搜索产品名 / 规格 / 标准..." data-i18n-placeholder="toolbar.search">
                         </div>
-                        <a href="#rfq" class="line-link" data-i18n="line.custom.cta">立即定制 →</a>
+                        <div class="toolbar-info">
+                            <span class="result-count"><span id="resultCount">100</span> <span data-i18n="toolbar.results">个结果</span></span>
+                            <select id="productSort" class="sort-select">
+                                <option value="default" data-i18n="sort.default">默认排序</option>
+                                <option value="id-asc" data-i18n="sort.id">按编号</option>
+                                <option value="name-asc" data-i18n="sort.name">按名称</option>
+                                <option value="cat-asc" data-i18n="sort.cat">按类别</option>
+                            </select>
+                        </div>
                     </div>
-                </article>
+
+                    <div class="product-grid" id="productGrid"></div>
+
+                    <div class="catalog-more">
+                        <button class="btn btn-outline" id="loadMoreBtn" data-i18n="toolbar.more">加载更多</button>
+                        <p class="more-hint" id="moreHint"></p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -656,6 +631,7 @@
         </div>
     </footer>
 
+    <script src="js/products-data.js"></script>
     <script src="js/specs-data.js"></script>
     <script src="js/i18n.js"></script>
     <script src="js/main.js"></script>

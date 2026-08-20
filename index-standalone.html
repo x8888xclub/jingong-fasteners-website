@@ -590,9 +590,517 @@ button {
 
 .spec-val { color: var(--text-muted); }
 
-/* ===== 产品中心 ===== */
+/* ===== 产品中心 - 目录布局 ===== */
 .products-section { background: var(--bg-dark); }
 
+.catalog-layout {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 28px;
+    align-items: start;
+}
+
+/* 左侧筛选 */
+.catalog-filter {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    padding: 22px;
+    position: sticky;
+    top: 100px;
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+}
+
+.filter-block {
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.filter-block:last-of-type {
+    border-bottom: none;
+    margin-bottom: 12px;
+}
+
+.filter-title {
+    font-size: 11px;
+    font-weight: 800;
+    color: var(--accent-orange);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    font-family: var(--font-en);
+}
+
+.filter-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.filter-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 10px;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: left;
+}
+
+.filter-btn:hover {
+    background: rgba(247, 129, 26, 0.06);
+    color: var(--text-primary);
+}
+
+.filter-btn.active {
+    background: rgba(247, 129, 26, 0.12);
+    border-color: rgba(247, 129, 26, 0.4);
+    color: var(--accent-orange);
+}
+
+.filter-icon {
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.filter-name {
+    flex: 1;
+}
+
+.filter-count {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-muted);
+    padding: 1px 6px;
+    background: var(--bg-deep);
+    border-radius: 3px;
+    font-weight: 700;
+}
+
+.filter-btn.active .filter-count {
+    background: var(--accent-orange);
+    color: #0a0d14;
+}
+
+.filter-tag {
+    display: inline-block;
+    width: 38px;
+    text-align: center;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 800;
+    padding: 2px 0;
+    background: var(--bg-deep);
+    color: var(--accent-steel);
+    border-radius: 3px;
+    flex-shrink: 0;
+}
+
+.filter-btn.active .filter-tag {
+    background: var(--accent-orange);
+    color: #0a0d14;
+}
+
+.filter-reset {
+    width: 100%;
+    padding: 10px;
+    background: var(--bg-deep);
+    border: 1px solid var(--border-light);
+    border-radius: 4px;
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.filter-reset:hover {
+    border-color: var(--accent-orange);
+    color: var(--accent-orange);
+}
+
+/* 右侧产品区 */
+.catalog-main {
+    min-width: 0;
+}
+
+.catalog-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 20px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.toolbar-search {
+    position: relative;
+    flex: 1;
+    max-width: 400px;
+}
+
+.toolbar-search .search-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    opacity: 0.6;
+}
+
+.toolbar-search input {
+    width: 100%;
+    padding: 9px 14px 9px 38px;
+    background: var(--bg-deep);
+    border: 1px solid var(--border-light);
+    border-radius: 4px;
+    color: var(--text-primary);
+    font-size: 13px;
+    font-family: inherit;
+    transition: all 0.2s;
+}
+
+.toolbar-search input:focus {
+    outline: none;
+    border-color: var(--accent-orange);
+    box-shadow: 0 0 0 2px rgba(247, 129, 26, 0.15);
+}
+
+.toolbar-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.result-count {
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+.result-count span:first-child {
+    color: var(--accent-orange);
+    font-weight: 800;
+    font-family: var(--font-en);
+    font-size: 16px;
+    margin-right: 2px;
+}
+
+.sort-select {
+    padding: 8px 14px;
+    background: var(--bg-deep);
+    border: 1px solid var(--border-light);
+    border-radius: 4px;
+    color: var(--text-primary);
+    font-size: 13px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.sort-select:hover { border-color: var(--accent-orange); }
+.sort-select:focus { outline: none; border-color: var(--accent-orange); }
+
+.sort-select option {
+    background: var(--bg-dark);
+    color: var(--text-primary);
+}
+
+/* 产品网格 */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.product-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--gradient);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+}
+
+.product-card:hover {
+    border-color: var(--border);
+    background: var(--bg-card-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.product-card:hover::before { transform: scaleX(1); }
+
+.pc-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+}
+
+.pc-icon {
+    font-size: 32px;
+    line-height: 1;
+    color: var(--accent-orange);
+}
+
+.pc-sku {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--accent-orange);
+    background: rgba(247, 129, 26, 0.08);
+    border: 1px solid rgba(247, 129, 26, 0.25);
+    padding: 2px 7px;
+    border-radius: 3px;
+    letter-spacing: 0.5px;
+}
+
+.pc-name {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.4;
+    margin-bottom: 10px;
+    min-height: 38px;
+}
+
+.pc-std {
+    display: inline-block;
+    font-family: var(--font-en);
+    font-size: 10px;
+    color: var(--accent-steel);
+    background: rgba(77, 146, 232, 0.08);
+    border: 1px solid rgba(77, 146, 232, 0.2);
+    padding: 2px 7px;
+    border-radius: 3px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: 0.3px;
+}
+
+.pc-info {
+    list-style: none;
+    margin: 10px 0;
+    padding-top: 10px;
+    border-top: 1px dashed var(--border-light);
+}
+
+.pc-info li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 0;
+    font-size: 11px;
+    color: var(--text-muted);
+    gap: 8px;
+}
+
+.pc-info li strong {
+    color: var(--text-secondary);
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.pc-info li span {
+    font-family: var(--font-mono);
+    color: var(--text-primary);
+    font-size: 11px;
+    text-align: right;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.pc-action {
+    margin-top: auto;
+    padding-top: 12px;
+    display: flex;
+    gap: 6px;
+}
+
+.pc-btn {
+    flex: 1;
+    padding: 7px 10px;
+    font-size: 11px;
+    font-weight: 700;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: center;
+    border: 1px solid;
+    letter-spacing: 0.3px;
+}
+
+.pc-btn-primary {
+    background: var(--gradient);
+    border: none;
+    color: #0a0d14;
+}
+
+.pc-btn-primary:hover { filter: brightness(1.1); }
+
+.pc-btn-outline {
+    background: transparent;
+    color: var(--text-primary);
+    border-color: var(--border-light);
+}
+
+.pc-btn-outline:hover {
+    border-color: var(--accent-orange);
+    color: var(--accent-orange);
+}
+
+/* 加载更多 */
+.catalog-more {
+    text-align: center;
+    padding: 24px 0;
+}
+
+.more-hint {
+    margin-top: 12px;
+    color: var(--text-muted);
+    font-size: 12px;
+}
+
+.product-empty {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 80px 20px;
+    background: var(--bg-card);
+    border: 1px dashed var(--border-light);
+    border-radius: 8px;
+}
+
+.product-empty-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+    opacity: 0.4;
+}
+
+.product-empty p {
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+/* 响应式 */
+@media (max-width: 968px) {
+    .catalog-layout {
+        grid-template-columns: 1fr;
+    }
+    /* 移动端筛选器默认折叠 */
+    .catalog-filter {
+        position: static;
+        max-height: 0;
+        overflow: hidden;
+        padding: 0 22px;
+        border: none;
+        transition: max-height 0.35s ease, padding 0.35s ease, margin-bottom 0.35s ease;
+    }
+    .catalog-filter.open {
+        max-height: 800px;
+        padding: 22px;
+        border: 1px solid var(--border-light);
+        margin-bottom: 16px;
+    }
+    .filter-toggle {
+        display: flex;
+    }
+    .catalog-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .toolbar-search { max-width: none; }
+    .toolbar-info {
+        justify-content: space-between;
+    }
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    }
+    .pc-name { font-size: 13px; min-height: 36px; }
+}
+
+@media (max-width: 640px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    .product-card { padding: 14px; }
+    .pc-icon { font-size: 24px; }
+    .pc-name { font-size: 12px; min-height: 32px; }
+    .pc-info { display: none; }
+    .pc-action { padding-top: 8px; }
+    .pc-btn { padding: 6px 8px; font-size: 10px; }
+}
+
+/* 移动端筛选切换按钮 */
+.filter-toggle {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 14px 18px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-bottom: 12px;
+}
+
+.filter-toggle .ft-count {
+    color: var(--accent-orange);
+    font-family: var(--font-en);
+    font-size: 13px;
+    padding: 2px 8px;
+    background: rgba(247, 129, 26, 0.1);
+    border-radius: 3px;
+    margin-left: 8px;
+}
+
+.filter-toggle .ft-arrow {
+    color: var(--accent-orange);
+    transition: transform 0.3s;
+    font-size: 12px;
+}
+
+.catalog-filter.open ~ .filter-toggle .ft-arrow,
+.filter-toggle.active .ft-arrow {
+    transform: rotate(180deg);
+}
+
+/* ===== 旧产品线网格（保留以防回退） ===== */
 .product-line-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -1605,106 +2113,81 @@ button {
             <div class="section-head">
                 <p class="section-tag" data-i18n="products.tag">产品中心</p>
                 <h2 class="section-title">
-                    <span data-i18n="products.title.l1">三大产品线</span> ·
-                    <span class="text-gradient" data-i18n="products.title.l2">8000+ SKU 现货</span>
+                    <span data-i18n="products.title.l1">产品目录</span> ·
+                    <span class="text-gradient" data-i18n="products.title.l2">100 个 SKU</span>
                 </h2>
-                <p class="section-desc" data-i18n="products.desc">从基础标准件到定制非标件，覆盖螺栓、螺母、螺杆全系列，支持来图来样定制。</p>
+                <p class="section-desc" data-i18n="products.desc">从基础标准件到定制非标件，覆盖螺栓、螺母、螺杆、紧固件全系列，4 大类 · 8 子系列 · 100 SKU 现货，支持来图来样定制。</p>
             </div>
-            <div class="product-line-grid">
-                <!-- 螺丝 -->
-                <article class="line-card line-screws">
-                    <div class="line-icon">
-                        <svg viewBox="0 0 80 80" fill="none">
-                            <rect x="22" y="8" width="36" height="20" rx="2" fill="currentColor" opacity="0.15"/>
-                            <rect x="22" y="8" width="36" height="20" rx="2" stroke="currentColor" stroke-width="2.5" fill="none"/>
-                            <path d="M40 28v44M34 36h12M34 44h12M34 52h12M34 60h12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-                            <path d="M28 72l4-4M40 72v-4M52 72l-4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-                        </svg>
-                    </div>
-                    <div class="line-info">
-                        <h3 data-i18n="line.screws.name">六角螺栓 / Hex Bolts</h3>
-                        <p data-i18n="line.screws.desc">DIN 933 / ISO 4017 / UNC / UNF 全规格，强度等级 4.8-12.9</p>
-                        <div class="line-tags">
-                            <span class="tag">DIN 933</span>
-                            <span class="tag">ISO 4017</span>
-                            <span class="tag">UNC</span>
-                            <span class="tag">UNF</span>
-                        </div>
-                        <a href="#specs" class="line-link" data-i18n="line.view">查看规格 →</a>
-                    </div>
-                </article>
 
-                <!-- 螺帽 -->
-                <article class="line-card line-nuts">
-                    <div class="line-icon">
-                        <svg viewBox="0 0 80 80" fill="none">
-                            <polygon points="40,8 67,24 67,56 40,72 13,56 13,24" stroke="currentColor" stroke-width="2.5" fill="currentColor" fill-opacity="0.15"/>
-                            <polygon points="40,18 57,28 57,52 40,62 23,52 23,28" stroke="currentColor" stroke-width="2" fill="none"/>
-                            <circle cx="40" cy="40" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
-                            <path d="M40 30v20M30 40h20" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 2"/>
-                        </svg>
+            <!-- 目录布局：左侧筛选 + 右侧网格 -->
+            <button class="filter-toggle" id="filterToggle">
+                <span><span class="ft-icon">⚙️</span> <span data-i18n="filter.toggle">筛选</span><span class="ft-count" id="filterCount">100</span></span>
+                <span class="ft-arrow">▼</span>
+            </button>
+            <div class="catalog-layout">
+                <!-- 左侧筛选 -->
+                <aside class="catalog-filter">
+                    <div class="filter-block">
+                        <h4 class="filter-title" data-i18n="filter.cat">产品分类</h4>
+                        <ul class="filter-list" id="filterCat">
+                            <li><button class="filter-btn active" data-cat="all"><span class="filter-name" data-i18n="cat.all">全部产品</span><span class="filter-count">100</span></button></li>
+                            <li><button class="filter-btn" data-cat="bolts"><span class="filter-icon">🔩</span><span class="filter-name" data-i18n="cat.bolts">螺栓系列</span><span class="filter-count">30</span></button></li>
+                            <li><button class="filter-btn" data-cat="nuts"><span class="filter-icon">⬢</span><span class="filter-name" data-i18n="cat.nuts">螺母系列</span><span class="filter-count">28</span></button></li>
+                            <li><button class="filter-btn" data-cat="rods"><span class="filter-icon">📏</span><span class="filter-name" data-i18n="cat.rods">螺杆系列</span><span class="filter-count">12</span></button></li>
+                            <li><button class="filter-btn" data-cat="misc"><span class="filter-icon">⚙️</span><span class="filter-name" data-i18n="cat.misc">紧固件系列</span><span class="filter-count">30</span></button></li>
+                        </ul>
                     </div>
-                    <div class="line-info">
-                        <h3 data-i18n="line.nuts.name">六角螺母 / Hex Nuts</h3>
-                        <p data-i18n="line.nuts.desc">DIN 934 / ISO 4032 / 美制 / 英制全规格，含自锁 / 法兰 / 盖帽系列</p>
-                        <div class="line-tags">
-                            <span class="tag">DIN 934</span>
-                            <span class="tag">ISO 4032</span>
-                            <span class="tag">Nylock</span>
-                            <span class="tag">Flange</span>
-                        </div>
-                        <a href="#specs" class="line-link" data-i18n="line.view">查看规格 →</a>
-                    </div>
-                </article>
 
-                <!-- 螺杆 -->
-                <article class="line-card line-studs">
-                    <div class="line-icon">
-                        <svg viewBox="0 0 80 80" fill="none">
-                            <rect x="10" y="34" width="60" height="12" rx="2" stroke="currentColor" stroke-width="2.5" fill="currentColor" fill-opacity="0.15"/>
-                            <path d="M10 40h4M18 40h4M26 40h4M34 40h4M42 40h4M50 40h4M58 40h4M66 40h4" stroke="currentColor" stroke-width="1.5"/>
-                            <circle cx="14" cy="40" r="1.5" fill="currentColor"/>
-                            <circle cx="22" cy="40" r="1.5" fill="currentColor"/>
-                            <circle cx="30" cy="40" r="1.5" fill="currentColor"/>
-                            <circle cx="38" cy="40" r="1.5" fill="currentColor"/>
-                            <circle cx="46" cy="40" r="1.5" fill="currentColor"/>
-                            <circle cx="54" cy="40" r="1.5" fill="currentColor"/>
-                            <circle cx="62" cy="40" r="1.5" fill="currentColor"/>
-                        </svg>
+                    <div class="filter-block">
+                        <h4 class="filter-title" data-i18n="filter.std">标准体系</h4>
+                        <ul class="filter-list" id="filterStd">
+                            <li><button class="filter-btn active" data-std="all"><span class="filter-name" data-i18n="std.all">全部标准</span></button></li>
+                            <li><button class="filter-btn" data-std="DIN"><span class="filter-tag">DIN</span><span class="filter-name">DIN / ISO</span></button></li>
+                            <li><button class="filter-btn" data-std="ANSI"><span class="filter-tag">ANSI</span><span class="filter-name">ANSI / ASME</span></button></li>
+                            <li><button class="filter-btn" data-std="BS"><span class="filter-tag">BS</span><span class="filter-name">BS / BSW</span></button></li>
+                            <li><button class="filter-btn" data-std="GB"><span class="filter-tag">GB</span><span class="filter-name">GB / ASTM</span></button></li>
+                        </ul>
                     </div>
-                    <div class="line-info">
-                        <h3 data-i18n="line.studs.name">双头螺杆 / Threaded Rods</h3>
-                        <p data-i18n="line.studs.desc">DIN 976 / ASTM A193 B7/B8 全规格，长度可定制 50mm-3000mm</p>
-                        <div class="line-tags">
-                            <span class="tag">DIN 976</span>
-                            <span class="tag">ASTM A193</span>
-                            <span class="tag">B7</span>
-                            <span class="tag">B8</span>
-                        </div>
-                        <a href="#specs" class="line-link" data-i18n="line.view">查看规格 →</a>
-                    </div>
-                </article>
 
-                <!-- 自定义 -->
-                <article class="line-card line-custom">
-                    <div class="line-icon">
-                        <svg viewBox="0 0 80 80" fill="none">
-                            <path d="M20 30L40 12L60 30L40 48Z" stroke="currentColor" stroke-width="2.5" fill="currentColor" fill-opacity="0.15"/>
-                            <path d="M20 50L40 32L60 50L40 68Z" stroke="currentColor" stroke-width="2.5" fill="currentColor" fill-opacity="0.2"/>
-                            <path d="M40 32v36" stroke="currentColor" stroke-width="2" stroke-dasharray="3 3"/>
-                        </svg>
+                    <div class="filter-block">
+                        <h4 class="filter-title" data-i18n="filter.mat">材质</h4>
+                        <ul class="filter-list" id="filterMat">
+                            <li><button class="filter-btn active" data-mat="all"><span class="filter-name" data-i18n="mat.all">全部材质</span></button></li>
+                            <li><button class="filter-btn" data-mat="carbon"><span class="filter-name">碳钢</span></button></li>
+                            <li><button class="filter-btn" data-mat="alloy"><span class="filter-name">合金钢</span></button></li>
+                            <li><button class="filter-btn" data-mat="stainless"><span class="filter-name">不锈钢</span></button></li>
+                            <li><button class="filter-btn" data-mat="other"><span class="filter-name">其他</span></button></li>
+                        </ul>
                     </div>
-                    <div class="line-info">
-                        <h3 data-i18n="line.custom.name">非标定制 / Custom Parts</h3>
-                        <p data-i18n="line.custom.desc">来图来样定制，特殊材质 / 特殊规格 / 特殊表面处理均可定制</p>
-                        <div class="line-tags">
-                            <span class="tag" data-i18n="line.custom.tag1">CAD / STEP</span>
-                            <span class="tag" data-i18n="line.custom.tag2">小批量起订</span>
-                            <span class="tag" data-i18n="line.custom.tag3">15 天交付</span>
+
+                    <button class="filter-reset" id="filterReset" data-i18n="filter.reset">↻ 重置筛选</button>
+                </aside>
+
+                <!-- 右侧产品 -->
+                <div class="catalog-main">
+                    <div class="catalog-toolbar">
+                        <div class="toolbar-search">
+                            <span class="search-icon">🔍</span>
+                            <input type="text" id="productSearch" placeholder="搜索产品名 / 规格 / 标准..." data-i18n-placeholder="toolbar.search">
                         </div>
-                        <a href="#rfq" class="line-link" data-i18n="line.custom.cta">立即定制 →</a>
+                        <div class="toolbar-info">
+                            <span class="result-count"><span id="resultCount">100</span> <span data-i18n="toolbar.results">个结果</span></span>
+                            <select id="productSort" class="sort-select">
+                                <option value="default" data-i18n="sort.default">默认排序</option>
+                                <option value="id-asc" data-i18n="sort.id">按编号</option>
+                                <option value="name-asc" data-i18n="sort.name">按名称</option>
+                                <option value="cat-asc" data-i18n="sort.cat">按类别</option>
+                            </select>
+                        </div>
                     </div>
-                </article>
+
+                    <div class="product-grid" id="productGrid"></div>
+
+                    <div class="catalog-more">
+                        <button class="btn btn-outline" id="loadMoreBtn" data-i18n="toolbar.more">加载更多</button>
+                        <p class="more-hint" id="moreHint"></p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -2134,7 +2617,180 @@ button {
         </div>
     </footer>
 
-    <script>
+<script>
+// ===== 产品数据：100 个 SKU =====
+// 4 大类（螺栓 / 螺母 / 螺杆 / 紧固件）+ 多系列 + 多种规格
+// 用于产品中心展示，每条产品包含：编号 / 中文名 / 英文名 / 类别 / 系列 / 标准 / 规格 / 材质 / 表面
+
+const productCategories = {
+    zh: {
+        bolts: '螺栓系列',
+        nuts: '螺母系列',
+        rods: '螺杆系列',
+        misc: '紧固件系列',
+        all: '全部产品'
+    },
+    en: {
+        bolts: 'Bolts',
+        nuts: 'Nuts',
+        rods: 'Threaded Rods',
+        misc: 'Fasteners',
+        all: 'All Products'
+    }
+};
+
+const products = [
+    // ========== 螺栓系列 (30 个) ==========
+    // 六角头螺栓 (10)
+    { id: 'B001', cat: 'bolts', series: 'hex', name_zh: '六角头螺栓 (半牙)', name_en: 'Hex Bolt (Half Thread)', std: 'DIN 933 / ISO 4017', spec: 'M6 × 20 × 8.8', mat: '8.8级 合金钢', surface: '镀锌', icon: '�' },
+    { id: 'B002', cat: 'bolts', series: 'hex', name_zh: '六角头螺栓 (全牙)', name_en: 'Hex Bolt (Full Thread)', std: 'DIN 933 / ISO 4017', spec: 'M8 × 30 × 8.8', mat: '8.8级 合金钢', surface: '镀锌', icon: '🔩' },
+    { id: 'B003', cat: 'bolts', series: 'hex', name_zh: '六角头螺栓 (半牙)', name_en: 'Hex Bolt (Half Thread)', std: 'UNC 1/4"-20 × 1"', spec: '1/4"-20 × 1"', mat: 'Grade 5 碳钢', surface: '镀锌', icon: '🔩' },
+    { id: 'B004', cat: 'bolts', series: 'hex', name_zh: '六角头螺栓 (半牙)', name_en: 'Hex Bolt (Half Thread)', std: 'UNC 3/8"-16 × 2"', spec: '3/8"-16 × 2"', mat: 'Grade 8 合金钢', surface: '达克罗', icon: '🔩' },
+    { id: 'B005', cat: 'bolts', series: 'hex', name_zh: '六角头螺栓 (半牙)', name_en: 'Hex Bolt (Half Thread)', std: 'BSW 1/2" × 2"', spec: '1/2" × 2"', mat: '8.8级 碳钢', surface: '热浸镀锌', icon: '🔩' },
+    { id: 'B006', cat: 'bolts', series: 'hex', name_zh: '六角头螺栓 (半牙)', name_en: 'Hex Bolt (Half Thread)', std: 'UNF 1/2"-20 × 2"', spec: '1/2"-20 × 2"', mat: 'Grade 8 合金钢', surface: '发黑', icon: '🔩' },
+    { id: 'B007', cat: 'bolts', series: 'hex', name_zh: '六角头螺栓 (高强度)', name_en: 'Hex Bolt (High-Strength)', std: 'DIN 931 / ASTM A325', spec: 'M16 × 60 × 10.9', mat: '10.9级 合金钢', surface: '达克罗', icon: '🔩' },
+    { id: 'B008', cat: 'bolts', series: 'hex', name_zh: '六角头螺栓 (高强度)', name_en: 'Hex Bolt (High-Strength)', std: 'ASTM A490', spec: 'M20 × 80 × 12.9', mat: '12.9级 合金钢', surface: '磷化 + 涂油', icon: '🔩' },
+    { id: 'B009', cat: 'bolts', series: 'hex', name_zh: '六角头螺栓 (不锈钢)', name_en: 'Hex Bolt (Stainless)', std: 'DIN 933 / A2-70', spec: 'M10 × 40 × A2-70', mat: 'A2 不锈钢', surface: '本色', icon: '🔩' },
+    { id: 'B010', cat: 'bolts', series: 'hex', name_zh: '六角头螺栓 (不锈钢)', name_en: 'Hex Bolt (Stainless)', std: 'DIN 933 / A4-80', spec: 'M12 × 50 × A4-80', mat: 'A4 不锈钢', surface: '本色', icon: '🔩' },
+
+    // 内六角螺栓 (5)
+    { id: 'B011', cat: 'bolts', series: 'socket', name_zh: '内六角圆柱头螺栓', name_en: 'Socket Cap Screw', std: 'DIN 912 / ISO 4762', spec: 'M8 × 25 × 12.9', mat: '12.9级 合金钢', surface: '发黑', icon: '🧷' },
+    { id: 'B012', cat: 'bolts', series: 'socket', name_zh: '内六角圆柱头螺栓', name_en: 'Socket Cap Screw', std: 'DIN 912 / ISO 4762', spec: 'M10 × 30 × 12.9', mat: '12.9级 合金钢', surface: '发黑', icon: '🧷' },
+    { id: 'B013', cat: 'bolts', series: 'socket', name_zh: '内六角沉头螺栓', name_en: 'Socket Countersunk Screw', std: 'DIN 7991 / ISO 10642', spec: 'M6 × 20 × 10.9', mat: '10.9级 合金钢', surface: '发黑', icon: '🧷' },
+    { id: 'B014', cat: 'bolts', series: 'socket', name_zh: '内六角圆柱头螺栓 (不锈钢)', name_en: 'Socket Cap Screw (SS)', std: 'DIN 912 / A2-70', spec: 'M6 × 16 × A2-70', mat: 'A2 不锈钢', surface: '本色', icon: '🧷' },
+    { id: 'B015', cat: 'bolts', series: 'socket', name_zh: '内六角圆柱头螺栓 (美制)', name_en: 'Socket Cap Screw (US)', std: 'UNC 1/4"-20 × 1"', spec: '1/4"-20 × 1"', mat: 'Grade 8 合金钢', surface: '发黑', icon: '🧷' },
+
+    // 马车/方头/异形螺栓 (5)
+    { id: 'B016', cat: 'bolts', series: 'special', name_zh: '马车螺栓 (美制)', name_en: 'Carriage Bolt', std: 'ASME B18.5', spec: '1/2"-13 × 4"', mat: 'Grade 5 碳钢', surface: '热浸镀锌', icon: '⚙️' },
+    { id: 'B017', cat: 'bolts', series: 'special', name_zh: '马车螺栓 (公制)', name_en: 'Carriage Bolt', std: 'DIN 603 / ISO 8677', spec: 'M10 × 50 × 8.8', mat: '8.8级 碳钢', surface: '镀锌', icon: '⚙️' },
+    { id: 'B018', cat: 'bolts', series: 'special', name_zh: 'T 型螺栓', name_en: 'T-Slot Bolt', std: 'DIN 261', spec: 'M8 × 30 × 8.8', mat: '8.8级 合金钢', surface: '发黑', icon: '⚙️' },
+    { id: 'B019', cat: 'bolts', series: 'special', name_zh: 'U 型螺栓 (圆弧)', name_en: 'U-Bolt (Round Bend)', std: 'ASTM A307', spec: 'M12 × 80', mat: 'Grade 2 碳钢', surface: '热浸镀锌', icon: '⚙️' },
+    { id: 'B020', cat: 'bolts', series: 'special', name_zh: '地脚螺栓 (弯钩)', name_en: 'Anchor Bolt (Hooked)', std: 'GB/T 799 / ASTM F1554', spec: 'M16 × 300 × 8.8', mat: '8.8级 碳钢', surface: '热浸镀锌', icon: '⚙️' },
+
+    // 法兰/吊环/蝶形螺栓 (5)
+    { id: 'B021', cat: 'bolts', series: 'flange', name_zh: '六角法兰面螺栓', name_en: 'Hex Flange Bolt', std: 'DIN 6921', spec: 'M8 × 25 × 8.8', mat: '8.8级 合金钢', surface: '镀锌', icon: '⚡' },
+    { id: 'B022', cat: 'bolts', series: 'flange', name_zh: '六角法兰面螺栓 (美制)', name_en: 'Hex Flange Bolt (US)', std: 'SAE J429', spec: '5/16"-18 × 1"', mat: 'Grade 5 碳钢', surface: '镀锌', icon: '⚡' },
+    { id: 'B023', cat: 'bolts', series: 'flange', name_zh: '吊环螺栓 (美制)', name_en: 'Eye Bolt (US)', std: 'ASME B18.15', spec: '3/8"-16 × 4"', mat: 'Grade 5 碳钢', surface: '镀锌', icon: '⚡' },
+    { id: 'B024', cat: 'bolts', series: 'flange', name_zh: '蝶形螺栓 (镀锌)', name_en: 'Wing Bolt', std: 'DIN 316', spec: 'M10 × 50 × 4.8', mat: '4.8级 碳钢', surface: '镀锌', icon: '�' },
+    { id: 'B025', cat: 'bolts', series: 'flange', name_zh: '马车螺栓 (美制圆头)', name_en: 'Round Head Carriage Bolt', std: 'ASME B18.5', spec: '3/8"-16 × 2-1/2"', mat: 'Grade 5 碳钢', surface: '镀锌', icon: '⚡' },
+
+    // 自攻/自钻螺栓 (5)
+    { id: 'B026', cat: 'bolts', series: 'self', name_zh: '十字沉头自攻螺丝', name_en: 'Cross Recessed CSK Self-Tapping Screw', std: 'DIN 7982', spec: 'ST4.2 × 16', mat: 'C1022 碳钢', surface: '镀锌', icon: '🪛' },
+    { id: 'B027', cat: 'bolts', series: 'self', name_zh: '十字盘头自攻螺丝', name_en: 'Cross Recessed Pan Self-Tapping Screw', std: 'DIN 7981', spec: 'ST4.8 × 25', mat: 'C1022 碳钢', surface: '镀锌', icon: '🪛' },
+    { id: 'B028', cat: 'bolts', series: 'self', name_zh: '六角华司自钻螺丝', name_en: 'Hex Washer Self-Drilling Screw', std: 'DIN 7504-K', spec: 'ST5.5 × 32', mat: 'C1022 碳钢', surface: '镀锌', icon: '🪛' },
+    { id: 'B029', cat: 'bolts', series: 'self', name_zh: '十字盘头自攻螺丝 (不锈钢)', name_en: 'Pan Self-Tapping Screw (SS)', std: 'DIN 7981 / A2', spec: 'ST4.8 × 19', mat: 'A2 不锈钢', surface: '本色', icon: '🪛' },
+    { id: 'B030', cat: 'bolts', series: 'self', name_zh: '六角头自钻螺丝', name_en: 'Hex Head Self-Drilling Screw', std: 'ASME B18.6.4', spec: '#10-16 × 1"', mat: 'C1022 碳钢', surface: '镀锌', icon: '🪛' },
+
+    // ========== 螺母系列 (28 个) ==========
+    // 六角螺母 (8)
+    { id: 'N001', cat: 'nuts', series: 'hex', name_zh: '六角螺母 (1型)', name_en: 'Hex Nut (Type 1)', std: 'DIN 934 / ISO 4032', spec: 'M8 × 8.8 配用', mat: '8级 碳钢', surface: '镀锌', icon: '�' },
+    { id: 'N002', cat: 'nuts', series: 'hex', name_zh: '六角螺母 (1型)', name_en: 'Hex Nut (Type 1)', std: 'DIN 934 / ISO 4032', spec: 'M10 × 8.8 配用', mat: '8级 碳钢', surface: '镀锌', icon: '⬢' },
+    { id: 'N003', cat: 'nuts', series: 'hex', name_zh: '六角螺母 (1型)', name_en: 'Hex Nut (Type 1)', std: 'DIN 934 / ISO 4032', spec: 'M12 × 10.9 配用', mat: '10级 合金钢', surface: '发黑', icon: '⬢' },
+    { id: 'N004', cat: 'nuts', series: 'hex', name_zh: '六角螺母 (美制)', name_en: 'Hex Nut (US)', std: 'ASME B18.2.2', spec: '1/4"-20 UNC', mat: 'Grade 5 碳钢', surface: '镀锌', icon: '⬢' },
+    { id: 'N005', cat: 'nuts', series: 'hex', name_zh: '六角螺母 (美制)', name_en: 'Hex Nut (US)', std: 'ASME B18.2.2', spec: '3/8"-16 UNC', mat: 'Grade 5 碳钢', surface: '镀锌', icon: '⬢' },
+    { id: 'N006', cat: 'nuts', series: 'hex', name_zh: '六角螺母 (英制)', name_en: 'Hex Nut (BSW)', std: 'BS 1768 / BSW', spec: '1/2" BSW', mat: '8级 碳钢', surface: '热浸镀锌', icon: '⬢' },
+    { id: 'N007', cat: 'nuts', series: 'hex', name_zh: '六角螺母 (不锈钢)', name_en: 'Hex Nut (SS)', std: 'DIN 934 / A2-70', spec: 'M8 × A2-70', mat: 'A2 不锈钢', surface: '本色', icon: '⬢' },
+    { id: 'N008', cat: 'nuts', series: 'hex', name_zh: '六角螺母 (不锈钢)', name_en: 'Hex Nut (SS)', std: 'DIN 934 / A4-80', spec: 'M10 × A4-80', mat: 'A4 不锈钢', surface: '本色', icon: '⬢' },
+
+    // 自锁螺母 (5)
+    { id: 'N009', cat: 'nuts', series: 'lock', name_zh: '尼龙锁紧螺母 (美制)', name_en: 'Nylon Lock Nut (US)', std: 'ASME B18.16.6', spec: '1/4"-20 UNC', mat: 'Grade 5 碳钢', surface: '镀锌', icon: '�' },
+    { id: 'N010', cat: 'nuts', series: 'lock', name_zh: '尼龙锁紧螺母 (公制)', name_en: 'Nylon Lock Nut (DIN)', std: 'DIN 985 / ISO 10512', spec: 'M8 × 8级', mat: '8级 碳钢', surface: '镀锌', icon: '🔒' },
+    { id: 'N011', cat: 'nuts', series: 'lock', name_zh: '全金属锁紧螺母', name_en: 'All-Metal Lock Nut', std: 'DIN 980 / ISO 7042', spec: 'M10 × 10级', mat: '10级 合金钢', surface: '发黑', icon: '🔒' },
+    { id: 'N012', cat: 'nuts', series: 'lock', name_zh: '尼龙锁紧螺母 (不锈钢)', name_en: 'Nylon Lock Nut (SS)', std: 'DIN 985 / A2', spec: 'M8 × A2-70', mat: 'A2 不锈钢', surface: '本色', icon: '🔒' },
+    { id: 'N013', cat: 'nuts', series: 'lock', name_zh: '法兰尼龙锁紧螺母', name_en: 'Nylon Lock Flange Nut', std: 'DIN 6926', spec: 'M10 × 8级', mat: '8级 碳钢', surface: '镀锌', icon: '🔒' },
+
+    // 法兰螺母 (4)
+    { id: 'N014', cat: 'nuts', series: 'flange', name_zh: '六角法兰螺母', name_en: 'Hex Flange Nut', std: 'DIN 6923', spec: 'M8 × 8级', mat: '8级 碳钢', surface: '镀锌', icon: '⭕' },
+    { id: 'N015', cat: 'nuts', series: 'flange', name_zh: '六角法兰螺母 (美制)', name_en: 'Hex Flange Nut (US)', std: 'SAE J429', spec: '5/16"-18 UNC', mat: 'Grade 5 碳钢', surface: '镀锌', icon: '⭕' },
+    { id: 'N016', cat: 'nuts', series: 'flange', name_zh: '六角法兰螺母 (不锈钢)', name_en: 'Hex Flange Nut (SS)', std: 'DIN 6923 / A2', spec: 'M10 × A2-70', mat: 'A2 不锈钢', surface: '本色', icon: '⭕' },
+    { id: 'N017', cat: 'nuts', series: 'flange', name_zh: '六角锯齿法兰螺母', name_en: 'Serrated Hex Flange Nut', std: 'DIN 6923 (Serrated)', spec: 'M8 × 8级', mat: '8级 碳钢', surface: '镀锌', icon: '⭕' },
+
+    // 盖帽螺母 (3)
+    { id: 'N018', cat: 'nuts', series: 'cap', name_zh: '六角盖帽螺母', name_en: 'Hex Cap Nut', std: 'DIN 917', spec: 'M8 × 8级', mat: '8级 碳钢', surface: '镀锌', icon: '🔘' },
+    { id: 'N019', cat: 'nuts', series: 'cap', name_zh: '六角盖帽螺母 (不锈钢)', name_en: 'Hex Cap Nut (SS)', std: 'DIN 917 / A2', spec: 'M10 × A2-70', mat: 'A2 不锈钢', surface: '本色', icon: '🔘' },
+    { id: 'N020', cat: 'nuts', series: 'cap', name_zh: '圆头盖帽螺母 (美制)', name_en: 'Acorn Cap Nut (US)', std: 'ASME B18.2.2', spec: '3/8"-16 UNC', mat: 'Grade 5 碳钢', surface: '镀锌', icon: '🔘' },
+
+    // 异形螺母 (8)
+    { id: 'N021', cat: 'nuts', series: 'special', name_zh: '四方螺母', name_en: 'Square Nut', std: 'DIN 557', spec: 'M10 × 8级', mat: '8级 碳钢', surface: '热浸镀锌', icon: '�' },
+    { id: 'N022', cat: 'nuts', series: 'special', name_zh: '蝶形螺母 (镀锌)', name_en: 'Wing Nut', std: 'DIN 315', spec: 'M10 × 4级', mat: '4级 碳钢', surface: '镀锌', icon: '⬛' },
+    { id: 'N023', cat: 'nuts', series: 'special', name_zh: '蝶形螺母 (不锈钢)', name_en: 'Wing Nut (SS)', std: 'DIN 315 / A2', spec: 'M8 × A2-70', mat: 'A2 不锈钢', surface: '本色', icon: '⬛' },
+    { id: 'N024', cat: 'nuts', series: 'special', name_zh: 'T 型螺母', name_en: 'T-Slot Nut', std: 'DIN 508', spec: 'M10 × 8级', mat: '8级 碳钢', surface: '发黑', icon: '⬛' },
+    { id: 'N025', cat: 'nuts', series: 'special', name_zh: '圆螺母 (开槽)', name_en: 'Slotted Round Nut', std: 'DIN 1804', spec: 'M20 × 8级', mat: '8级 碳钢', surface: '发黑', icon: '⬛' },
+    { id: 'N026', cat: 'nuts', series: 'special', name_zh: '焊接螺母 (四方)', name_en: 'Weld Nut (Square)', std: 'DIN 928', spec: 'M8 × 8级', mat: '8级 碳钢', surface: '本色', icon: '⬛' },
+    { id: 'N027', cat: 'nuts', series: 'special', name_zh: '拉铆螺母', name_en: 'Riveting Nut', std: 'DIN 7337', spec: 'M6 × 1.0', mat: '铝合金', surface: '本色', icon: '⬛' },
+    { id: 'N028', cat: 'nuts', series: 'special', name_zh: '六角螺母 (细牙)', name_en: 'Hex Nut (Fine Thread)', std: 'DIN 934 / UNF', spec: '1/2"-20 UNF', mat: 'Grade 5 碳钢', surface: '镀锌', icon: '⬛' },
+
+    // ========== 螺杆系列 (12 个) ==========
+    { id: 'R001', cat: 'rods', series: 'threaded', name_zh: '全螺纹螺杆', name_en: 'Fully Threaded Rod', std: 'DIN 976-1', spec: 'M8 × 1000mm', mat: '4.8级 碳钢', surface: '镀锌', icon: '📏' },
+    { id: 'R002', cat: 'rods', series: 'threaded', name_zh: '全螺纹螺杆', name_en: 'Fully Threaded Rod', std: 'DIN 976-1', spec: 'M10 × 1000mm', mat: '8.8级 合金钢', surface: '镀锌', icon: '📏' },
+    { id: 'R003', cat: 'rods', series: 'threaded', name_zh: '全螺纹螺杆', name_en: 'Fully Threaded Rod', std: 'DIN 976-1', spec: 'M12 × 1000mm', mat: '8.8级 合金钢', surface: '发黑', icon: '📏' },
+    { id: 'R004', cat: 'rods', series: 'threaded', name_zh: '全螺纹螺杆 (高强)', name_en: 'Fully Threaded Rod (High-Strength)', std: 'ASTM A193 B7', spec: 'M16 × 1000mm', mat: 'B7 合金钢', surface: '发黑', icon: '📏' },
+    { id: 'R005', cat: 'rods', series: 'threaded', name_zh: '全螺纹螺杆 (高强)', name_en: 'Fully Threaded Rod (High-Strength)', std: 'ASTM A193 B7', spec: 'M20 × 1000mm', mat: 'B7 合金钢', surface: '发黑', icon: '📏' },
+    { id: 'R006', cat: 'rods', series: 'threaded', name_zh: '全螺纹螺杆 (美制)', name_en: 'Fully Threaded Rod (US)', std: 'ASME B18.31.3', spec: '1/2"-13 × 36"', mat: 'Grade B7 合金钢', surface: '发黑', icon: '📏' },
+    { id: 'R007', cat: 'rods', series: 'threaded', name_zh: '全螺纹螺杆 (美制)', name_en: 'Fully Threaded Rod (US)', std: 'ASME B18.31.3', spec: '3/4"-10 × 36"', mat: 'Grade B7 合金钢', surface: '发黑', icon: '📏' },
+    { id: 'R008', cat: 'rods', series: 'threaded', name_zh: '全螺纹螺杆 (不锈钢)', name_en: 'Fully Threaded Rod (SS)', std: 'DIN 976 / A2', spec: 'M10 × 1000mm', mat: 'A2 不锈钢', surface: '本色', icon: '📏' },
+    { id: 'R009', cat: 'rods', series: 'threaded', name_zh: '全螺纹螺杆 (不锈钢)', name_en: 'Fully Threaded Rod (SS)', std: 'DIN 976 / A4', spec: 'M12 × 1000mm', mat: 'A4 不锈钢', surface: '本色', icon: '📏' },
+    { id: 'R010', cat: 'rods', series: 'threaded', name_zh: '双头螺柱 (一端螺纹)', name_en: 'Stud Bolt (Thread One End)', std: 'DIN 938', spec: 'M10 × 50 × 8.8', mat: '8.8级 合金钢', surface: '发黑', icon: '📏' },
+    { id: 'R011', cat: 'rods', series: 'threaded', name_zh: '双头螺柱 (两端螺纹)', name_en: 'Stud Bolt (Thread Both Ends)', std: 'DIN 939', spec: 'M12 × 60 × 8.8', mat: '8.8级 合金钢', surface: '发黑', icon: '📏' },
+    { id: 'R012', cat: 'rods', series: 'threaded', name_zh: '双头螺柱 (美制高强)', name_en: 'Stud Bolt (US High-Strength)', std: 'ASTM A193 B7', spec: '3/4"-10 × 100mm', mat: 'B7 合金钢', surface: '发黑', icon: '📏' },
+
+    // ========== 紧固件系列 (30 个) ==========
+    // 平垫圈 (5)
+    { id: 'F001', cat: 'misc', series: 'washer', name_zh: '平垫圈 (公制)', name_en: 'Flat Washer (DIN)', std: 'DIN 125 / ISO 7089', spec: 'M8 × 16 × 1.6', mat: '140HV 碳钢', surface: '镀锌', icon: '⊕' },
+    { id: 'F002', cat: 'misc', series: 'washer', name_zh: '平垫圈 (公制)', name_en: 'Flat Washer (DIN)', std: 'DIN 125 / ISO 7089', spec: 'M10 × 20 × 2.0', mat: '140HV 碳钢', surface: '镀锌', icon: '⊕' },
+    { id: 'F003', cat: 'misc', series: 'washer', name_zh: '平垫圈 (美制)', name_en: 'Flat Washer (US)', std: 'ASME B18.21.1', spec: '1/4" USS', mat: '碳钢', surface: '镀锌', icon: '⊕' },
+    { id: 'F004', cat: 'misc', series: 'washer', name_zh: '平垫圈 (美制)', name_en: 'Flat Washer (US)', std: 'ASME B18.21.1', spec: '3/8" USS', mat: '碳钢', surface: '镀锌', icon: '⊕' },
+    { id: 'F005', cat: 'misc', series: 'washer', name_zh: '平垫圈 (不锈钢)', name_en: 'Flat Washer (SS)', std: 'DIN 125 / A2', spec: 'M10 × A2', mat: 'A2 不锈钢', surface: '本色', icon: '⊕' },
+
+    // 弹簧垫圈 (3)
+    { id: 'F006', cat: 'misc', series: 'washer', name_zh: '弹簧垫圈 (公制)', name_en: 'Spring Lock Washer', std: 'DIN 127', spec: 'M8', mat: '碳钢', surface: '镀锌', icon: '🌀' },
+    { id: 'F007', cat: 'misc', series: 'washer', name_zh: '弹簧垫圈 (美制)', name_en: 'Spring Lock Washer (US)', std: 'ASME B18.21.1', spec: '1/4"', mat: '碳钢', surface: '镀锌', icon: '�' },
+    { id: 'F008', cat: 'misc', series: 'washer', name_zh: '弹簧垫圈 (不锈钢)', name_en: 'Spring Lock Washer (SS)', std: 'DIN 127 / A2', spec: 'M10 × A2', mat: 'A2 不锈钢', surface: '本色', icon: '🌀' },
+
+    // 销轴 (5)
+    { id: 'F009', cat: 'misc', series: 'pin', name_zh: '开口销', name_en: 'Cotter Pin', std: 'DIN 94 / ISO 1234', spec: 'Ø3 × 30mm', mat: '低碳钢', surface: '镀锌', icon: '📍' },
+    { id: 'F010', cat: 'misc', series: 'pin', name_zh: '开口销', name_en: 'Cotter Pin', std: 'DIN 94 / ISO 1234', spec: 'Ø5 × 50mm', mat: '低碳钢', surface: '镀锌', icon: '📍' },
+    { id: 'F011', cat: 'misc', series: 'pin', name_zh: '圆柱销 (弹性)', name_en: 'Spring Pin (Roll Pin)', std: 'DIN 1481 / ISO 8752', spec: 'Ø6 × 30mm', mat: '弹簧钢', surface: '发黑', icon: '📍' },
+    { id: 'F012', cat: 'misc', series: 'pin', name_zh: '圆柱销 (弹性)', name_en: 'Spring Pin (Roll Pin)', std: 'DIN 1481 / ISO 8752', spec: 'Ø10 × 50mm', mat: '弹簧钢', surface: '发黑', icon: '📍' },
+    { id: 'F013', cat: 'misc', series: 'pin', name_zh: '圆柱销 (硬性)', name_en: 'Solid Dowel Pin', std: 'DIN 6325 / ISO 8734', spec: 'Ø8 × 40mm', mat: '工具钢', surface: '本色', icon: '📍' },
+
+    // 铆钉 (5)
+    { id: 'F014', cat: 'misc', series: 'rivet', name_zh: '沉头铆钉 (公制)', name_en: 'Countersunk Rivet', std: 'DIN 661 / ISO 7721', spec: 'Ø4 × 12mm', mat: '低碳钢', surface: '镀锌', icon: '🔨' },
+    { id: 'F015', cat: 'misc', series: 'rivet', name_zh: '沉头铆钉 (美制)', name_en: 'Countersunk Rivet (US)', std: 'ASME B18.1.1', spec: '1/8" × 1/2"', mat: '低碳钢', surface: '镀锌', icon: '🔨' },
+    { id: 'F016', cat: 'misc', series: 'rivet', name_zh: '圆头铆钉 (公制)', name_en: 'Round Head Rivet', std: 'DIN 660', spec: 'Ø5 × 20mm', mat: '低碳钢', surface: '镀锌', icon: '🔨' },
+    { id: 'F017', cat: 'misc', series: 'rivet', name_zh: '拉铆钉 (铝)', name_en: 'Blind Rivet (Aluminum)', std: 'DIN 7337 / ISO 15977', spec: 'Ø4.8 × 12mm', mat: '铝 + 钢钉', surface: '本色', icon: '🔨' },
+    { id: 'F018', cat: 'misc', series: 'rivet', name_zh: '拉铆钉 (不锈钢)', name_en: 'Blind Rivet (SS)', std: 'DIN 7337 / A2', spec: 'Ø4.8 × 12mm', mat: 'A2 不锈钢', surface: '本色', icon: '�' },
+
+    // 挡圈 (4)
+    { id: 'F019', cat: 'misc', series: 'ring', name_zh: '外卡簧挡圈', name_en: 'External Retaining Ring', std: 'DIN 471 / ISO 464', spec: 'Ø10mm 轴用', mat: '弹簧钢', surface: '发黑', icon: '⊙' },
+    { id: 'F020', cat: 'misc', series: 'ring', name_zh: '外卡簧挡圈', name_en: 'External Retaining Ring', std: 'DIN 471 / ISO 464', spec: 'Ø20mm 轴用', mat: '弹簧钢', surface: '发黑', icon: '⊙' },
+    { id: 'F021', cat: 'misc', series: 'ring', name_zh: '内卡簧挡圈', name_en: 'Internal Retaining Ring', std: 'DIN 472 / ISO 464', spec: 'Ø20mm 孔用', mat: '弹簧钢', surface: '发黑', icon: '⊙' },
+    { id: 'F022', cat: 'misc', series: 'ring', name_zh: '内卡簧挡圈', name_en: 'Internal Retaining Ring', std: 'DIN 472 / ISO 464', spec: 'Ø40mm 孔用', mat: '弹簧钢', surface: '发黑', icon: '⊙' },
+
+    // 喉箍/卡箍/喉塞 (4)
+    { id: 'F023', cat: 'misc', series: 'clamp', name_zh: '英式喉箍', name_en: 'British Hose Clamp', std: 'BS 5315', spec: 'Ø20-30mm', mat: '不锈钢 + 镀锌', surface: '镀锌', icon: '🎯' },
+    { id: 'F024', cat: 'misc', series: 'clamp', name_zh: '德式喉箍', name_en: 'German Hose Clamp', std: 'DIN 3017', spec: 'Ø20-30mm', mat: '不锈钢 + 镀锌', surface: '镀锌', icon: '🎯' },
+    { id: 'F025', cat: 'misc', series: 'clamp', name_zh: 'T 型螺栓卡箍', name_en: 'T-Bolt Hose Clamp', std: 'SAE J1508', spec: 'Ø50-70mm', mat: '不锈钢 304', surface: '本色', icon: '�' },
+    { id: 'F026', cat: 'misc', series: 'clamp', name_zh: '喉箍 (美式)', name_en: 'Hose Clamp (US)', std: 'SAE J1508', spec: 'Ø1-1/2"', mat: '不锈钢 304', surface: '本色', icon: '🎯' },
+
+    // 螺丝/螺栓补充 (4)
+    { id: 'F027', cat: 'misc', series: 'bolt', name_zh: '组合螺丝 (公制)', name_en: 'Combination Screw (Bolt+Washer)', std: 'DIN 6901', spec: 'M6 × 30 + 平+弹垫', mat: '8.8级 碳钢', surface: '镀锌', icon: '🔩' },
+    { id: 'F028', cat: 'misc', series: 'bolt', name_zh: '内六角螺丝 (薄头)', name_en: 'Low Head Socket Cap Screw', std: 'DIN 7984', spec: 'M6 × 16 × 8.8', mat: '8.8级 合金钢', surface: '发黑', icon: '🔩' },
+    { id: 'F029', cat: 'misc', series: 'bolt', name_zh: '铰制孔螺栓', name_en: 'Fitting Bolt (Reamed)', std: 'DIN 609', spec: 'M10 × 40 × 8.8', mat: '8.8级 合金钢', surface: '发黑', icon: '🔩' },
+    { id: 'F030', cat: 'misc', series: 'bolt', name_zh: '半圆头方颈螺栓', name_en: 'Cup Head Square Neck Bolt', std: 'DIN 603 / ISO 8677', spec: 'M8 × 40 × 4.8', mat: '4.8级 碳钢', surface: '热浸镀锌', icon: '🔩' },
+];
+
+// 验证数量
+if (products.length !== 100) {
+    console.warn(`⚠️ 产品数量异常: ${products.length}`);
+}
+
+// 按类别统计
+const productStats = products.reduce((acc, p) => {
+    acc[p.cat] = (acc[p.cat] || 0) + 1;
+    return acc;
+}, {});
+
 // ===== 紧固件规格数据 =====
 // 数据来源：BS 84 / BS 1083 / ANSI B1.1 / ISO 261 / ISO 724 / DIN 13
 // 真实工程数据，仅供参考。具体规格以官方标准为准。
@@ -2248,8 +2904,6 @@ const specTableHeaders = {
     }
 };
 
-</script>
-    <script>
 // ===== Lumiq Hardware i18n 中英双语翻译 =====
 
 const translations = {
@@ -2285,9 +2939,9 @@ const translations = {
 
         // Products
         'products.tag': '产品中心',
-        'products.title.l1': '三大产品线',
-        'products.title.l2': '8000+ SKU 现货',
-        'products.desc': '从基础标准件到定制非标件，覆盖螺栓、螺母、螺杆全系列，支持来图来样定制。',
+        'products.title.l1': '产品目录',
+        'products.title.l2': '100 个 SKU',
+        'products.desc': '从基础标准件到定制非标件，覆盖螺栓、螺母、螺杆、紧固件全系列，4 大类 · 8 子系列 · 100 SKU 现货，支持来图来样定制。',
         'line.screws.name': '六角螺栓 / Hex Bolts',
         'line.screws.desc': 'DIN 933 / ISO 4017 / UNC / UNF 全规格，强度等级 4.8-12.9',
         'line.nuts.name': '六角螺母 / Hex Nuts',
@@ -2304,6 +2958,36 @@ const translations = {
 
         // Specs
         'specs.tag': '规格标准',
+        // Catalog Filter
+        'filter.cat': '产品分类',
+        'filter.std': '标准体系',
+        'filter.mat': '材质',
+        'filter.toggle': '筛选',
+        'filter.reset': '↻ 重置筛选',
+        'cat.all': '全部产品',
+        'cat.bolts': '螺栓系列',
+        'cat.nuts': '螺母系列',
+        'cat.rods': '螺杆系列',
+        'cat.misc': '紧固件系列',
+        'std.all': '全部标准',
+        'mat.all': '全部材质',
+        // Toolbar
+        'toolbar.search': '搜索产品名 / 规格 / 标准...',
+        'toolbar.results': '个结果',
+        'toolbar.more': '加载更多',
+        'toolbar.showing': '显示',
+        'toolbar.of': '共',
+        // Sort
+        'sort.default': '默认排序',
+        'sort.id': '按编号',
+        'sort.name': '按名称',
+        'sort.cat': '按类别',
+        // Product Card
+        'pc.material': '材质',
+        'pc.surface': '表面',
+        'pc.spec': '规格',
+        'pc.inquire': '询价',
+        'pc.detail': '详情',
         'specs.title.l1': '英美标',
         'specs.title.l2': '速查表',
         'specs.desc': '覆盖 BS / ANSI / ASME / ISO / DIN 全系列标准，紧固件规格一站查询。',
@@ -2507,9 +3191,9 @@ const translations = {
 
         // Products
         'products.tag': 'PRODUCTS',
-        'products.title.l1': 'Three Product Lines',
-        'products.title.l2': '8,000+ SKUs in Stock',
-        'products.desc': 'From standard parts to custom specials — complete range of bolts, nuts, and threaded rods. Drawings & samples accepted for customization.',
+        'products.title.l1': 'Product Catalog',
+        'products.title.l2': '100 SKUs',
+        'products.desc': 'From standard parts to custom specials — full range of bolts, nuts, threaded rods, and fasteners. 4 categories · 8 sub-series · 100 SKUs in stock. Drawings & samples accepted.',
         'line.screws.name': 'Hex Bolts',
         'line.screws.desc': 'DIN 933 / ISO 4017 / UNC / UNF full range, strength grades 4.8 to 12.9',
         'line.nuts.name': 'Hex Nuts',
@@ -2526,6 +3210,36 @@ const translations = {
 
         // Specs
         'specs.tag': 'SPECIFICATIONS',
+        // Catalog Filter
+        'filter.cat': 'Categories',
+        'filter.std': 'Standards',
+        'filter.mat': 'Material',
+        'filter.toggle': 'Filters',
+        'filter.reset': '↻ Reset Filters',
+        'cat.all': 'All Products',
+        'cat.bolts': 'Bolts',
+        'cat.nuts': 'Nuts',
+        'cat.rods': 'Threaded Rods',
+        'cat.misc': 'Fasteners',
+        'std.all': 'All Standards',
+        'mat.all': 'All Materials',
+        // Toolbar
+        'toolbar.search': 'Search by name / spec / standard...',
+        'toolbar.results': ' results',
+        'toolbar.more': 'Load More',
+        'toolbar.showing': 'Showing',
+        'toolbar.of': 'of',
+        // Sort
+        'sort.default': 'Default',
+        'sort.id': 'By SKU',
+        'sort.name': 'By Name',
+        'sort.cat': 'By Category',
+        // Product Card
+        'pc.material': 'Material',
+        'pc.surface': 'Surface',
+        'pc.spec': 'Spec',
+        'pc.inquire': 'Inquire',
+        'pc.detail': 'Detail',
         'specs.title.l1': 'BS / ANSI',
         'specs.title.l2': 'Quick Reference',
         'specs.desc': 'Complete coverage of BS / ANSI / ASME / ISO / DIN standards — one-stop fastener specification lookup.',
@@ -2751,8 +3465,6 @@ if (document.readyState === 'loading') {
     setLanguage(currentLang);
 }
 
-</script>
-    <script>
 // ===== 导航栏滚动效果 =====
 const navbar = document.getElementById('navbar');
 let lastScroll = 0;
@@ -2944,6 +3656,275 @@ console.log(
     '%c英美标紧固件专业制造商 · BS / ANSI Standard Fastener Manufacturer',
     'color: #f7811a; font-size: 13px;'
 );
+
+
+// ===== 产品目录渲染 =====
+
+const ITEMS_PER_PAGE = 24;
+let filteredProducts = [...products];
+let displayedCount = 0;
+
+// 判断产品材质类型
+function getMaterialType(mat) {
+    const m = mat.toLowerCase();
+    if (m.includes('a2') || m.includes('a4') || m.includes('304') || m.includes('316') || m.includes('不锈钢')) return 'stainless';
+    if (m.includes('c10') || m.includes('c1045') || m.includes('低碳') || m.includes('140hv') || m.includes('碳钢')) return 'carbon';
+    if (m.includes('合金') || m.includes('8.8') || m.includes('10.9') || m.includes('12.9') || m.includes('b7') || m.includes('scm') || m.includes('40cr') || m.includes('grade 5') || m.includes('grade 8') || m.includes('弹簧') || m.includes('工具')) return 'alloy';
+    return 'other';
+}
+
+// 判断产品标准类型
+function getStdType(std) {
+    const s = std.toUpperCase();
+    if (s.includes('DIN') || s.includes('ISO')) return 'DIN';
+    if (s.includes('ANSI') || s.includes('ASME') || s.includes('SAE')) return 'ANSI';
+    if (s.includes('BS') || s.includes('BSW') || s.includes('BSF')) return 'BS';
+    if (s.includes('GB') || s.includes('ASTM')) return 'GB';
+    return 'DIN';
+}
+
+// 获取翻译 key
+const pcMaterialLabel = () => translations[currentLang]['pc.material'] || '材质';
+const pcSurfaceLabel = () => translations[currentLang]['pc.surface'] || '表面';
+const pcSpecLabel = () => translations[currentLang]['pc.spec'] || '规格';
+const pcInquireLabel = () => translations[currentLang]['pc.inquire'] || '询价';
+
+// 渲染产品卡片
+function renderProductCard(p) {
+    const name = currentLang === 'en' ? p.name_en : p.name_zh;
+    return `
+        <article class="product-card" data-id="${p.id}">
+            <div class="pc-head">
+                <span class="pc-icon">${p.icon || '🔩'}</span>
+                <span class="pc-sku">${p.id}</span>
+            </div>
+            <h3 class="pc-name">${name}</h3>
+            <span class="pc-std">${p.std}</span>
+            <ul class="pc-info">
+                <li><strong>${pcSpecLabel()}</strong><span>${p.spec}</span></li>
+                <li><strong>${pcMaterialLabel()}</strong><span>${p.mat}</span></li>
+                <li><strong>${pcSurfaceLabel()}</strong><span>${p.surface}</span></li>
+            </ul>
+            <div class="pc-action">
+                <a href="#rfq" class="pc-btn pc-btn-outline" data-sku="${p.id}">${currentLang === 'en' ? 'Detail' : '详情'}</a>
+                <a href="#rfq" class="pc-btn pc-btn-primary" data-sku="${p.id}">${currentLang === 'en' ? 'Inquire' : '询价'}</a>
+            </div>
+        </article>
+    `;
+}
+
+// 渲染产品列表（分页）
+function renderProducts(reset = false) {
+    const grid = document.getElementById('productGrid');
+    const loadBtn = document.getElementById('loadMoreBtn');
+    const hint = document.getElementById('moreHint');
+
+    if (reset) {
+        grid.innerHTML = '';
+        displayedCount = 0;
+    }
+
+    const next = filteredProducts.slice(displayedCount, displayedCount + ITEMS_PER_PAGE);
+
+    if (displayedCount === 0 && next.length === 0) {
+        const emptyIcon = currentLang === 'en' ? '🔍' : '🔍';
+        const emptyText = currentLang === 'en' ? 'No products match your filters.' : '没有匹配筛选条件的产品';
+        grid.innerHTML = `
+            <div class="product-empty">
+                <div class="product-empty-icon">${emptyIcon}</div>
+                <p>${emptyText}</p>
+            </div>
+        `;
+        loadBtn.style.display = 'none';
+        hint.textContent = '';
+        return;
+    }
+
+    const html = next.map(renderProductCard).join('');
+    if (reset) {
+        grid.innerHTML = html;
+    } else {
+        grid.insertAdjacentHTML('beforeend', html);
+    }
+
+    displayedCount += next.length;
+
+    // 更新计数
+    document.getElementById('resultCount').textContent = filteredProducts.length;
+
+    // 加载更多按钮
+    if (displayedCount >= filteredProducts.length) {
+        loadBtn.style.display = 'none';
+        const total = filteredProducts.length;
+        hint.textContent = currentLang === 'en'
+            ? `Showing all ${total} products`
+            : `已显示全部 ${total} 个产品`;
+    } else {
+        loadBtn.style.display = '';
+        const remaining = filteredProducts.length - displayedCount;
+        const showing = currentLang === 'en' ? 'Showing' : '已显示';
+        const total = filteredProducts.length;
+        const remainText = currentLang === 'en' ? 'remaining' : '个待显示';
+        hint.textContent = `${showing} ${displayedCount} / ${total} · ${remaining} ${remainText}`;
+    }
+}
+
+// 筛选状态
+const filterState = {
+    cat: 'all',
+    std: 'all',
+    mat: 'all',
+    search: '',
+    sort: 'default'
+};
+
+// 应用筛选
+function applyFilters() {
+    filteredProducts = products.filter(p => {
+        if (filterState.cat !== 'all' && p.cat !== filterState.cat) return false;
+        if (filterState.std !== 'all' && getStdType(p.std) !== filterState.std) return false;
+        if (filterState.mat !== 'all' && getMaterialType(p.mat) !== filterState.mat) return false;
+        if (filterState.search) {
+            const q = filterState.search.toLowerCase();
+            const hay = `${p.name_zh} ${p.name_en} ${p.spec} ${p.std} ${p.mat} ${p.id}`.toLowerCase();
+            if (!hay.includes(q)) return false;
+        }
+        return true;
+    });
+
+    // 排序
+    if (filterState.sort === 'id-asc') {
+        filteredProducts.sort((a, b) => a.id.localeCompare(b.id));
+    } else if (filterState.sort === 'name-asc') {
+        filteredProducts.sort((a, b) => {
+            const an = currentLang === 'en' ? a.name_en : a.name_zh;
+            const bn = currentLang === 'en' ? b.name_en : b.name_zh;
+            return an.localeCompare(bn, currentLang === 'zh' ? 'zh' : 'en');
+        });
+    } else if (filterState.sort === 'cat-asc') {
+        filteredProducts.sort((a, b) => a.cat.localeCompare(b.cat) || a.id.localeCompare(b.id));
+    }
+
+    renderProducts(true);
+    const fc = document.getElementById("filterCount");
+    if (fc) fc.textContent = filteredProducts.length;
+}
+
+// 筛选按钮
+document.querySelectorAll('#filterCat .filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        document.querySelectorAll('#filterCat .filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        filterState.cat = btn.dataset.cat;
+        applyFilters();
+    });
+});
+
+document.querySelectorAll('#filterStd .filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        document.querySelectorAll('#filterStd .filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        filterState.std = btn.dataset.std;
+        applyFilters();
+    });
+});
+
+document.querySelectorAll('#filterMat .filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        document.querySelectorAll('#filterMat .filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        filterState.mat = btn.dataset.mat;
+        applyFilters();
+    });
+});
+
+// 重置
+document.getElementById('filterReset').addEventListener('click', () => {
+    filterState.cat = 'all';
+    filterState.std = 'all';
+    filterState.mat = 'all';
+    filterState.search = '';
+    filterState.sort = 'default';
+    document.getElementById('productSearch').value = '';
+    document.getElementById('productSort').value = 'default';
+    document.querySelectorAll('.filter-btn').forEach(b => {
+        b.classList.remove('active');
+        const parent = b.closest('.filter-list');
+        if (parent.id === 'filterCat' && b.dataset.cat === 'all') b.classList.add('active');
+        if (parent.id === 'filterStd' && b.dataset.std === 'all') b.classList.add('active');
+        if (parent.id === 'filterMat' && b.dataset.mat === 'all') b.classList.add('active');
+    });
+    applyFilters();
+});
+
+// 搜索（防抖）
+let searchTimer;
+document.getElementById('productSearch').addEventListener('input', (e) => {
+    clearTimeout(searchTimer);
+    searchTimer = setTimeout(() => {
+        filterState.search = e.target.value.trim();
+        applyFilters();
+    }, 200);
+});
+
+// 排序
+document.getElementById('productSort').addEventListener('change', (e) => {
+    filterState.sort = e.target.value;
+    applyFilters();
+});
+
+// 加载更多
+document.getElementById('loadMoreBtn').addEventListener('click', () => {
+    renderProducts(false);
+});
+
+// 产品卡片点击 → 询价表单自动填充 SKU
+document.getElementById('productGrid').addEventListener('click', (e) => {
+    const btn = e.target.closest('[data-sku]');
+    if (btn) {
+        const sku = btn.dataset.sku;
+        setTimeout(() => {
+            const descField = document.querySelector('#rfqForm textarea');
+            if (descField) {
+                const skuPrefix = currentLang === 'en' ? 'Product' : '产品';
+                descField.value = `${skuPrefix}: ${sku}
+` + descField.value;
+                descField.focus();
+            }
+        }, 600);
+    }
+});
+
+// 初始渲染
+applyFilters();
+
+
+// ===== 移动端筛选切换 =====
+const filterToggle = document.getElementById('filterToggle');
+const catalogFilter = document.querySelector('.catalog-filter');
+if (filterToggle && catalogFilter) {
+    filterToggle.addEventListener('click', () => {
+        catalogFilter.classList.toggle('open');
+        filterToggle.classList.toggle('active');
+    });
+}
+
+// 关闭筛选（点产品卡片或筛选按钮时）
+document.querySelectorAll('.catalog-filter .filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        if (window.innerWidth <= 968) {
+            // 移动端选择后不关闭，方便连续选
+        }
+    });
+});
+
+// 监听 filter count 实时更新
+const filterCountEl = document.getElementById('filterCount');
+const updateFilterCount = () => {
+    if (filterCountEl) filterCountEl.textContent = filteredProducts.length;
+};
+const origApplyFilters = applyFilters;
+// 包装原函数以更新 count（简单做法：再调一次 updateFilterCount）
 
 </script>
 </body>

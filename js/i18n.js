@@ -33,9 +33,9 @@ const translations = {
 
         // Products
         'products.tag': '产品中心',
-        'products.title.l1': '三大产品线',
-        'products.title.l2': '8000+ SKU 现货',
-        'products.desc': '从基础标准件到定制非标件，覆盖螺栓、螺母、螺杆全系列，支持来图来样定制。',
+        'products.title.l1': '产品目录',
+        'products.title.l2': '100 个 SKU',
+        'products.desc': '从基础标准件到定制非标件，覆盖螺栓、螺母、螺杆、紧固件全系列，4 大类 · 8 子系列 · 100 SKU 现货，支持来图来样定制。',
         'line.screws.name': '六角螺栓 / Hex Bolts',
         'line.screws.desc': 'DIN 933 / ISO 4017 / UNC / UNF 全规格，强度等级 4.8-12.9',
         'line.nuts.name': '六角螺母 / Hex Nuts',
@@ -52,6 +52,36 @@ const translations = {
 
         // Specs
         'specs.tag': '规格标准',
+        // Catalog Filter
+        'filter.cat': '产品分类',
+        'filter.std': '标准体系',
+        'filter.mat': '材质',
+        'filter.toggle': '筛选',
+        'filter.reset': '↻ 重置筛选',
+        'cat.all': '全部产品',
+        'cat.bolts': '螺栓系列',
+        'cat.nuts': '螺母系列',
+        'cat.rods': '螺杆系列',
+        'cat.misc': '紧固件系列',
+        'std.all': '全部标准',
+        'mat.all': '全部材质',
+        // Toolbar
+        'toolbar.search': '搜索产品名 / 规格 / 标准...',
+        'toolbar.results': '个结果',
+        'toolbar.more': '加载更多',
+        'toolbar.showing': '显示',
+        'toolbar.of': '共',
+        // Sort
+        'sort.default': '默认排序',
+        'sort.id': '按编号',
+        'sort.name': '按名称',
+        'sort.cat': '按类别',
+        // Product Card
+        'pc.material': '材质',
+        'pc.surface': '表面',
+        'pc.spec': '规格',
+        'pc.inquire': '询价',
+        'pc.detail': '详情',
         'specs.title.l1': '英美标',
         'specs.title.l2': '速查表',
         'specs.desc': '覆盖 BS / ANSI / ASME / ISO / DIN 全系列标准，紧固件规格一站查询。',
@@ -255,9 +285,9 @@ const translations = {
 
         // Products
         'products.tag': 'PRODUCTS',
-        'products.title.l1': 'Three Product Lines',
-        'products.title.l2': '8,000+ SKUs in Stock',
-        'products.desc': 'From standard parts to custom specials — complete range of bolts, nuts, and threaded rods. Drawings & samples accepted for customization.',
+        'products.title.l1': 'Product Catalog',
+        'products.title.l2': '100 SKUs',
+        'products.desc': 'From standard parts to custom specials — full range of bolts, nuts, threaded rods, and fasteners. 4 categories · 8 sub-series · 100 SKUs in stock. Drawings & samples accepted.',
         'line.screws.name': 'Hex Bolts',
         'line.screws.desc': 'DIN 933 / ISO 4017 / UNC / UNF full range, strength grades 4.8 to 12.9',
         'line.nuts.name': 'Hex Nuts',
@@ -274,6 +304,36 @@ const translations = {
 
         // Specs
         'specs.tag': 'SPECIFICATIONS',
+        // Catalog Filter
+        'filter.cat': 'Categories',
+        'filter.std': 'Standards',
+        'filter.mat': 'Material',
+        'filter.toggle': 'Filters',
+        'filter.reset': '↻ Reset Filters',
+        'cat.all': 'All Products',
+        'cat.bolts': 'Bolts',
+        'cat.nuts': 'Nuts',
+        'cat.rods': 'Threaded Rods',
+        'cat.misc': 'Fasteners',
+        'std.all': 'All Standards',
+        'mat.all': 'All Materials',
+        // Toolbar
+        'toolbar.search': 'Search by name / spec / standard...',
+        'toolbar.results': ' results',
+        'toolbar.more': 'Load More',
+        'toolbar.showing': 'Showing',
+        'toolbar.of': 'of',
+        // Sort
+        'sort.default': 'Default',
+        'sort.id': 'By SKU',
+        'sort.name': 'By Name',
+        'sort.cat': 'By Category',
+        // Product Card
+        'pc.material': 'Material',
+        'pc.surface': 'Surface',
+        'pc.spec': 'Spec',
+        'pc.inquire': 'Inquire',
+        'pc.detail': 'Detail',
         'specs.title.l1': 'BS / ANSI',
         'specs.title.l2': 'Quick Reference',
         'specs.desc': 'Complete coverage of BS / ANSI / ASME / ISO / DIN standards — one-stop fastener specification lookup.',
