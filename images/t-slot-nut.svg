@@ -1,31 +1,62 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
-<defs>
-    <radialGradient id="bg" cx="50%" cy="45%" r="70%">
-      <stop offset="0%" stop-color="#f6f8fb"/>
-      <stop offset="100%" stop-color="#b8c2cf"/>
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="42%" r="75%">
+      <stop offset="0%" stop-color="#f5f7fa"/>
+      <stop offset="50%" stop-color="#e2e8f0"/>
+      <stop offset="100%" stop-color="#a8b2bf"/>
     </radialGradient>
-  </defs>
-  <rect width="100%" height="100%" fill="url(#bg)"/>
-<filter id="ds" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur in="SourceAlpha" stdDeviation="4"/>
-      <feOffset dx="0" dy="10"/>
-      <feComponentTransfer><feFuncA type="linear" slope="0.4"/></feComponentTransfer>
+    <!-- 摄影噪点 -->
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" seed="5"/>
+      <feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.08 0"/>
+      <feComposite in2="SourceGraphic" operator="in"/>
+    </filter>
+    <!-- 软景深模糊 -->
+    <filter id="depthBlur">
+      <feGaussianBlur stdDeviation="1.5"/>
+    </filter>
+    <!-- 真实阴影 -->
+    <filter id="realShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="6"/>
+      <feOffset dx="0" dy="14"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.55"/></feComponentTransfer>
       <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
-<linearGradient id="shaft" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#3a4250"/>
-      <stop offset="25%" stop-color="#7e8896"/>
-      <stop offset="50%" stop-color="#e0e6ee"/>
-      <stop offset="75%" stop-color="#7e8896"/>
-      <stop offset="100%" stop-color="#3a4250"/>
+    <!-- 边缘磨损 -->
+    <filter id="worn">
+      <feTurbulence type="turbulence" baseFrequency="0.04" numOctaves="2" seed="3"/>
+      <feDisplacementMap in="SourceGraphic" scale="3"/>
+    </filter>
+    <linearGradient id="metal" x1="0%" y1="0%" x2="100%" y2="0%" gradientTransform="rotate(0)">
+      <stop offset="0%" stop-color="#2a3038"/>
+      <stop offset="15%" stop-color="#5a6370"/>
+      <stop offset="30%" stop-color="#8a92a0"/>
+      <stop offset="45%" stop-color="#e8edf4"/>
+      <stop offset="52%" stop-color="#ffffff" stop-opacity="0.9"/>
+      <stop offset="58%" stop-color="#e8edf4"/>
+      <stop offset="75%" stop-color="#8a92a0"/>
+      <stop offset="100%" stop-color="#2a3038"/>
     </linearGradient>
-<ellipse cx="256" cy="455" rx="115" ry="14" fill="#000" opacity="0.25" filter="url(#ds)"/>
-<g filter="url(#ds)">
-  <rect x="156" y="220" width="200" height="80" fill="url(#shaft)" stroke="#2a3038" stroke-width="1.5"/>
-  <rect x="156" y="220" width="200" height="6" fill="#fff" opacity="0.3"/>
-  <rect x="156" y="295" width="200" height="6" fill="#000" opacity="0.3"/>
-  <!-- 中心螺孔 -->
-  <ellipse cx="256" cy="260" rx="36" ry="12" fill="#1a1e25"/>
-  <ellipse cx="256" cy="258" rx="36" ry="10" fill="#0a0d14"/>
-</g>
+    <linearGradient id="topShine" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.55"/>
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="thread" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1a1e25"/>
+      <stop offset="50%" stop-color="#6a7280"/>
+      <stop offset="100%" stop-color="#1a1e25"/>
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#bg)"/>
+  <rect width="100%" height="100%" fill="url(#bg)" filter="url(#grain)" opacity="0.4"/>
+  <ellipse cx="256" cy="460" rx="125" ry="14" fill="#000" opacity="0.35" filter="url(#depthBlur)"/>
+  <g filter="url(#realShadow)">
+    <rect x="146" y="218" width="220" height="86" fill="url(#metal)" stroke="#1a1e25" stroke-width="1.5"/>
+    <rect x="146" y="218" width="220" height="8" fill="#fff" opacity="0.4"/>
+    <rect x="146" y="298" width="220" height="6" fill="#000" opacity="0.35"/>
+    <ellipse cx="256" cy="260" rx="38" ry="13" fill="#0a0d14"/>
+    <ellipse cx="256" cy="258" rx="38" ry="11" fill="#000"/>
+  </g>
+  <rect width="100%" height="100%" fill="#000" filter="url(#grain)" opacity="0.3" pointer-events="none"/>
 </svg>

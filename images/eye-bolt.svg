@@ -1,57 +1,103 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
-<defs>
-    <radialGradient id="bg" cx="50%" cy="45%" r="70%">
-      <stop offset="0%" stop-color="#f6f8fb"/>
-      <stop offset="100%" stop-color="#b8c2cf"/>
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="42%" r="75%">
+      <stop offset="0%" stop-color="#f5f7fa"/>
+      <stop offset="50%" stop-color="#e2e8f0"/>
+      <stop offset="100%" stop-color="#a8b2bf"/>
     </radialGradient>
-  </defs>
-  <rect width="100%" height="100%" fill="url(#bg)"/>
-<filter id="ds" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur in="SourceAlpha" stdDeviation="4"/>
-      <feOffset dx="0" dy="10"/>
-      <feComponentTransfer><feFuncA type="linear" slope="0.4"/></feComponentTransfer>
+    <!-- 摄影噪点 -->
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" seed="5"/>
+      <feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.08 0"/>
+      <feComposite in2="SourceGraphic" operator="in"/>
+    </filter>
+    <!-- 软景深模糊 -->
+    <filter id="depthBlur">
+      <feGaussianBlur stdDeviation="1.5"/>
+    </filter>
+    <!-- 真实阴影 -->
+    <filter id="realShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="6"/>
+      <feOffset dx="0" dy="14"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.55"/></feComponentTransfer>
       <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
-<linearGradient id="shaft" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#3a4250"/>
-      <stop offset="25%" stop-color="#7e8896"/>
-      <stop offset="50%" stop-color="#e0e6ee"/>
-      <stop offset="75%" stop-color="#7e8896"/>
-      <stop offset="100%" stop-color="#3a4250"/>
+    <!-- 边缘磨损 -->
+    <filter id="worn">
+      <feTurbulence type="turbulence" baseFrequency="0.04" numOctaves="2" seed="3"/>
+      <feDisplacementMap in="SourceGraphic" scale="3"/>
+    </filter>
+    <linearGradient id="metal" x1="0%" y1="0%" x2="100%" y2="0%" gradientTransform="rotate(0)">
+      <stop offset="0%" stop-color="#2a3038"/>
+      <stop offset="15%" stop-color="#5a6370"/>
+      <stop offset="30%" stop-color="#8a92a0"/>
+      <stop offset="45%" stop-color="#e8edf4"/>
+      <stop offset="52%" stop-color="#ffffff" stop-opacity="0.9"/>
+      <stop offset="58%" stop-color="#e8edf4"/>
+      <stop offset="75%" stop-color="#8a92a0"/>
+      <stop offset="100%" stop-color="#2a3038"/>
     </linearGradient>
-<ellipse cx="256" cy="455" rx="115" ry="14" fill="#000" opacity="0.25" filter="url(#ds)"/>
-<g filter="url(#ds)">
-  <rect x="226" y="280" width="60" height="170" fill="url(#shaft)"/>
-  <line x1="226" y1="292" x2="286" y2="294" stroke="#2a3038" stroke-width="1.5" opacity="0.65"/>
-  <line x1="226" y1="304" x2="286" y2="306" stroke="#2a3038" stroke-width="1.5" opacity="0.65"/>
-  <line x1="226" y1="316" x2="286" y2="318" stroke="#2a3038" stroke-width="1.5" opacity="0.65"/>
-  <line x1="226" y1="328" x2="286" y2="330" stroke="#2a3038" stroke-width="1.5" opacity="0.65"/>
-  <line x1="226" y1="340" x2="286" y2="342" stroke="#2a3038" stroke-width="1.5" opacity="0.65"/>
-  <line x1="226" y1="352" x2="286" y2="354" stroke="#2a3038" stroke-width="1.5" opacity="0.65"/>
-  <line x1="226" y1="364" x2="286" y2="366" stroke="#2a3038" stroke-width="1.5" opacity="0.65"/>
-  <line x1="226" y1="376" x2="286" y2="378" stroke="#2a3038" stroke-width="1.5" opacity="0.65"/>
-  <line x1="226" y1="388" x2="286" y2="390" stroke="#2a3038" stroke-width="1.5" opacity="0.65"/>
-  <line x1="226" y1="400" x2="286" y2="402" stroke="#2a3038" stroke-width="1.5" opacity="0.65"/>
-  <line x1="226" y1="412" x2="286" y2="414" stroke="#2a3038" stroke-width="1.5" opacity="0.65"/>
-  <line x1="226" y1="424" x2="286" y2="426" stroke="#2a3038" stroke-width="1.5" opacity="0.65"/>
-  <line x1="226" y1="436" x2="286" y2="438" stroke="#2a3038" stroke-width="1.5" opacity="0.65"/>
-  <line x1="230" y1="294" x2="282" y2="296" stroke="#fff" stroke-width="0.8" opacity="0.35"/>
-  <line x1="230" y1="306" x2="282" y2="308" stroke="#fff" stroke-width="0.8" opacity="0.35"/>
-  <line x1="230" y1="318" x2="282" y2="320" stroke="#fff" stroke-width="0.8" opacity="0.35"/>
-  <line x1="230" y1="330" x2="282" y2="332" stroke="#fff" stroke-width="0.8" opacity="0.35"/>
-  <line x1="230" y1="342" x2="282" y2="344" stroke="#fff" stroke-width="0.8" opacity="0.35"/>
-  <line x1="230" y1="354" x2="282" y2="356" stroke="#fff" stroke-width="0.8" opacity="0.35"/>
-  <line x1="230" y1="366" x2="282" y2="368" stroke="#fff" stroke-width="0.8" opacity="0.35"/>
-  <line x1="230" y1="378" x2="282" y2="380" stroke="#fff" stroke-width="0.8" opacity="0.35"/>
-  <line x1="230" y1="390" x2="282" y2="392" stroke="#fff" stroke-width="0.8" opacity="0.35"/>
-  <line x1="230" y1="402" x2="282" y2="404" stroke="#fff" stroke-width="0.8" opacity="0.35"/>
-  <line x1="230" y1="414" x2="282" y2="416" stroke="#fff" stroke-width="0.8" opacity="0.35"/>
-  <line x1="230" y1="426" x2="282" y2="428" stroke="#fff" stroke-width="0.8" opacity="0.35"/>
-  <line x1="230" y1="438" x2="282" y2="440" stroke="#fff" stroke-width="0.8" opacity="0.35"/>
-  <circle cx="256" cy="180" r="80" fill="none" stroke="#3a4250" stroke-width="22" stroke-linecap="round"/>
-  <circle cx="256" cy="180" r="80" fill="none" stroke="url(#shaft)" stroke-width="18" stroke-linecap="round"/>
-  <circle cx="256" cy="180" r="80" fill="none" stroke="#fff" stroke-width="2" opacity="0.4"/>
-  <!-- 杆连接处 -->
-  <rect x="230" y="240" width="52" height="50" fill="url(#shaft)" stroke="#2a3038" stroke-width="1"/>
-</g>
+    <linearGradient id="topShine" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.55"/>
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="thread" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1a1e25"/>
+      <stop offset="50%" stop-color="#6a7280"/>
+      <stop offset="100%" stop-color="#1a1e25"/>
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#bg)"/>
+  <rect width="100%" height="100%" fill="url(#bg)" filter="url(#grain)" opacity="0.4"/>
+  <ellipse cx="256" cy="460" rx="125" ry="14" fill="#000" opacity="0.35" filter="url(#depthBlur)"/>
+  <g filter="url(#realShadow)">
+    <rect x="226" y="280" width="60" height="170" fill="url(#metal)"/>
+    <rect x="226" y="280" width="60" height="40" fill="url(#topShine)"/>
+  <line x1="226" y1="292" x2="286" y2="293" stroke="#0a0d14" stroke-width="2" opacity="0.75"/>
+  <line x1="226" y1="293" x2="286" y2="294" stroke="#000" stroke-width="1" opacity="0.5"/>
+  <line x1="228" y1="291" x2="284" y2="292" stroke="#fff" stroke-width="1" opacity="0.5"/>
+  <line x1="226" y1="304" x2="286" y2="305" stroke="#0a0d14" stroke-width="2" opacity="0.75"/>
+  <line x1="226" y1="305" x2="286" y2="306" stroke="#000" stroke-width="1" opacity="0.5"/>
+  <line x1="228" y1="303" x2="284" y2="304" stroke="#fff" stroke-width="1" opacity="0.5"/>
+  <line x1="226" y1="316" x2="286" y2="317" stroke="#0a0d14" stroke-width="2" opacity="0.75"/>
+  <line x1="226" y1="317" x2="286" y2="318" stroke="#000" stroke-width="1" opacity="0.5"/>
+  <line x1="228" y1="315" x2="284" y2="316" stroke="#fff" stroke-width="1" opacity="0.5"/>
+  <line x1="226" y1="328" x2="286" y2="329" stroke="#0a0d14" stroke-width="2" opacity="0.75"/>
+  <line x1="226" y1="329" x2="286" y2="330" stroke="#000" stroke-width="1" opacity="0.5"/>
+  <line x1="228" y1="327" x2="284" y2="328" stroke="#fff" stroke-width="1" opacity="0.5"/>
+  <line x1="226" y1="340" x2="286" y2="341" stroke="#0a0d14" stroke-width="2" opacity="0.75"/>
+  <line x1="226" y1="341" x2="286" y2="342" stroke="#000" stroke-width="1" opacity="0.5"/>
+  <line x1="228" y1="339" x2="284" y2="340" stroke="#fff" stroke-width="1" opacity="0.5"/>
+  <line x1="226" y1="352" x2="286" y2="353" stroke="#0a0d14" stroke-width="2" opacity="0.75"/>
+  <line x1="226" y1="353" x2="286" y2="354" stroke="#000" stroke-width="1" opacity="0.5"/>
+  <line x1="228" y1="351" x2="284" y2="352" stroke="#fff" stroke-width="1" opacity="0.5"/>
+  <line x1="226" y1="364" x2="286" y2="365" stroke="#0a0d14" stroke-width="2" opacity="0.75"/>
+  <line x1="226" y1="365" x2="286" y2="366" stroke="#000" stroke-width="1" opacity="0.5"/>
+  <line x1="228" y1="363" x2="284" y2="364" stroke="#fff" stroke-width="1" opacity="0.5"/>
+  <line x1="226" y1="376" x2="286" y2="377" stroke="#0a0d14" stroke-width="2" opacity="0.75"/>
+  <line x1="226" y1="377" x2="286" y2="378" stroke="#000" stroke-width="1" opacity="0.5"/>
+  <line x1="228" y1="375" x2="284" y2="376" stroke="#fff" stroke-width="1" opacity="0.5"/>
+  <line x1="226" y1="388" x2="286" y2="389" stroke="#0a0d14" stroke-width="2" opacity="0.75"/>
+  <line x1="226" y1="389" x2="286" y2="390" stroke="#000" stroke-width="1" opacity="0.5"/>
+  <line x1="228" y1="387" x2="284" y2="388" stroke="#fff" stroke-width="1" opacity="0.5"/>
+  <line x1="226" y1="400" x2="286" y2="401" stroke="#0a0d14" stroke-width="2" opacity="0.75"/>
+  <line x1="226" y1="401" x2="286" y2="402" stroke="#000" stroke-width="1" opacity="0.5"/>
+  <line x1="228" y1="399" x2="284" y2="400" stroke="#fff" stroke-width="1" opacity="0.5"/>
+  <line x1="226" y1="412" x2="286" y2="413" stroke="#0a0d14" stroke-width="2" opacity="0.75"/>
+  <line x1="226" y1="413" x2="286" y2="414" stroke="#000" stroke-width="1" opacity="0.5"/>
+  <line x1="228" y1="411" x2="284" y2="412" stroke="#fff" stroke-width="1" opacity="0.5"/>
+  <line x1="226" y1="424" x2="286" y2="425" stroke="#0a0d14" stroke-width="2" opacity="0.75"/>
+  <line x1="226" y1="425" x2="286" y2="426" stroke="#000" stroke-width="1" opacity="0.5"/>
+  <line x1="228" y1="423" x2="284" y2="424" stroke="#fff" stroke-width="1" opacity="0.5"/>
+  <line x1="226" y1="436" x2="286" y2="437" stroke="#0a0d14" stroke-width="2" opacity="0.75"/>
+  <line x1="226" y1="437" x2="286" y2="438" stroke="#000" stroke-width="1" opacity="0.5"/>
+  <line x1="228" y1="435" x2="284" y2="436" stroke="#fff" stroke-width="1" opacity="0.5"/>
+    <circle cx="256" cy="180" r="80" fill="none" stroke="#3a4250" stroke-width="24"/>
+    <circle cx="256" cy="180" r="80" fill="none" stroke="url(#metal)" stroke-width="20"/>
+    <circle cx="256" cy="180" r="80" fill="none" stroke="#fff" stroke-width="2.5" opacity="0.5"/>
+    <circle cx="256" cy="180" r="80" fill="none" stroke="#000" stroke-width="1" opacity="0.3" transform="translate(0,2)"/>
+    <rect x="230" y="240" width="52" height="50" fill="url(#metal)" stroke="#1a1e25" stroke-width="1"/>
+  </g>
+  <rect width="100%" height="100%" fill="#000" filter="url(#grain)" opacity="0.3" pointer-events="none"/>
 </svg>
