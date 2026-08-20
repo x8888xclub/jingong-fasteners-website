@@ -255,6 +255,241 @@
         </div>
     </section>
 
+
+    <!-- 紧固件计算器 -->
+    <section class="section calc-section" id="calculator">
+        <div class="container">
+            <div class="section-head">
+                <p class="section-tag" data-i18n="calc.tag">在线计算器</p>
+                <h2 class="section-title">
+                    <span data-i18n="calc.title.l1">输入规格</span> ·
+                    <span class="text-gradient" data-i18n="calc.title.l2">查询尺寸/体积/重量/强度</span>
+                </h2>
+                <p class="section-desc" data-i18n="calc.desc">5 个专业计算器：螺栓、螺母、螺杆、垫圈、强度对比。基于 ISO 898-1 / DIN 933 / DIN 934 / DIN 976 真实工程数据。</p>
+            </div>
+
+            <!-- 5 个计算器标签 -->
+            <div class="calc-tabs">
+                <button class="calc-tab active" data-calc="bolt">
+                    <span class="calc-tab-icon">🔩</span>
+                    <span data-i18n="calc.tab.bolt">螺栓</span>
+                </button>
+                <button class="calc-tab" data-calc="nut">
+                    <span class="calc-tab-icon">⬢</span>
+                    <span data-i18n="calc.tab.nut">螺母</span>
+                </button>
+                <button class="calc-tab" data-calc="rod">
+                    <span class="calc-tab-icon">📏</span>
+                    <span data-i18n="calc.tab.rod">螺杆</span>
+                </button>
+                <button class="calc-tab" data-calc="washer">
+                    <span class="calc-tab-icon">⊕</span>
+                    <span data-i18n="calc.tab.washer">垫圈</span>
+                </button>
+                <button class="calc-tab" data-calc="strength">
+                    <span class="calc-tab-icon">💪</span>
+                    <span data-i18n="calc.tab.strength">强度</span>
+                </button>
+            </div>
+
+            <!-- 1. 螺栓计算器 -->
+            <div class="calc-panel active" id="calc-panel-bolt">
+                <div class="calc-form">
+                    <div class="calc-form-row">
+                        <div class="calc-field">
+                            <label data-i18n="calc.field.size">规格 *</label>
+                            <select id="boltD">
+                                <option value="3">M3</option><option value="4">M4</option>
+                                <option value="5">M5</option><option value="6" selected>M6</option>
+                                <option value="8">M8</option><option value="10">M10</option>
+                                <option value="12">M12</option><option value="14">M14</option>
+                                <option value="16">M16</option><option value="20">M20</option>
+                                <option value="24">M24</option><option value="30">M30</option>
+                                <option value="36">M36</option>
+                            </select>
+                            <span class="calc-hint" id="boltPDisplay">1.000 mm</span>
+                        </div>
+                        <div class="calc-field">
+                            <label data-i18n="calc.field.length">长度 L (mm) *</label>
+                            <input type="number" id="boltL" value="40" min="3" max="500" step="1">
+                        </div>
+                    </div>
+                    <div class="calc-form-row">
+                        <div class="calc-field">
+                            <label data-i18n="calc.field.material">材质</label>
+                            <select id="boltMat">
+                                <option value="8.8" selected>8.8 级 合金钢</option>
+                                <option value="10.9">10.9 级 合金钢</option>
+                                <option value="12.9">12.9 级 合金钢</option>
+                                <option value="4.8">4.8 级 碳钢</option>
+                                <option value="b7">B7 合金钢</option>
+                                <option value="a2">A2-70 不锈钢</option>
+                                <option value="a4">A4-80 不锈钢</option>
+                                <option value="c1022">C1022 碳钢</option>
+                                <option value="brass">H62 黄铜</option>
+                            </select>
+                        </div>
+                        <div class="calc-field">
+                            <label data-i18n="calc.field.grade">强度等级</label>
+                            <select id="boltGrade">
+                                <option value="4.8">4.8</option>
+                                <option value="8.8" selected>8.8</option>
+                                <option value="10.9">10.9</option>
+                                <option value="12.9">12.9</option>
+                                <option value="a2-70">A2-70</option>
+                                <option value="a4-80">A4-80</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary calc-btn" id="calcBoltBtn">
+                        <span data-i18n="calc.btn">🔬 开始计算</span>
+                    </button>
+                </div>
+                <div class="calc-result" id="boltResult"></div>
+            </div>
+
+            <!-- 2. 螺母计算器 -->
+            <div class="calc-panel" id="calc-panel-nut">
+                <div class="calc-form">
+                    <div class="calc-form-row">
+                        <div class="calc-field">
+                            <label data-i18n="calc.field.size">规格 *</label>
+                            <select id="nutD">
+                                <option value="3">M3</option><option value="4">M4</option>
+                                <option value="5">M5</option><option value="6" selected>M6</option>
+                                <option value="8">M8</option><option value="10">M10</option>
+                                <option value="12">M12</option><option value="14">M14</option>
+                                <option value="16">M16</option><option value="20">M20</option>
+                                <option value="24">M24</option><option value="30">M30</option>
+                                <option value="36">M36</option>
+                            </select>
+                        </div>
+                        <div class="calc-field">
+                            <label data-i18n="calc.field.material">材质</label>
+                            <select id="nutMat">
+                                <option value="8.8" selected>8 级 碳钢</option>
+                                <option value="10.9">10 级 合金钢</option>
+                                <option value="a2">A2-70 不锈钢</option>
+                                <option value="a4">A4-80 不锈钢</option>
+                                <option value="brass">H62 黄铜</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary calc-btn" id="calcNutBtn">
+                        <span data-i18n="calc.btn">🔬 开始计算</span>
+                    </button>
+                </div>
+                <div class="calc-result" id="nutResult"></div>
+            </div>
+
+            <!-- 3. 螺杆计算器 -->
+            <div class="calc-panel" id="calc-panel-rod">
+                <div class="calc-form">
+                    <div class="calc-form-row">
+                        <div class="calc-field">
+                            <label data-i18n="calc.field.size">直径 d (mm) *</label>
+                            <input type="number" id="rodD" value="10" min="3" max="64" step="0.5">
+                        </div>
+                        <div class="calc-field">
+                            <label data-i18n="calc.field.length">长度 L (mm) *</label>
+                            <input type="number" id="rodL" value="1000" min="50" max="3000" step="50">
+                        </div>
+                    </div>
+                    <div class="calc-form-row">
+                        <div class="calc-field">
+                            <label data-i18n="calc.field.material">材质</label>
+                            <select id="rodMat">
+                                <option value="4.8">4.8 级 碳钢</option>
+                                <option value="8.8" selected>8.8 级 合金钢</option>
+                                <option value="10.9">10.9 级 合金钢</option>
+                                <option value="b7">B7 合金钢</option>
+                                <option value="a2">A2-70 不锈钢</option>
+                                <option value="a4">A4-80 不锈钢</option>
+                            </select>
+                        </div>
+                        <div class="calc-field" style="visibility:hidden"></div>
+                    </div>
+                    <button class="btn btn-primary calc-btn" id="calcRodBtn">
+                        <span data-i18n="calc.btn">🔬 开始计算</span>
+                    </button>
+                </div>
+                <div class="calc-result" id="rodResult"></div>
+            </div>
+
+            <!-- 4. 垫圈计算器 -->
+            <div class="calc-panel" id="calc-panel-washer">
+                <div class="calc-form">
+                    <div class="calc-form-row">
+                        <div class="calc-field">
+                            <label data-i18n="calc.field.size">适用螺栓 *</label>
+                            <select id="washerD">
+                                <option value="3">M3</option><option value="4">M4</option>
+                                <option value="5">M5</option><option value="6" selected>M6</option>
+                                <option value="8">M8</option><option value="10">M10</option>
+                                <option value="12">M12</option><option value="14">M14</option>
+                                <option value="16">M16</option><option value="20">M20</option>
+                                <option value="24">M24</option><option value="30">M30</option>
+                                <option value="36">M36</option>
+                            </select>
+                        </div>
+                        <div class="calc-field">
+                            <label data-i18n="calc.field.material">材质</label>
+                            <select id="washerMat">
+                                <option value="c1022" selected>140HV 碳钢</option>
+                                <option value="a2">A2 不锈钢</option>
+                                <option value="a4">A4 不锈钢</option>
+                                <option value="brass">H62 黄铜</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary calc-btn" id="calcWasherBtn">
+                        <span data-i18n="calc.btn">🔬 开始计算</span>
+                    </button>
+                </div>
+                <div class="calc-result" id="washerResult"></div>
+            </div>
+
+            <!-- 5. 强度对比 -->
+            <div class="calc-panel" id="calc-panel-strength">
+                <div class="calc-form">
+                    <div class="calc-form-row">
+                        <div class="calc-field">
+                            <label data-i18n="calc.field.size">螺纹大径 d (mm) *</label>
+                            <input type="number" id="strD" value="10" min="3" max="64" step="0.5">
+                        </div>
+                        <div class="calc-field">
+                            <label data-i18n="calc.field.type">螺纹类型</label>
+                            <select id="strType">
+                                <option value="metric" selected>公制 (Metric)</option>
+                                <option value="imperial">美制 (Imperial)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="calc-form-row">
+                        <div class="calc-field">
+                            <label data-i18n="calc.field.grade">强度等级</label>
+                            <select id="strGrade">
+                                <option value="4.8">4.8</option>
+                                <option value="8.8" selected>8.8</option>
+                                <option value="10.9">10.9</option>
+                                <option value="12.9">12.9</option>
+                                <option value="a2-70">A2-70</option>
+                                <option value="a4-80">A4-80</option>
+                            </select>
+                        </div>
+                        <div class="calc-field" style="visibility:hidden"></div>
+                    </div>
+                    <button class="btn btn-primary calc-btn" id="calcStrBtn">
+                        <span data-i18n="calc.btn">🔬 开始计算</span>
+                    </button>
+                </div>
+                <div class="calc-result" id="strResult"></div>
+            </div>
+
+            <p class="calc-note" data-i18n="calc.note">💡 所有计算基于 ISO 898-1 / DIN 933 / DIN 934 / DIN 976 等国际标准；用于工程估算，具体设计请参考官方标准。</p>
+        </div>
+    </section>
+
     <!-- 材质与表面处理 -->
     <section class="section material-section" id="material">
         <div class="container">
@@ -633,6 +868,9 @@
 
     <script src="js/products-data.js"></script>
     <script src="js/product-images.js"></script>
+    <script src="js/calculator-data.js"></script>
+    <script src="js/calculator-engine.js"></script>
+    <script src="js/calculator-ui.js"></script>
     <script src="js/specs-data.js"></script>
     <script src="js/i18n.js"></script>
     <script src="js/main.js"></script>

@@ -50,6 +50,23 @@ const translations = {
         'line.custom.cta': '立即定制 →',
         'line.view': '查看规格 →',
 
+        // Calculator
+        'calc.tag': '在线计算器',
+        'calc.title.l1': '输入规格',
+        'calc.title.l2': '查询尺寸/体积/重量/强度',
+        'calc.desc': '5 个专业计算器：螺栓、螺母、螺杆、垫圈、强度对比。基于 ISO 898-1 / DIN 933 / DIN 934 / DIN 976 真实工程数据。',
+        'calc.tab.bolt': '螺栓',
+        'calc.tab.nut': '螺母',
+        'calc.tab.rod': '螺杆',
+        'calc.tab.washer': '垫圈',
+        'calc.tab.strength': '强度',
+        'calc.field.size': '规格 *',
+        'calc.field.length': '长度 L (mm) *',
+        'calc.field.material': '材质',
+        'calc.field.grade': '强度等级',
+        'calc.field.type': '螺纹类型',
+        'calc.btn': '🔬 开始计算',
+        'calc.note': '💡 所有计算基于 ISO 898-1 / DIN 933 / DIN 934 / DIN 976 等国际标准；用于工程估算，具体设计请参考官方标准。',
         // Specs
         'specs.tag': '规格标准',
         // Catalog Filter
@@ -302,6 +319,23 @@ const translations = {
         'line.custom.cta': 'Customize Now →',
         'line.view': 'View Specs →',
 
+        // Calculator
+        'calc.tag': 'CALCULATORS',
+        'calc.title.l1': 'Input Specs',
+        'calc.title.l2': 'Query Dimensions / Volume / Weight / Strength',
+        'calc.desc': '5 professional calculators: bolt, nut, rod, washer, strength comparison. Based on ISO 898-1 / DIN 933 / DIN 934 / DIN 976 engineering data.',
+        'calc.tab.bolt': 'Bolt',
+        'calc.tab.nut': 'Nut',
+        'calc.tab.rod': 'Rod',
+        'calc.tab.washer': 'Washer',
+        'calc.tab.strength': 'Strength',
+        'calc.field.size': 'Size *',
+        'calc.field.length': 'Length L (mm) *',
+        'calc.field.material': 'Material',
+        'calc.field.grade': 'Strength Grade',
+        'calc.field.type': 'Thread Type',
+        'calc.btn': '🔬 Calculate',
+        'calc.note': '💡 All calculations based on ISO 898-1 / DIN 933 / DIN 934 / DIN 976 standards; for engineering estimation. Refer to official standards for design.',
         // Specs
         'specs.tag': 'SPECIFICATIONS',
         // Catalog Filter
