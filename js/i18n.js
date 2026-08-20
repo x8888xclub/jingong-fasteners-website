@@ -286,6 +286,7 @@ const translations = {
         'calc.mat.a2-70': 'A2-70 不锈钢',
         'calc.mat.a4-80': 'A4-80 不锈钢',
         'calc.mat.c1022': 'C1022 碳钢',
+        'brand.cn': '精工固件',
     },
 
     en: {
@@ -573,9 +574,8 @@ const translations = {
         'calc.mat.a2-70': 'A2-70 Stainless Steel',
         'calc.mat.a4-80': 'A4-80 Stainless Steel',
         'calc.mat.c1022': 'C1022 Carbon Steel',
+        'brand.cn': 'Jingong Fasteners',
     }
-        'brand.cn': '精工固件',
-        'brand.en': 'Jingong Fasteners',
 };
 
 let currentLang = localStorage.getItem('jingong-lang') || 'zh';
