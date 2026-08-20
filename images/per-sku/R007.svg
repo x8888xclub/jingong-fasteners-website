@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="42%" r="75%">
+      <stop offset="0%" stop-color="#f5f7fa"/><stop offset="50%" stop-color="#e2e8f0"/><stop offset="100%" stop-color="#a8b2bf"/>
+    </radialGradient>
+    <linearGradient id="metal" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2a3038"/><stop offset="15%" stop-color="#5a6370"/><stop offset="30%" stop-color="#8a92a0"/><stop offset="45%" stop-color="#e8edf4"/><stop offset="52%" stop-color="#ffffff" stop-opacity="0.9"/><stop offset="58%" stop-color="#e8edf4"/><stop offset="75%" stop-color="#8a92a0"/><stop offset="100%" stop-color="#2a3038"/>
+    </linearGradient>
+    <linearGradient id="topShine" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.55"/><stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="shadow"><feGaussianBlur in="SourceAlpha" stdDeviation="4"/><feOffset dx="0" dy="6"/><feComponentTransfer><feFuncA type="linear" slope="0.45"/></feComponentTransfer><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" seed="5"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.06 0"/><feComposite in2="SourceGraphic" operator="in"/></filter>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#bg)"/>
+  <ellipse cx="256" cy="300.6" rx="120" ry="12" fill="#000" opacity="0.3" filter="url(#shadow)"/>  <g filter="url(#shadow)">
+    <rect x="221.71" y="216.4" width="68.58" height="79.2" fill="url(#metal)"/>
+    <rect x="221.71" y="216.4" width="68.58" height="15.840000000000002" fill="url(#topShine)"/>
+  <line x1="221.71" y1="230.4" x2="281.71000000000004" y2="231.4" stroke="#0a0d14" stroke-width="2" opacity="0.75"/>
+  <line x1="221.71" y1="231.4" x2="281.71000000000004" y2="232.4" stroke="#000" stroke-width="1" opacity="0.5"/>
+  <line x1="223.71" y1="229.4" x2="279.71000000000004" y2="230.4" stroke="#fff" stroke-width="1" opacity="0.5"/>
+  <line x1="221.71" y1="242.4" x2="281.71000000000004" y2="243.4" stroke="#0a0d14" stroke-width="2" opacity="0.75"/>
+  <line x1="221.71" y1="243.4" x2="281.71000000000004" y2="244.4" stroke="#000" stroke-width="1" opacity="0.5"/>
+  <line x1="223.71" y1="241.4" x2="279.71000000000004" y2="242.4" stroke="#fff" stroke-width="1" opacity="0.5"/>
+  <line x1="221.71" y1="254.4" x2="281.71000000000004" y2="255.4" stroke="#0a0d14" stroke-width="2" opacity="0.75"/>
+  <line x1="221.71" y1="255.4" x2="281.71000000000004" y2="256.4" stroke="#000" stroke-width="1" opacity="0.5"/>
+  <line x1="223.71" y1="253.4" x2="279.71000000000004" y2="254.4" stroke="#fff" stroke-width="1" opacity="0.5"/>
+  <line x1="221.71" y1="266.4" x2="281.71000000000004" y2="267.4" stroke="#0a0d14" stroke-width="2" opacity="0.75"/>
+  <line x1="221.71" y1="267.4" x2="281.71000000000004" y2="268.4" stroke="#000" stroke-width="1" opacity="0.5"/>
+  <line x1="223.71" y1="265.4" x2="279.71000000000004" y2="266.4" stroke="#fff" stroke-width="1" opacity="0.5"/>
+  <line x1="221.71" y1="278.4" x2="281.71000000000004" y2="279.4" stroke="#0a0d14" stroke-width="2" opacity="0.75"/>
+  <line x1="221.71" y1="279.4" x2="281.71000000000004" y2="280.4" stroke="#000" stroke-width="1" opacity="0.5"/>
+  <line x1="223.71" y1="277.4" x2="279.71000000000004" y2="278.4" stroke="#fff" stroke-width="1" opacity="0.5"/>
+  <line x1="221.71" y1="290.4" x2="281.71000000000004" y2="291.4" stroke="#0a0d14" stroke-width="2" opacity="0.75"/>
+  <line x1="221.71" y1="291.4" x2="281.71000000000004" y2="292.4" stroke="#000" stroke-width="1" opacity="0.5"/>
+  <line x1="223.71" y1="289.4" x2="279.71000000000004" y2="290.4" stroke="#fff" stroke-width="1" opacity="0.5"/>
+  </g>
+  <!-- 规格标签（右上） -->
+  <rect x="320" y="20" width="180" height="58" rx="6" fill="#fff" stroke="#0a0d14" stroke-width="2" opacity="0.95"/>
+  <text x="332" y="48" font-family="Consolas,monospace" font-size="22" font-weight="700" fill="#0a0d14">3/4"-10 × 36"</text>
+  <text x="332" y="68" font-family="Consolas,monospace" font-size="12" fill="#666">ASME B18.3 · Grade</text>
+  <!-- SKU 编号（左上） -->
+  <rect x="14" y="14" width="68" height="30" rx="4" fill="#f7811a" opacity="0.95"/>
+  <text x="48" y="34" font-family="Consolas,monospace" font-size="16" font-weight="700" fill="#fff" text-anchor="middle">R007</text>
+  <rect width="100%" height="100%" fill="#000" filter="url(#grain)" opacity="0.3" pointer-events="none"/>
+</svg>
