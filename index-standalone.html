@@ -1349,6 +1349,325 @@ button {
     border-radius: 4px;
 }
 
+/* ===== 紧固件计算器 ===== */
+.calc-section {
+    background: var(--bg-dark);
+    background-image:
+        radial-gradient(circle at 20% 30%, rgba(247, 129, 26, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(77, 146, 232, 0.05) 0%, transparent 40%);
+}
+
+.calc-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: var(--bg-card);
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid var(--border-light);
+}
+
+.calc-tab {
+    flex: 1;
+    min-width: 120px;
+    padding: 14px 20px;
+    background: var(--bg-deep);
+    border: 1px solid var(--border-light);
+    border-radius: 6px;
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.calc-tab:hover {
+    border-color: var(--accent-orange);
+    color: var(--text-primary);
+    transform: translateY(-1px);
+}
+
+.calc-tab.active {
+    background: var(--gradient);
+    color: #0a0d14;
+    border-color: transparent;
+    box-shadow: 0 4px 16px rgba(247, 129, 26, 0.3);
+}
+
+.calc-tab-icon {
+    font-size: 20px;
+    line-height: 1;
+}
+
+.calc-panel {
+    display: none;
+}
+
+.calc-panel.active {
+    display: block;
+    animation: fadeInUp 0.4s ease;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.calc-form {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 32px;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.calc-form::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--gradient);
+}
+
+.calc-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.calc-form-row:last-of-type {
+    margin-bottom: 24px;
+}
+
+.calc-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.calc-field label {
+    font-size: 13px;
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+.calc-field input,
+.calc-field select {
+    padding: 12px 14px;
+    background: var(--bg-deep);
+    border: 1px solid var(--border-light);
+    border-radius: 5px;
+    color: var(--text-primary);
+    font-size: 14px;
+    font-family: inherit;
+    transition: all 0.2s;
+    font-weight: 600;
+}
+
+.calc-field input:focus,
+.calc-field select:focus {
+    outline: none;
+    border-color: var(--accent-orange);
+    box-shadow: 0 0 0 3px rgba(247, 129, 26, 0.15);
+}
+
+.calc-field select {
+    cursor: pointer;
+}
+
+.calc-field select option {
+    background: var(--bg-dark);
+    color: var(--text-primary);
+}
+
+.calc-hint {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--accent-orange);
+    font-weight: 700;
+}
+
+.calc-btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 15px;
+}
+
+.calc-note {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 13px;
+    margin-top: 24px;
+    padding: 14px 20px;
+    background: rgba(77, 146, 232, 0.06);
+    border: 1px dashed rgba(77, 146, 232, 0.25);
+    border-radius: 6px;
+}
+
+/* 计算结果 */
+.calc-result {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 0;
+    overflow: hidden;
+    opacity: 0;
+    max-height: 0;
+    transition: all 0.4s ease;
+}
+
+.calc-result.visible {
+    opacity: 1;
+    max-height: 5000px;
+    padding: 28px;
+    margin-bottom: 16px;
+}
+
+.calc-result:empty {
+    display: none;
+}
+
+.result-header {
+    padding-bottom: 20px;
+    margin-bottom: 24px;
+    border-bottom: 2px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.result-title {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--accent-orange);
+}
+
+.result-subtitle {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--text-secondary);
+    background: rgba(247, 129, 26, 0.06);
+    padding: 4px 10px;
+    border-radius: 3px;
+    border: 1px solid var(--border);
+}
+
+.result-section {
+    margin-bottom: 24px;
+}
+
+.result-section:last-of-type {
+    margin-bottom: 0;
+}
+
+.result-section-title {
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--accent-steel);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    font-family: var(--font-en);
+    padding-left: 12px;
+    border-left: 3px solid var(--accent-orange);
+}
+
+.result-section.result-strength .result-section-title {
+    border-left-color: var(--accent-blue);
+}
+
+.result-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 10px;
+}
+
+.result-item {
+    background: var(--bg-deep);
+    border: 1px solid var(--border-light);
+    border-radius: 5px;
+    padding: 12px 14px;
+    transition: all 0.2s;
+}
+
+.result-item:hover {
+    border-color: var(--border);
+    background: rgba(247, 129, 26, 0.03);
+}
+
+.result-label {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+    letter-spacing: 0.3px;
+}
+
+.result-value {
+    font-family: var(--font-mono);
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--accent-orange);
+    word-break: break-word;
+}
+
+.result-section.result-strength .result-value {
+    color: var(--accent-blue);
+}
+
+.result-meta {
+    margin-top: 16px;
+    padding: 12px 16px;
+    background: rgba(63, 185, 80, 0.06);
+    border-left: 3px solid var(--accent-green);
+    border-radius: 4px;
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+.result-note {
+    margin-top: 16px;
+    padding: 10px 14px;
+    background: rgba(247, 129, 26, 0.04);
+    border: 1px dashed rgba(247, 129, 26, 0.2);
+    border-radius: 4px;
+    font-size: 12px;
+    color: var(--text-muted);
+    text-align: center;
+}
+
+.result-error {
+    padding: 24px;
+    text-align: center;
+    color: var(--accent-red);
+    font-size: 14px;
+    background: rgba(248, 81, 73, 0.06);
+    border: 1px solid rgba(248, 81, 73, 0.2);
+    border-radius: 5px;
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+    .calc-form-row { grid-template-columns: 1fr; }
+    .calc-tab { min-width: 90px; font-size: 12px; padding: 10px 12px; }
+    .calc-tab-icon { font-size: 16px; }
+    .calc-form { padding: 22px; }
+    .calc-result.visible { padding: 18px; }
+    .result-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
 /* ===== 材质与工艺 ===== */
 .material-section { background: var(--bg-dark); }
 
@@ -2289,6 +2608,241 @@ button {
         </div>
     </section>
 
+
+    <!-- 紧固件计算器 -->
+    <section class="section calc-section" id="calculator">
+        <div class="container">
+            <div class="section-head">
+                <p class="section-tag" data-i18n="calc.tag">在线计算器</p>
+                <h2 class="section-title">
+                    <span data-i18n="calc.title.l1">输入规格</span> ·
+                    <span class="text-gradient" data-i18n="calc.title.l2">查询尺寸/体积/重量/强度</span>
+                </h2>
+                <p class="section-desc" data-i18n="calc.desc">5 个专业计算器：螺栓、螺母、螺杆、垫圈、强度对比。基于 ISO 898-1 / DIN 933 / DIN 934 / DIN 976 真实工程数据。</p>
+            </div>
+
+            <!-- 5 个计算器标签 -->
+            <div class="calc-tabs">
+                <button class="calc-tab active" data-calc="bolt">
+                    <span class="calc-tab-icon">🔩</span>
+                    <span data-i18n="calc.tab.bolt">螺栓</span>
+                </button>
+                <button class="calc-tab" data-calc="nut">
+                    <span class="calc-tab-icon">⬢</span>
+                    <span data-i18n="calc.tab.nut">螺母</span>
+                </button>
+                <button class="calc-tab" data-calc="rod">
+                    <span class="calc-tab-icon">📏</span>
+                    <span data-i18n="calc.tab.rod">螺杆</span>
+                </button>
+                <button class="calc-tab" data-calc="washer">
+                    <span class="calc-tab-icon">⊕</span>
+                    <span data-i18n="calc.tab.washer">垫圈</span>
+                </button>
+                <button class="calc-tab" data-calc="strength">
+                    <span class="calc-tab-icon">💪</span>
+                    <span data-i18n="calc.tab.strength">强度</span>
+                </button>
+            </div>
+
+            <!-- 1. 螺栓计算器 -->
+            <div class="calc-panel active" id="calc-panel-bolt">
+                <div class="calc-form">
+                    <div class="calc-form-row">
+                        <div class="calc-field">
+                            <label data-i18n="calc.field.size">规格 *</label>
+                            <select id="boltD">
+                                <option value="3">M3</option><option value="4">M4</option>
+                                <option value="5">M5</option><option value="6" selected>M6</option>
+                                <option value="8">M8</option><option value="10">M10</option>
+                                <option value="12">M12</option><option value="14">M14</option>
+                                <option value="16">M16</option><option value="20">M20</option>
+                                <option value="24">M24</option><option value="30">M30</option>
+                                <option value="36">M36</option>
+                            </select>
+                            <span class="calc-hint" id="boltPDisplay">1.000 mm</span>
+                        </div>
+                        <div class="calc-field">
+                            <label data-i18n="calc.field.length">长度 L (mm) *</label>
+                            <input type="number" id="boltL" value="40" min="3" max="500" step="1">
+                        </div>
+                    </div>
+                    <div class="calc-form-row">
+                        <div class="calc-field">
+                            <label data-i18n="calc.field.material">材质</label>
+                            <select id="boltMat">
+                                <option value="8.8" selected>8.8 级 合金钢</option>
+                                <option value="10.9">10.9 级 合金钢</option>
+                                <option value="12.9">12.9 级 合金钢</option>
+                                <option value="4.8">4.8 级 碳钢</option>
+                                <option value="b7">B7 合金钢</option>
+                                <option value="a2">A2-70 不锈钢</option>
+                                <option value="a4">A4-80 不锈钢</option>
+                                <option value="c1022">C1022 碳钢</option>
+                                <option value="brass">H62 黄铜</option>
+                            </select>
+                        </div>
+                        <div class="calc-field">
+                            <label data-i18n="calc.field.grade">强度等级</label>
+                            <select id="boltGrade">
+                                <option value="4.8">4.8</option>
+                                <option value="8.8" selected>8.8</option>
+                                <option value="10.9">10.9</option>
+                                <option value="12.9">12.9</option>
+                                <option value="a2-70">A2-70</option>
+                                <option value="a4-80">A4-80</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary calc-btn" id="calcBoltBtn">
+                        <span data-i18n="calc.btn">🔬 开始计算</span>
+                    </button>
+                </div>
+                <div class="calc-result" id="boltResult"></div>
+            </div>
+
+            <!-- 2. 螺母计算器 -->
+            <div class="calc-panel" id="calc-panel-nut">
+                <div class="calc-form">
+                    <div class="calc-form-row">
+                        <div class="calc-field">
+                            <label data-i18n="calc.field.size">规格 *</label>
+                            <select id="nutD">
+                                <option value="3">M3</option><option value="4">M4</option>
+                                <option value="5">M5</option><option value="6" selected>M6</option>
+                                <option value="8">M8</option><option value="10">M10</option>
+                                <option value="12">M12</option><option value="14">M14</option>
+                                <option value="16">M16</option><option value="20">M20</option>
+                                <option value="24">M24</option><option value="30">M30</option>
+                                <option value="36">M36</option>
+                            </select>
+                        </div>
+                        <div class="calc-field">
+                            <label data-i18n="calc.field.material">材质</label>
+                            <select id="nutMat">
+                                <option value="8.8" selected>8 级 碳钢</option>
+                                <option value="10.9">10 级 合金钢</option>
+                                <option value="a2">A2-70 不锈钢</option>
+                                <option value="a4">A4-80 不锈钢</option>
+                                <option value="brass">H62 黄铜</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary calc-btn" id="calcNutBtn">
+                        <span data-i18n="calc.btn">🔬 开始计算</span>
+                    </button>
+                </div>
+                <div class="calc-result" id="nutResult"></div>
+            </div>
+
+            <!-- 3. 螺杆计算器 -->
+            <div class="calc-panel" id="calc-panel-rod">
+                <div class="calc-form">
+                    <div class="calc-form-row">
+                        <div class="calc-field">
+                            <label data-i18n="calc.field.size">直径 d (mm) *</label>
+                            <input type="number" id="rodD" value="10" min="3" max="64" step="0.5">
+                        </div>
+                        <div class="calc-field">
+                            <label data-i18n="calc.field.length">长度 L (mm) *</label>
+                            <input type="number" id="rodL" value="1000" min="50" max="3000" step="50">
+                        </div>
+                    </div>
+                    <div class="calc-form-row">
+                        <div class="calc-field">
+                            <label data-i18n="calc.field.material">材质</label>
+                            <select id="rodMat">
+                                <option value="4.8">4.8 级 碳钢</option>
+                                <option value="8.8" selected>8.8 级 合金钢</option>
+                                <option value="10.9">10.9 级 合金钢</option>
+                                <option value="b7">B7 合金钢</option>
+                                <option value="a2">A2-70 不锈钢</option>
+                                <option value="a4">A4-80 不锈钢</option>
+                            </select>
+                        </div>
+                        <div class="calc-field" style="visibility:hidden"></div>
+                    </div>
+                    <button class="btn btn-primary calc-btn" id="calcRodBtn">
+                        <span data-i18n="calc.btn">🔬 开始计算</span>
+                    </button>
+                </div>
+                <div class="calc-result" id="rodResult"></div>
+            </div>
+
+            <!-- 4. 垫圈计算器 -->
+            <div class="calc-panel" id="calc-panel-washer">
+                <div class="calc-form">
+                    <div class="calc-form-row">
+                        <div class="calc-field">
+                            <label data-i18n="calc.field.size">适用螺栓 *</label>
+                            <select id="washerD">
+                                <option value="3">M3</option><option value="4">M4</option>
+                                <option value="5">M5</option><option value="6" selected>M6</option>
+                                <option value="8">M8</option><option value="10">M10</option>
+                                <option value="12">M12</option><option value="14">M14</option>
+                                <option value="16">M16</option><option value="20">M20</option>
+                                <option value="24">M24</option><option value="30">M30</option>
+                                <option value="36">M36</option>
+                            </select>
+                        </div>
+                        <div class="calc-field">
+                            <label data-i18n="calc.field.material">材质</label>
+                            <select id="washerMat">
+                                <option value="c1022" selected>140HV 碳钢</option>
+                                <option value="a2">A2 不锈钢</option>
+                                <option value="a4">A4 不锈钢</option>
+                                <option value="brass">H62 黄铜</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary calc-btn" id="calcWasherBtn">
+                        <span data-i18n="calc.btn">🔬 开始计算</span>
+                    </button>
+                </div>
+                <div class="calc-result" id="washerResult"></div>
+            </div>
+
+            <!-- 5. 强度对比 -->
+            <div class="calc-panel" id="calc-panel-strength">
+                <div class="calc-form">
+                    <div class="calc-form-row">
+                        <div class="calc-field">
+                            <label data-i18n="calc.field.size">螺纹大径 d (mm) *</label>
+                            <input type="number" id="strD" value="10" min="3" max="64" step="0.5">
+                        </div>
+                        <div class="calc-field">
+                            <label data-i18n="calc.field.type">螺纹类型</label>
+                            <select id="strType">
+                                <option value="metric" selected>公制 (Metric)</option>
+                                <option value="imperial">美制 (Imperial)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="calc-form-row">
+                        <div class="calc-field">
+                            <label data-i18n="calc.field.grade">强度等级</label>
+                            <select id="strGrade">
+                                <option value="4.8">4.8</option>
+                                <option value="8.8" selected>8.8</option>
+                                <option value="10.9">10.9</option>
+                                <option value="12.9">12.9</option>
+                                <option value="a2-70">A2-70</option>
+                                <option value="a4-80">A4-80</option>
+                            </select>
+                        </div>
+                        <div class="calc-field" style="visibility:hidden"></div>
+                    </div>
+                    <button class="btn btn-primary calc-btn" id="calcStrBtn">
+                        <span data-i18n="calc.btn">🔬 开始计算</span>
+                    </button>
+                </div>
+                <div class="calc-result" id="strResult"></div>
+            </div>
+
+            <p class="calc-note" data-i18n="calc.note">💡 所有计算基于 ISO 898-1 / DIN 933 / DIN 934 / DIN 976 等国际标准；用于工程估算，具体设计请参考官方标准。</p>
+        </div>
+    </section>
+
     <!-- 材质与表面处理 -->
     <section class="section material-section" id="material">
         <div class="container">
@@ -2839,6 +3393,7 @@ const productStats = products.reduce((acc, p) => {
     return acc;
 }, {});
 
+
 const productImages = {
     "B001": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIj4KPHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiMxMTE1MWQiIHJ4PSI4Ii8+Cgo8ZyBzdHJva2U9IiM3YmE3ZDQiIHN0cm9rZS13aWR0aD0iMi41IiBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiPgogIDwhLS0g5YWt6KeS5aS0IC0tPgogIDxwb2x5Z29uIHBvaW50cz0iNjAsNTUgMTQwLDU1IDE2NSw3NSAxNjUsOTUgMTQwLDExNSA2MCwxMTUgMzUsOTUgMzUsNzUiIGZpbGw9IiMxYTI1MzUiLz4KICA8cG9seWdvbiBwb2ludHM9IjY4LDY4IDEzMiw2OCAxNDgsODIgMTQ4LDg4IDEzMiwxMDIgNjgsMTAyIDUyLDg4IDUyLDgyIiBzdHJva2Utd2lkdGg9IjEiIG9wYWNpdHk9IjAuNCIvPgogIDwhLS0g5p2G6YOoIC0tPgogIDxyZWN0IHg9IjkyIiB5PSIxMTUiIHdpZHRoPSIxNiIgaGVpZ2h0PSI1MCIgZmlsbD0iIzFhMjUzNSIvPgo8L2c+CjwhLS0g6J6657q5IC0tPgo8ZyBzdHJva2U9IiNmNzgxMWEiIHN0cm9rZS13aWR0aD0iMS41IiBmaWxsPSJub25lIj4KICA8bGluZSB4MT0iOTIiIHkxPSIxMjAiIHgyPSIxMDgiIHkyPSIxMjAiLz4KICA8bGluZSB4MT0iOTIiIHkxPSIxMjUiIHgyPSIxMDgiIHkyPSIxMjUiLz4KICA8bGluZSB4MT0iOTIiIHkxPSIxMzAiIHgyPSIxMDgiIHkyPSIxMzAiLz4KICA8bGluZSB4MT0iOTIiIHkxPSIxMzUiIHgyPSIxMDgiIHkyPSIxMzUiLz4KICA8bGluZSB4MT0iOTIiIHkxPSIxNDAiIHgyPSIxMDgiIHkyPSIxNDAiLz4KICA8bGluZSB4MT0iOTIiIHkxPSIxNDUiIHgyPSIxMDgiIHkyPSIxNDUiLz4KICA8bGluZSB4MT0iOTIiIHkxPSIxNTAiIHgyPSIxMDgiIHkyPSIxNTAiLz4KICA8bGluZSB4MT0iOTIiIHkxPSIxNTUiIHgyPSIxMDgiIHkyPSIxNTUiLz4KICA8bGluZSB4MT0iOTIiIHkxPSIxNjAiIHgyPSIxMDgiIHkyPSIxNjAiLz4KPC9nPgo8IS0tIOW6lemDqOWwluinkiAtLT4KPGcgc3Ryb2tlPSIjN2JhN2Q0IiBzdHJva2Utd2lkdGg9IjIiIGZpbGw9Im5vbmUiPgogIDxsaW5lIHgxPSI5MiIgeTE9IjE2NSIgeDI9IjEwMCIgeTI9IjE4MCIvPgogIDxsaW5lIHgxPSIxMDgiIHkxPSIxNjUiIHgyPSIxMDAiIHkyPSIxODAiLz4KPC9nPgo8IS0tIOWwuuWvuOagh+azqCAtLT4KPGcgc3Ryb2tlPSIjNWE4OWJkIiBzdHJva2Utd2lkdGg9IjAuNSIgZmlsbD0iIzVhODliZCIgZm9udC1mYW1pbHk9Im1vbm9zcGFjZSIgZm9udC1zaXplPSI3Ij4KICA8bGluZSB4MT0iMTcwIiB5MT0iNTUiIHgyPSIxODAiIHkyPSI1NSIvPgogIDxsaW5lIHgxPSIxNzAiIHkxPSIxMTUiIHgyPSIxODAiIHkyPSIxMTUiLz4KICA8bGluZSB4MT0iMTc4IiB5MT0iNTUiIHgyPSIxNzgiIHkyPSIxMTUiLz4KICA8dGV4dCB4PSIxODIiIHk9Ijg4Ij5BL0Y8L3RleHQ+CjwvZz4KCjwvc3ZnPg==",
     "B002": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIj4KPHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiMxMTE1MWQiIHJ4PSI4Ii8+Cgo8ZyBzdHJva2U9IiM3YmE3ZDQiIHN0cm9rZS13aWR0aD0iMi41IiBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiPgogIDwhLS0g5YWt6KeS5aS0IC0tPgogIDxwb2x5Z29uIHBvaW50cz0iNjAsNTUgMTQwLDU1IDE2NSw3NSAxNjUsOTUgMTQwLDExNSA2MCwxMTUgMzUsOTUgMzUsNzUiIGZpbGw9IiMxYTI1MzUiLz4KICA8cG9seWdvbiBwb2ludHM9IjY4LDY4IDEzMiw2OCAxNDgsODIgMTQ4LDg4IDEzMiwxMDIgNjgsMTAyIDUyLDg4IDUyLDgyIiBzdHJva2Utd2lkdGg9IjEiIG9wYWNpdHk9IjAuNCIvPgogIDwhLS0g5p2G6YOoIC0tPgogIDxyZWN0IHg9IjkyIiB5PSIxMTUiIHdpZHRoPSIxNiIgaGVpZ2h0PSI1MCIgZmlsbD0iIzFhMjUzNSIvPgo8L2c+CjwhLS0g6J6657q5IC0tPgo8ZyBzdHJva2U9IiNmNzgxMWEiIHN0cm9rZS13aWR0aD0iMS41IiBmaWxsPSJub25lIj4KICA8bGluZSB4MT0iOTIiIHkxPSIxMjAiIHgyPSIxMDgiIHkyPSIxMjAiLz4KICA8bGluZSB4MT0iOTIiIHkxPSIxMjUiIHgyPSIxMDgiIHkyPSIxMjUiLz4KICA8bGluZSB4MT0iOTIiIHkxPSIxMzAiIHgyPSIxMDgiIHkyPSIxMzAiLz4KICA8bGluZSB4MT0iOTIiIHkxPSIxMzUiIHgyPSIxMDgiIHkyPSIxMzUiLz4KICA8bGluZSB4MT0iOTIiIHkxPSIxNDAiIHgyPSIxMDgiIHkyPSIxNDAiLz4KICA8bGluZSB4MT0iOTIiIHkxPSIxNDUiIHgyPSIxMDgiIHkyPSIxNDUiLz4KICA8bGluZSB4MT0iOTIiIHkxPSIxNTAiIHgyPSIxMDgiIHkyPSIxNTAiLz4KICA8bGluZSB4MT0iOTIiIHkxPSIxNTUiIHgyPSIxMDgiIHkyPSIxNTUiLz4KICA8bGluZSB4MT0iOTIiIHkxPSIxNjAiIHgyPSIxMDgiIHkyPSIxNjAiLz4KPC9nPgo8IS0tIOW6lemDqOWwluinkiAtLT4KPGcgc3Ryb2tlPSIjN2JhN2Q0IiBzdHJva2Utd2lkdGg9IjIiIGZpbGw9Im5vbmUiPgogIDxsaW5lIHgxPSI5MiIgeTE9IjE2NSIgeDI9IjEwMCIgeTI9IjE4MCIvPgogIDxsaW5lIHgxPSIxMDgiIHkxPSIxNjUiIHgyPSIxMDAiIHkyPSIxODAiLz4KPC9nPgo8IS0tIOWwuuWvuOagh+azqCAtLT4KPGcgc3Ryb2tlPSIjNWE4OWJkIiBzdHJva2Utd2lkdGg9IjAuNSIgZmlsbD0iIzVhODliZCIgZm9udC1mYW1pbHk9Im1vbm9zcGFjZSIgZm9udC1zaXplPSI3Ij4KICA8bGluZSB4MT0iMTcwIiB5MT0iNTUiIHgyPSIxODAiIHkyPSI1NSIvPgogIDxsaW5lIHgxPSIxNzAiIHkxPSIxMTUiIHgyPSIxODAiIHkyPSIxMTUiLz4KICA8bGluZSB4MT0iMTc4IiB5MT0iNTUiIHgyPSIxNzgiIHkyPSIxMTUiLz4KICA8dGV4dCB4PSIxODIiIHk9Ijg4Ij5BL0Y8L3RleHQ+CjwvZz4KCjwvc3ZnPg==",
@@ -2941,6 +3496,684 @@ const productImages = {
     "F029": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIj4KPHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiMxMTE1MWQiIHJ4PSI4Ii8+Cgo8ZyBzdHJva2U9IiM3YmE3ZDQiIHN0cm9rZS13aWR0aD0iMi41IiBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiPgogIDwhLS0g5YWt6KeS5aS0IC0tPgogIDxwb2x5Z29uIHBvaW50cz0iNjAsNTUgMTQwLDU1IDE2NSw3NSAxNjUsOTUgMTQwLDExNSA2MCwxMTUgMzUsOTUgMzUsNzUiIGZpbGw9IiMxYTI1MzUiLz4KICA8cG9seWdvbiBwb2ludHM9IjY4LDY4IDEzMiw2OCAxNDgsODIgMTQ4LDg4IDEzMiwxMDIgNjgsMTAyIDUyLDg4IDUyLDgyIiBzdHJva2Utd2lkdGg9IjEiIG9wYWNpdHk9IjAuNCIvPgogIDwhLS0g5p2G6YOoIC0tPgogIDxyZWN0IHg9IjkyIiB5PSIxMTUiIHdpZHRoPSIxNiIgaGVpZ2h0PSI1MCIgZmlsbD0iIzFhMjUzNSIvPgo8L2c+CjwhLS0g6J6657q5IC0tPgo8ZyBzdHJva2U9IiNmNzgxMWEiIHN0cm9rZS13aWR0aD0iMS41IiBmaWxsPSJub25lIj4KICA8bGluZSB4MT0iOTIiIHkxPSIxMjAiIHgyPSIxMDgiIHkyPSIxMjAiLz4KICA8bGluZSB4MT0iOTIiIHkxPSIxMjUiIHgyPSIxMDgiIHkyPSIxMjUiLz4KICA8bGluZSB4MT0iOTIiIHkxPSIxMzAiIHgyPSIxMDgiIHkyPSIxMzAiLz4KICA8bGluZSB4MT0iOTIiIHkxPSIxMzUiIHgyPSIxMDgiIHkyPSIxMzUiLz4KICA8bGluZSB4MT0iOTIiIHkxPSIxNDAiIHgyPSIxMDgiIHkyPSIxNDAiLz4KICA8bGluZSB4MT0iOTIiIHkxPSIxNDUiIHgyPSIxMDgiIHkyPSIxNDUiLz4KICA8bGluZSB4MT0iOTIiIHkxPSIxNTAiIHgyPSIxMDgiIHkyPSIxNTAiLz4KICA8bGluZSB4MT0iOTIiIHkxPSIxNTUiIHgyPSIxMDgiIHkyPSIxNTUiLz4KICA8bGluZSB4MT0iOTIiIHkxPSIxNjAiIHgyPSIxMDgiIHkyPSIxNjAiLz4KPC9nPgo8IS0tIOW6lemDqOWwluinkiAtLT4KPGcgc3Ryb2tlPSIjN2JhN2Q0IiBzdHJva2Utd2lkdGg9IjIiIGZpbGw9Im5vbmUiPgogIDxsaW5lIHgxPSI5MiIgeTE9IjE2NSIgeDI9IjEwMCIgeTI9IjE4MCIvPgogIDxsaW5lIHgxPSIxMDgiIHkxPSIxNjUiIHgyPSIxMDAiIHkyPSIxODAiLz4KPC9nPgo8IS0tIOWwuuWvuOagh+azqCAtLT4KPGcgc3Ryb2tlPSIjNWE4OWJkIiBzdHJva2Utd2lkdGg9IjAuNSIgZmlsbD0iIzVhODliZCIgZm9udC1mYW1pbHk9Im1vbm9zcGFjZSIgZm9udC1zaXplPSI3Ij4KICA8bGluZSB4MT0iMTcwIiB5MT0iNTUiIHgyPSIxODAiIHkyPSI1NSIvPgogIDxsaW5lIHgxPSIxNzAiIHkxPSIxMTUiIHgyPSIxODAiIHkyPSIxMTUiLz4KICA8bGluZSB4MT0iMTc4IiB5MT0iNTUiIHgyPSIxNzgiIHkyPSIxMTUiLz4KICA8dGV4dCB4PSIxODIiIHk9Ijg4Ij5BL0Y8L3RleHQ+CjwvZz4KCjwvc3ZnPg==",
     "F030": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIj4KPHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiMxMTE1MWQiIHJ4PSI4Ii8+Cgo8ZyBzdHJva2U9IiM3YmE3ZDQiIHN0cm9rZS13aWR0aD0iMi41IiBmaWxsPSJub25lIj4KICA8IS0tIOWchuWktO+8iOiYkeiPh+WktO+8iS0tPgogIDxwYXRoIGQ9Ik03MCA2MCBRNzAgMzUgMTAwIDM1IFExMzAgMzUgMTMwIDYwIEwxMzAgNzAgTDcwIDcwIFoiIGZpbGw9IiMxYTI1MzUiLz4KICA8IS0tIOaWuemiiCAtLT4KICA8cmVjdCB4PSI5MiIgeT0iNzAiIHdpZHRoPSIxNiIgaGVpZ2h0PSIyMCIgZmlsbD0iIzFhMjUzNSIvPgogIDwhLS0g5p2G6YOoIC0tPgogIDxyZWN0IHg9IjkyIiB5PSI5MCIgd2lkdGg9IjE2IiBoZWlnaHQ9Ijc1IiBmaWxsPSIjMWEyNTM1Ii8+CjwvZz4KPCEtLSDonrrnurkgLS0+CjxnIHN0cm9rZT0iI2Y3ODExYSIgc3Ryb2tlLXdpZHRoPSIxLjUiIGZpbGw9Im5vbmUiPgogIDxsaW5lIHgxPSI5MiIgeTE9Ijk4IiB4Mj0iMTA4IiB5Mj0iOTgiLz4KICA8bGluZSB4MT0iOTIiIHkxPSIxMDUiIHgyPSIxMDgiIHkyPSIxMDUiLz4KICA8bGluZSB4MT0iOTIiIHkxPSIxMTIiIHgyPSIxMDgiIHkyPSIxMTIiLz4KICA8bGluZSB4MT0iOTIiIHkxPSIxMTkiIHgyPSIxMDgiIHkyPSIxMTkiLz4KICA8bGluZSB4MT0iOTIiIHkxPSIxMjYiIHgyPSIxMDgiIHkyPSIxMjYiLz4KICA8bGluZSB4MT0iOTIiIHkxPSIxMzMiIHgyPSIxMDgiIHkyPSIxMzMiLz4KICA8bGluZSB4MT0iOTIiIHkxPSIxNDAiIHgyPSIxMDgiIHkyPSIxNDAiLz4KICA8bGluZSB4MT0iOTIiIHkxPSIxNDciIHgyPSIxMDgiIHkyPSIxNDciLz4KICA8bGluZSB4MT0iOTIiIHkxPSIxNTQiIHgyPSIxMDgiIHkyPSIxNTQiLz4KPC9nPgoKPC9zdmc+",
 };
+
+// ===== 紧固件计算器：规格参数数据表 =====
+// 数据源：
+// - DIN 933 / ISO 4017 (六角螺栓)
+// - DIN 934 / ISO 4032 (六角螺母)
+// - DIN 125 / ISO 7089 (平垫圈)
+// - DIN 976 (全螺纹螺杆)
+// - ISO 898-1 (力学性能)
+
+// ===== 材质密度 (g/cm³) =====
+const MATERIAL_DENSITY = {
+    'c1022': { name_zh: 'C1022 碳钢', name_en: 'C1022 Carbon Steel', density: 7.85 },
+    'c1045': { name_zh: 'C1045 碳钢', name_en: 'C1045 Carbon Steel', density: 7.85 },
+    '8.8': { name_zh: '8.8 级 合金钢', name_en: 'Grade 8.8 Alloy Steel', density: 7.85 },
+    '10.9': { name_zh: '10.9 级 合金钢', name_en: 'Grade 10.9 Alloy Steel', density: 7.85 },
+    '12.9': { name_zh: '12.9 级 合金钢', name_en: 'Grade 12.9 Alloy Steel', density: 7.85 },
+    'b7': { name_zh: 'B7 合金钢 (ASTM A193)', name_en: 'B7 Alloy Steel', density: 7.85 },
+    'a2': { name_zh: 'A2-70 不锈钢 (304)', name_en: 'A2-70 Stainless (304)', density: 7.93 },
+    'a4': { name_zh: 'A4-80 不锈钢 (316)', name_en: 'A4-80 Stainless (316)', density: 7.98 },
+    'brass': { name_zh: 'H62 黄铜', name_en: 'H62 Brass', density: 8.43 }
+};
+
+// ===== 力学性能等级 (MPa) =====
+// 抗拉强度 Rm / 屈服强度 Rp0.2 / 推荐拧紧力矩系数 K
+const STRENGTH_GRADES = {
+    '4.8': { rm: 400, rp: 320, name_zh: '4.8 级', name_en: 'Grade 4.8' },
+    '8.8': { rm: 800, rp: 640, name_zh: '8.8 级', name_en: 'Grade 8.8' },
+    '10.9': { rm: 1040, rp: 940, name_zh: '10.9 级', name_en: 'Grade 10.9' },
+    '12.9': { rm: 1220, rp: 1100, name_zh: '12.9 级', name_en: 'Grade 12.9' },
+    'a2-70': { rm: 700, rp: 450, name_zh: 'A2-70 不锈钢', name_en: 'A2-70 Stainless' },
+    'a4-80': { rm: 800, rp: 600, name_zh: 'A4-80 不锈钢', name_en: 'A4-80 Stainless' }
+};
+
+// ===== 公制螺栓规格表 (DIN 933 / ISO 4017) =====
+// d=大径, p=螺距, k=头高, s=对边, e=对角, dk=头径
+// 数据单位：mm
+const BOLT_METRIC = [
+    { d: 3, p: 0.5, k: 2.0, s: 5.5, e: 6.01, dk: 5.3 },
+    { d: 4, p: 0.7, k: 2.8, s: 7, e: 7.66, dk: 7.0 },
+    { d: 5, p: 0.8, k: 3.5, s: 8, e: 8.79, dk: 8.6 },
+    { d: 6, p: 1.0, k: 4.0, s: 10, e: 10.95, dk: 10.6 },
+    { d: 8, p: 1.25, k: 5.3, s: 13, e: 14.26, dk: 14.2 },
+    { d: 10, p: 1.5, k: 6.4, s: 16, e: 17.62, dk: 17.7 },
+    { d: 12, p: 1.75, k: 7.5, s: 18, e: 19.86, dk: 20.0 },
+    { d: 14, p: 2.0, k: 8.8, s: 21, e: 23.15, dk: 23.4 },
+    { d: 16, p: 2.0, k: 10.0, s: 24, e: 26.75, dk: 26.7 },
+    { d: 20, p: 2.5, k: 12.5, s: 30, e: 33.53, dk: 33.6 },
+    { d: 24, p: 3.0, k: 15.0, s: 36, e: 39.98, dk: 40.0 },
+    { d: 30, p: 3.5, k: 18.7, s: 46, e: 50.85, dk: 51.0 },
+    { d: 36, p: 4.0, k: 22.5, s: 55, e: 60.79, dk: 61.0 }
+];
+
+// ===== 公制螺母规格表 (DIN 934 / ISO 4032) =====
+// d=螺纹大径, m=厚度, s=对边, e=对角
+const NUT_METRIC = [
+    { d: 3, m: 2.4, s: 5.5, e: 6.01 },
+    { d: 4, m: 3.2, s: 7, e: 7.66 },
+    { d: 5, m: 4.0, s: 8, e: 8.79 },
+    { d: 6, m: 5.0, s: 10, e: 10.95 },
+    { d: 8, m: 6.5, s: 13, e: 14.26 },
+    { d: 10, m: 8.0, s: 16, e: 17.62 },
+    { d: 12, m: 10.0, s: 18, e: 19.86 },
+    { d: 14, m: 11.0, s: 21, e: 23.15 },
+    { d: 16, m: 13.0, s: 24, e: 26.75 },
+    { d: 20, m: 16.0, s: 30, e: 33.53 },
+    { d: 24, m: 19.0, s: 36, e: 39.98 },
+    { d: 30, m: 24.0, s: 46, e: 50.85 },
+    { d: 36, m: 29.0, s: 55, e: 60.79 }
+];
+
+// ===== 公制平垫圈规格表 (DIN 125 / ISO 7089) =====
+// d1=内径, d2=外径, h=厚度
+const WASHER_METRIC = [
+    { d: 3, d1: 3.2, d2: 7, h: 0.5 },
+    { d: 4, d1: 4.3, d2: 9, h: 0.8 },
+    { d: 5, d1: 5.3, d2: 10, h: 1.0 },
+    { d: 6, d1: 6.4, d2: 12, h: 1.6 },
+    { d: 8, d1: 8.4, d2: 16, h: 1.6 },
+    { d: 10, d1: 10.5, d2: 20, h: 2.0 },
+    { d: 12, d1: 13.0, d2: 24, h: 2.5 },
+    { d: 14, d1: 15.0, d2: 28, h: 2.5 },
+    { d: 16, d1: 17.0, d2: 30, h: 3.0 },
+    { d: 20, d1: 21.0, d2: 37, h: 3.0 },
+    { d: 24, d1: 25.0, d2: 44, h: 4.0 },
+    { d: 30, d1: 31.0, d2: 56, h: 4.0 },
+    { d: 36, d1: 37.0, d2: 66, h: 5.0 }
+];
+
+// ===== 美制螺栓规格表 (ASME B18.2.1 / UNC & UNF) =====
+const BOLT_IMPERIAL = [
+    // UNC
+    { size: '#4-40 UNC', d: 2.845, p: 0.635, k: 1.40, s: 4.76, threads: 40 },
+    { size: '#6-32 UNC', d: 3.505, p: 0.794, k: 1.65, s: 5.56, threads: 32 },
+    { size: '#8-32 UNC', d: 4.166, p: 0.794, k: 1.91, s: 6.35, threads: 32 },
+    { size: '#10-24 UNC', d: 4.826, p: 1.058, k: 2.21, s: 7.14, threads: 24 },
+    { size: '1/4"-20 UNC', d: 6.350, p: 1.270, k: 2.84, s: 9.53, threads: 20 },
+    { size: '5/16"-18 UNC', d: 7.938, p: 1.411, k: 3.56, s: 11.91, threads: 18 },
+    { size: '3/8"-16 UNC', d: 9.525, p: 1.588, k: 4.24, s: 14.29, threads: 16 },
+    { size: '7/16"-14 UNC', d: 11.112, p: 1.814, k: 4.85, s: 15.88, threads: 14 },
+    { size: '1/2"-13 UNC', d: 12.700, p: 1.954, k: 5.56, s: 19.05, threads: 13 },
+    { size: '9/16"-12 UNC', d: 14.288, p: 2.117, k: 6.25, s: 20.64, threads: 12 },
+    { size: '5/8"-11 UNC', d: 15.875, p: 2.309, k: 6.96, s: 23.81, threads: 11 },
+    { size: '3/4"-10 UNC', d: 19.050, p: 2.540, k: 8.36, s: 28.58, threads: 10 },
+    { size: '7/8"-9 UNC', d: 22.225, p: 2.822, k: 9.78, s: 33.34, threads: 9 },
+    { size: '1"-8 UNC', d: 25.400, p: 3.175, k: 11.13, s: 38.10, threads: 8 },
+    // UNF
+    { size: '1/4"-28 UNF', d: 6.350, p: 0.907, k: 2.84, s: 9.53, threads: 28 },
+    { size: '5/16"-24 UNF', d: 7.938, p: 1.058, k: 3.56, s: 11.91, threads: 24 },
+    { size: '3/8"-24 UNF', d: 9.525, p: 1.058, k: 4.24, s: 14.29, threads: 24 },
+    { size: '1/2"-20 UNF', d: 12.700, p: 1.270, k: 5.56, s: 19.05, threads: 20 },
+    { size: '5/8"-18 UNF', d: 15.875, p: 1.411, k: 6.96, s: 23.81, threads: 18 },
+    { size: '3/4"-16 UNF', d: 19.050, p: 1.588, k: 8.36, s: 28.58, threads: 16 }
+];
+
+
+// ===== 紧固件计算引擎 =====
+// 基于 ISO 898-1 / DIN 933 / ISO 4017 工程公式
+
+const CalcEngine = {
+    // ===== 通用：螺栓杆部抗拉截面面积 =====
+    // As = (π/4) × (d - 0.9382p)²  (ISO 898-1 应力截面积公式)
+    tensileArea(d, p) {
+        return (Math.PI / 4) * Math.pow(d - 0.9382 * p, 2);
+    },
+
+    // ===== 螺栓计算 =====
+    bolt({ d, p, k, s, dk, length, material, grade }) {
+        const mat = MATERIAL_DENSITY[material];
+        const grd = STRENGTH_GRADES[grade];
+        if (!mat) throw new Error('Material not found: ' + material);
+        if (!grd) throw new Error('Grade not found: ' + grade);
+
+        // 体积（mm³）= 头部体积 + 杆部体积
+        // 头部（近似圆柱体）= π × (dk/2)² × k
+        const headVol = Math.PI * Math.pow(dk / 2, 2) * k;
+        // 杆部（螺纹段，简化为光杆）= π × (d/2)² × length
+        const bodyVol = Math.PI * Math.pow(d / 2, 2) * length;
+        const totalVol = headVol + bodyVol;
+
+        // 重量（克）= 体积(cm³) × 密度(g/cm³)
+        // 1 mm³ = 0.001 cm³
+        const volCm3 = totalVol * 0.001;
+        const weight = volCm3 * mat.density;
+
+        // 抗拉截面积 (mm²)
+        const As = this.tensileArea(d, p);
+
+        // 抗拉强度 (N) = As × Rm
+        const Fm = As * grd.rm;
+        // 屈服强度 (N) = As × Rp
+        const Fp = As * grd.rp;
+        // 推荐拧紧力矩 (N·m)，K=0.2 拧紧系数
+        const torque = 0.2 * Fp * d * 0.001;
+
+        return {
+            type: 'bolt',
+            input: { d, p, k, s, dk, length, material, grade },
+            spec: {
+                '大径 d': `${d.toFixed(3)} mm`,
+                '螺距 p': `${p.toFixed(3)} mm`,
+                '头高 k': `${k.toFixed(2)} mm`,
+                '对边 s': `${s.toFixed(2)} mm`,
+                '头径 dk': `${dk.toFixed(2)} mm`,
+                '长度 L': `${length} mm`
+            },
+            dimensions: {
+                totalLength: length + k,
+                headHeight: k,
+                shankLength: length,
+                shankDiameter: d,
+                acrossFlats: s,
+                acrossCorners: s * 1.155  // 六角对角 = 对边 × 2/√3
+            },
+            volume: {
+                headCm3: (headVol * 0.001).toFixed(4),
+                bodyCm3: (bodyVol * 0.001).toFixed(4),
+                totalCm3: volCm3.toFixed(4),
+                totalMm3: Math.round(totalVol)
+            },
+            weight: {
+                grams: weight.toFixed(2),
+                kg: (weight / 1000).toFixed(4),
+                lbs: (weight / 453.592).toFixed(4)
+            },
+            strength: {
+                material: mat,
+                grade: grd,
+                tensileArea: As.toFixed(3),
+                tensileLoadKN: (Fm / 1000).toFixed(2),
+                yieldLoadKN: (Fp / 1000).toFixed(2),
+                torqueNm: torque.toFixed(2),
+                shearLoadKN: ((0.6 * Fm) / 1000).toFixed(2)  // 剪切承载约 60% 抗拉
+            }
+        };
+    },
+
+    // ===== 螺母计算 =====
+    nut({ d, m, s, material }) {
+        const mat = MATERIAL_DENSITY[material];
+        if (!mat) throw new Error('Material not found: ' + material);
+
+        // 体积 = 六角棱柱体积 - 中心孔体积
+        // 六角棱柱：s² × m × (√3/2) × 3 / 2 = s² × m × 3√3/4 ≈ 1.299 × s² × m
+        const hexVol = 1.299 * s * s * m;
+        // 中心孔：π × (d/2)² × m（简化）
+        const holeVol = Math.PI * Math.pow(d / 2, 2) * m;
+        const netVol = hexVol - holeVol;
+        const volCm3 = netVol * 0.001;
+        const weight = volCm3 * mat.density;
+
+        return {
+            type: 'nut',
+            input: { d, m, s, material },
+            spec: {
+                '螺纹大径 d': `${d.toFixed(2)} mm`,
+                '螺母厚度 m': `${m.toFixed(2)} mm`,
+                '对边 s': `${s.toFixed(2)} mm`,
+                '对角 e': `${(s * 1.155).toFixed(2)} mm`
+            },
+            dimensions: {
+                thickness: m,
+                acrossFlats: s,
+                acrossCorners: s * 1.155,
+                innerDiameter: d
+            },
+            volume: {
+                hexCm3: (hexVol * 0.001).toFixed(4),
+                holeCm3: (holeVol * 0.001).toFixed(4),
+                netCm3: volCm3.toFixed(4),
+                totalMm3: Math.round(netVol)
+            },
+            weight: {
+                grams: weight.toFixed(2),
+                kg: (weight / 1000).toFixed(4),
+                lbs: (weight / 453.592).toFixed(4)
+            },
+            material: mat
+        };
+    },
+
+    // ===== 螺杆计算（按长度）=====
+    rod({ d, length, material }) {
+        const mat = MATERIAL_DENSITY[material];
+        if (!mat) throw new Error('Material not found: ' + material);
+
+        // 体积（光杆简化）= π × (d/2)² × length
+        const vol = Math.PI * Math.pow(d / 2, 2) * length;
+        const volCm3 = vol * 0.001;
+        const weight = volCm3 * mat.density;
+
+        // 单位重量（每米）
+        const perMeter = (Math.PI * Math.pow(d / 2, 2) * 1000) * 0.001 * mat.density;
+
+        return {
+            type: 'rod',
+            input: { d, length, material },
+            spec: {
+                '直径 d': `${d.toFixed(2)} mm`,
+                '长度 L': `${length} mm`,
+                '每米重量': `${perMeter.toFixed(3)} g/m`
+            },
+            dimensions: {
+                diameter: d,
+                length: length,
+                aspectRatio: (length / d).toFixed(2)
+            },
+            volume: {
+                cm3: volCm3.toFixed(4),
+                mm3: Math.round(vol),
+                m3: (vol * 1e-9).toFixed(6)
+            },
+            weight: {
+                grams: weight.toFixed(2),
+                kg: (weight / 1000).toFixed(4),
+                lbs: (weight / 453.592).toFixed(4),
+                perMeter: perMeter.toFixed(3)
+            },
+            material: mat
+        };
+    },
+
+    // ===== 垫圈计算 =====
+    washer({ d, material }) {
+        const mat = MATERIAL_DENSITY[material];
+        if (!mat) throw new Error('Material not found: ' + material);
+
+        const spec = WASHER_METRIC.find(w => w.d === d);
+        if (!spec) throw new Error('Washer size not found: M' + d);
+
+        // 体积 = π × ((d2/2)² - (d1/2)²) × h
+        const vol = Math.PI * (Math.pow(spec.d2 / 2, 2) - Math.pow(spec.d1 / 2, 2)) * spec.h;
+        const volCm3 = vol * 0.001;
+        const weight = volCm3 * mat.density;
+
+        // 承压面积（外径 - 内径的环形面积）
+        const loadArea = Math.PI * (Math.pow(spec.d2 / 2, 2) - Math.pow(spec.d1 / 2, 2));
+
+        return {
+            type: 'washer',
+            input: { d, material },
+            spec: {
+                '适用螺栓': `M${d}`,
+                '内径 d1': `${spec.d1.toFixed(2)} mm`,
+                '外径 d2': `${spec.d2.toFixed(2)} mm`,
+                '厚度 h': `${spec.h.toFixed(2)} mm`
+            },
+            dimensions: spec,
+            volume: {
+                cm3: volCm3.toFixed(4),
+                mm3: Math.round(vol)
+            },
+            weight: {
+                grams: weight.toFixed(3),
+                kg: (weight / 1000).toFixed(5),
+                lbs: (weight / 453.592).toFixed(4)
+            },
+            load: {
+                bearingArea: loadArea.toFixed(2),
+                unit: 'mm²'
+            },
+            material: mat
+        };
+    },
+
+    // ===== 强度对比（给定规格 + 等级）=====
+    strengthCompare({ d, grade, type = 'metric' }) {
+        const grd = STRENGTH_GRADES[grade];
+        if (!grd) throw new Error('Grade not found: ' + grade);
+
+        let p = 0;
+        if (type === 'metric') {
+            const bolt = BOLT_METRIC.find(b => b.d === d);
+            if (!bolt) throw new Error('Bolt size not found: M' + d);
+            p = bolt.p;
+        } else {
+            // 美制：查表
+            const bolt = BOLT_IMPERIAL.find(b => b.d === d);
+            if (bolt) p = bolt.p;
+        }
+
+        const As = p > 0 ? this.tensileArea(d, p) : (Math.PI / 4) * Math.pow(d, 2);
+
+        const Fm = As * grd.rm;
+        const Fp = As * grd.rp;
+        const torque = 0.2 * Fp * d * 0.001;
+
+        return {
+            type: 'strength',
+            input: { d, grade, threadType: type, pitch: p },
+            spec: {
+                '螺纹大径 d': `${d.toFixed(2)} mm`,
+                '螺距 p': p ? `${p.toFixed(3)} mm` : 'N/A',
+                '强度等级': grd.name_zh + ' / ' + grd.name_en,
+                '抗拉强度 Rm': `${grd.rm} MPa`,
+                '屈服强度 Rp0.2': `${grd.rp} MPa`
+            },
+            dimensions: {
+                tensileArea: `${As.toFixed(3)} mm²`
+            },
+            strength: {
+                tensileArea: As.toFixed(3),
+                tensileLoadKN: (Fm / 1000).toFixed(2),
+                yieldLoadKN: (Fp / 1000).toFixed(2),
+                torqueNm: torque.toFixed(2),
+                shearLoadKN: ((0.6 * Fm) / 1000).toFixed(2),
+                safeLoadKN: ((0.5 * Fp) / 1000).toFixed(2)  // 50% 屈服安全系数
+            },
+            grade: grd
+        };
+    },
+
+    // ===== 查找最近规格（公制螺栓）=====
+    findNearestBolt(d) {
+        return BOLT_METRIC.find(b => b.d === d) || BOLT_METRIC.reduce((prev, curr) => {
+            return Math.abs(curr.d - d) < Math.abs(prev.d - d) ? curr : prev;
+        });
+    },
+
+    findNearestNut(d) {
+        return NUT_METRIC.find(n => n.d === d) || NUT_METRIC.reduce((prev, curr) => {
+            return Math.abs(curr.d - d) < Math.abs(prev.d - d) ? curr : prev;
+        });
+    }
+};
+
+
+// ===== 紧固件计算器 UI 交互 =====
+
+// 标签页切换
+document.querySelectorAll('.calc-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+        document.querySelectorAll('.calc-tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.calc-panel').forEach(p => p.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById('calc-panel-' + tab.dataset.calc).classList.add('active');
+    });
+});
+
+// ===== 渲染结果卡片 =====
+function renderResult(targetEl, result, type) {
+    const html = formatResultHTML(result, type);
+    targetEl.innerHTML = html;
+    targetEl.classList.add('visible');
+    targetEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function formatResultHTML(r, type) {
+    const lang = currentLang;
+    const L = (zh, en) => lang === 'en' ? en : zh;
+
+    let html = '<div class="result-header">';
+    html += `<div class="result-title">${L('� 计算结果', '📊 Results')}</div>`;
+    html += `<div class="result-subtitle">${typeLabel(type, lang)}</div>`;
+    html += '</div>';
+
+    // 规格参数区
+    html += '<div class="result-section">';
+    html += `<div class="result-section-title">${L('📐 规格参数', '📐 Specifications')}</div>`;
+    html += '<div class="result-grid">';
+    Object.entries(r.spec).forEach(([k, v]) => {
+        const labelZh = k;
+        const labelEn = translateKey(k, lang);
+        html += `
+            <div class="result-item">
+                <div class="result-label">${lang === 'en' ? labelEn : labelZh}</div>
+                <div class="result-value">${v}</div>
+            </div>
+        `;
+    });
+    html += '</div></div>';
+
+    // 尺寸 / 体积 / 重量（合并）
+    if (r.volume || r.weight || r.dimensions) {
+        html += '<div class="result-section">';
+        html += `<div class="result-section-title">${L('📏 尺寸 · 体积 · 重量', '📏 Dimensions · Volume · Weight')}</div>`;
+        html += '<div class="result-grid">';
+
+        if (r.dimensions) {
+            Object.entries(r.dimensions).forEach(([k, v]) => {
+                const display = formatValue(v);
+                html += `
+                    <div class="result-item">
+                        <div class="result-label">${translateKey('dim.' + k, lang) || k}</div>
+                        <div class="result-value">${display}</div>
+                    </div>
+                `;
+            });
+        }
+        if (r.volume) {
+            Object.entries(r.volume).forEach(([k, v]) => {
+                html += `
+                    <div class="result-item">
+                        <div class="result-label">${translateKey('vol.' + k, lang) || k}</div>
+                        <div class="result-value">${v}</div>
+                    </div>
+                `;
+            });
+        }
+        if (r.weight) {
+            Object.entries(r.weight).forEach(([k, v]) => {
+                html += `
+                    <div class="result-item">
+                        <div class="result-label">${translateKey('weight.' + k, lang) || k}</div>
+                        <div class="result-value">${v}</div>
+                    </div>
+                `;
+            });
+        }
+        html += '</div></div>';
+    }
+
+    // 强度（仅螺栓/强度对比）
+    if (r.strength) {
+        html += '<div class="result-section result-strength">';
+        html += `<div class="result-section-title">${L('💪 力学性能', '💪 Mechanical Strength')}</div>`;
+        html += '<div class="result-grid">';
+        Object.entries(r.strength).forEach(([k, v]) => {
+            if (['material', 'grade'].includes(k)) return;
+            html += `
+                <div class="result-item">
+                    <div class="result-label">${translateKey('str.' + k, lang) || k}</div>
+                    <div class="result-value">${typeof v === 'number' ? v.toFixed(2) : v}</div>
+                </div>
+            `;
+        });
+        html += '</div></div>';
+
+        if (r.strength.material) {
+            const mat = r.strength.material;
+            html += `<div class="result-meta">${L('材质：', 'Material:')} ${lang === 'en' ? mat.name_en : mat.name_zh} (${mat.density} g/cm³)</div>`;
+        }
+    }
+
+    if (r.material && type === 'nut') {
+        const mat = r.material;
+        html += `<div class="result-meta">${L('材质：', 'Material:')} ${lang === 'en' ? mat.name_en : mat.name_zh} | ${L('密度', 'Density')}: ${mat.density} g/cm³</div>`;
+    }
+    // 显示材料密度（通用，bolt/rod/washer 都有）
+    if (r.strength && r.strength.material) {
+        // 已在 strength 区显示过了，避免重复
+    } else if (r.material) {
+        const mat = r.material;
+        const metaDiv = `<div class="result-meta">${L('材质：', 'Material:')} ${lang === 'en' ? mat.name_en : mat.name_zh} | ${L('密度', 'Density')}: ${mat.density} g/cm³</div>`;
+        // 找到 result-note 之前插入
+        html = html.replace('<div class="result-note">', metaDiv + '<div class="result-note">');
+    }
+
+    // 提示
+    html += `<div class="result-note">${L('⚠️ 计算基于 ISO 898-1 / DIN 标准，实际请以工程实测为准。', '⚠️ Based on ISO 898-1 / DIN standards. For engineering use, please refer to actual measurements.')}</div>`;
+
+    return html;
+}
+
+function formatValue(v) {
+    if (typeof v === 'number') {
+        if (v < 100) return v.toFixed(2);
+        return Math.round(v).toString();
+    }
+    return v;
+}
+
+function typeLabel(type, lang) {
+    const labels = {
+        bolt: ['六角螺栓 (DIN 933)', 'Hex Bolt (DIN 933)'],
+        nut: ['六角螺母 (DIN 934)', 'Hex Nut (DIN 934)'],
+        rod: ['全螺纹螺杆 (DIN 976)', 'Threaded Rod (DIN 976)'],
+        washer: ['平垫圈 (DIN 125)', 'Flat Washer (DIN 125)'],
+        strength: ['力学性能对比', 'Strength Comparison']
+    };
+    return lang === 'en' ? labels[type][1] : labels[type][0];
+}
+
+function translateKey(key, lang) {
+    const dict = {
+        'dim.totalLength': ['总长 (mm)', 'Total Length (mm)'],
+        'dim.headHeight': ['头高 (mm)', 'Head Height (mm)'],
+        'dim.shankLength': ['杆长 (mm)', 'Shank Length (mm)'],
+        'dim.shankDiameter': ['杆径 (mm)', 'Shank Diameter (mm)'],
+        'dim.acrossFlats': ['对边 (mm)', 'Across Flats (mm)'],
+        'dim.acrossCorners': ['对角 (mm)', 'Across Corners (mm)'],
+        'dim.thickness': ['厚度 (mm)', 'Thickness (mm)'],
+        'dim.innerDiameter': ['内径 (mm)', 'Inner Diameter (mm)'],
+        'dim.diameter': ['直径 (mm)', 'Diameter (mm)'],
+        'dim.length': ['长度 (mm)', 'Length (mm)'],
+        'dim.aspectRatio': ['长径比', 'Aspect Ratio'],
+        'dim.tensileArea': ['抗拉截面积 (mm²)', 'Tensile Area (mm²)'],
+        'vol.headCm3': ['头部体积 (cm³)', 'Head Volume (cm³)'],
+        'vol.bodyCm3': ['杆部体积 (cm³)', 'Body Volume (cm³)'],
+        'vol.totalCm3': ['总体积 (cm³)', 'Total Volume (cm³)'],
+        'vol.totalMm3': ['总体积 (mm³)', 'Total Volume (mm³)'],
+        'vol.cm3': ['体积 (cm³)', 'Volume (cm³)'],
+        'vol.mm3': ['体积 (mm³)', 'Volume (mm³)'],
+        'vol.m3': ['体积 (m³)', 'Volume (m³)'],
+        'vol.hexCm3': ['六角体积 (cm³)', 'Hex Volume (cm³)'],
+        'vol.holeCm3': ['内孔体积 (cm³)', 'Hole Volume (cm³)'],
+        'vol.netCm3': ['净体积 (cm³)', 'Net Volume (cm³)'],
+        'weight.grams': ['重量 (g)', 'Weight (g)'],
+        'weight.kg': ['重量 (kg)', 'Weight (kg)'],
+        'weight.lbs': ['重量 (lbs)', 'Weight (lbs)'],
+        'weight.perMeter': ['每米重量 (g/m)', 'Weight per meter (g/m)'],
+        'str.tensileArea': ['抗拉截面积 (mm²)', 'Tensile Area (mm²)'],
+        'str.tensileLoadKN': ['抗拉承载 (kN)', 'Tensile Load (kN)'],
+        'str.yieldLoadKN': ['屈服承载 (kN)', 'Yield Load (kN)'],
+        'str.shearLoadKN': ['剪切承载 (kN)', 'Shear Load (kN)'],
+        'str.safeLoadKN': ['安全载荷 (kN)', 'Safe Load (kN)'],
+        'str.torqueNm': ['推荐力矩 (N·m)', 'Tightening Torque (N·m)']
+    };
+    if (!dict[key]) return null;
+    return lang === 'en' ? dict[key][1] : dict[key][0];
+}
+
+// ===== 1. 螺栓计算 =====
+const calcBoltBtn = document.getElementById('calcBoltBtn');
+if (calcBoltBtn) {
+    calcBoltBtn.addEventListener('click', () => {
+        const d = parseFloat(document.getElementById('boltD').value);
+        const length = parseFloat(document.getElementById('boltL').value);
+        const material = document.getElementById('boltMat').value;
+        const grade = document.getElementById('boltGrade').value;
+        const resultEl = document.getElementById('boltResult');
+
+        try {
+            const spec = CalcEngine.findNearestBolt(d);
+            const result = CalcEngine.bolt({
+                d: spec.d, p: spec.p, k: spec.k, s: spec.s, dk: spec.dk,
+                length, material, grade
+            });
+            renderResult(resultEl, result, 'bolt');
+        } catch (e) {
+            resultEl.innerHTML = `<div class="result-error">❌ ${e.message}</div>`;
+        }
+    });
+}
+
+// ===== 2. 螺母计算 =====
+const calcNutBtn = document.getElementById('calcNutBtn');
+if (calcNutBtn) {
+    calcNutBtn.addEventListener('click', () => {
+        const d = parseFloat(document.getElementById('nutD').value);
+        const material = document.getElementById('nutMat').value;
+        const resultEl = document.getElementById('nutResult');
+
+        try {
+            const spec = CalcEngine.findNearestNut(d);
+            const result = CalcEngine.nut({
+                d: spec.d, m: spec.m, s: spec.s, material
+            });
+            renderResult(resultEl, result, 'nut');
+        } catch (e) {
+            resultEl.innerHTML = `<div class="result-error">❌ ${e.message}</div>`;
+        }
+    });
+}
+
+// ===== 3. 螺杆计算 =====
+const calcRodBtn = document.getElementById('calcRodBtn');
+if (calcRodBtn) {
+    calcRodBtn.addEventListener('click', () => {
+        const d = parseFloat(document.getElementById('rodD').value);
+        const length = parseFloat(document.getElementById('rodL').value);
+        const material = document.getElementById('rodMat').value;
+        const resultEl = document.getElementById('rodResult');
+
+        try {
+            const result = CalcEngine.rod({ d, length, material });
+            renderResult(resultEl, result, 'rod');
+        } catch (e) {
+            resultEl.innerHTML = `<div class="result-error">❌ ${e.message}</div>`;
+        }
+    });
+}
+
+// ===== 4. 垫圈计算 =====
+const calcWasherBtn = document.getElementById('calcWasherBtn');
+if (calcWasherBtn) {
+    calcWasherBtn.addEventListener('click', () => {
+        const d = parseFloat(document.getElementById('washerD').value);
+        const material = document.getElementById('washerMat').value;
+        const resultEl = document.getElementById('washerResult');
+
+        try {
+            const result = CalcEngine.washer({ d, material });
+            renderResult(resultEl, result, 'washer');
+        } catch (e) {
+            resultEl.innerHTML = `<div class="result-error">❌ ${e.message}</div>`;
+        }
+    });
+}
+
+// ===== 5. 强度对比 =====
+const calcStrBtn = document.getElementById('calcStrBtn');
+if (calcStrBtn) {
+    calcStrBtn.addEventListener('click', () => {
+        const d = parseFloat(document.getElementById('strD').value);
+        const grade = document.getElementById('strGrade').value;
+        const type = document.getElementById('strType').value;
+        const resultEl = document.getElementById('strResult');
+
+        try {
+            const result = CalcEngine.strengthCompare({ d, grade, type });
+            renderResult(resultEl, result, 'strength');
+        } catch (e) {
+            resultEl.innerHTML = `<div class="result-error">❌ ${e.message}</div>`;
+        }
+    });
+}
+
+// ===== 联动：自动设置螺距 =====
+document.getElementById('boltD')?.addEventListener('change', (e) => {
+    const d = parseFloat(e.target.value);
+    if (!isNaN(d)) {
+        const spec = CalcEngine.findNearestBolt(d);
+        const pitchDisplay = document.getElementById('boltPDisplay');
+        if (pitchDisplay) pitchDisplay.textContent = spec.p.toFixed(3) + ' mm';
+    }
+});
+
+
 // ===== 紧固件规格数据 =====
 // 数据来源：BS 84 / BS 1083 / ANSI B1.1 / ISO 261 / ISO 724 / DIN 13
 // 真实工程数据，仅供参考。具体规格以官方标准为准。
@@ -3054,6 +4287,7 @@ const specTableHeaders = {
     }
 };
 
+
 // ===== Lumiq Hardware i18n 中英双语翻译 =====
 
 const translations = {
@@ -3106,6 +4340,23 @@ const translations = {
         'line.custom.cta': '立即定制 →',
         'line.view': '查看规格 →',
 
+        // Calculator
+        'calc.tag': '在线计算器',
+        'calc.title.l1': '输入规格',
+        'calc.title.l2': '查询尺寸/体积/重量/强度',
+        'calc.desc': '5 个专业计算器：螺栓、螺母、螺杆、垫圈、强度对比。基于 ISO 898-1 / DIN 933 / DIN 934 / DIN 976 真实工程数据。',
+        'calc.tab.bolt': '螺栓',
+        'calc.tab.nut': '螺母',
+        'calc.tab.rod': '螺杆',
+        'calc.tab.washer': '垫圈',
+        'calc.tab.strength': '强度',
+        'calc.field.size': '规格 *',
+        'calc.field.length': '长度 L (mm) *',
+        'calc.field.material': '材质',
+        'calc.field.grade': '强度等级',
+        'calc.field.type': '螺纹类型',
+        'calc.btn': '🔬 开始计算',
+        'calc.note': '💡 所有计算基于 ISO 898-1 / DIN 933 / DIN 934 / DIN 976 等国际标准；用于工程估算，具体设计请参考官方标准。',
         // Specs
         'specs.tag': '规格标准',
         // Catalog Filter
@@ -3358,6 +4609,23 @@ const translations = {
         'line.custom.cta': 'Customize Now →',
         'line.view': 'View Specs →',
 
+        // Calculator
+        'calc.tag': 'CALCULATORS',
+        'calc.title.l1': 'Input Specs',
+        'calc.title.l2': 'Query Dimensions / Volume / Weight / Strength',
+        'calc.desc': '5 professional calculators: bolt, nut, rod, washer, strength comparison. Based on ISO 898-1 / DIN 933 / DIN 934 / DIN 976 engineering data.',
+        'calc.tab.bolt': 'Bolt',
+        'calc.tab.nut': 'Nut',
+        'calc.tab.rod': 'Rod',
+        'calc.tab.washer': 'Washer',
+        'calc.tab.strength': 'Strength',
+        'calc.field.size': 'Size *',
+        'calc.field.length': 'Length L (mm) *',
+        'calc.field.material': 'Material',
+        'calc.field.grade': 'Strength Grade',
+        'calc.field.type': 'Thread Type',
+        'calc.btn': '🔬 Calculate',
+        'calc.note': '💡 All calculations based on ISO 898-1 / DIN 933 / DIN 934 / DIN 976 standards; for engineering estimation. Refer to official standards for design.',
         // Specs
         'specs.tag': 'SPECIFICATIONS',
         // Catalog Filter
@@ -3614,6 +4882,7 @@ if (document.readyState === 'loading') {
 } else {
     setLanguage(currentLang);
 }
+
 
 // ===== 导航栏滚动效果 =====
 const navbar = document.getElementById('navbar');
@@ -4078,6 +5347,8 @@ const updateFilterCount = () => {
 };
 const origApplyFilters = applyFilters;
 // 包装原函数以更新 count（简单做法：再调一次 updateFilterCount）
+
+
 
 </script>
 </body>

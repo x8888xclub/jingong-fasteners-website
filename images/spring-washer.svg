@@ -1,15 +1,32 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
-<rect width="200" height="200" fill="#11151d" rx="8"/>
-
-<g stroke="#7ba7d4" stroke-width="2.5" fill="none">
-  <!-- 弹簧圈 -->
-  <circle cx="100" cy="100" r="50" fill="#1a2535"/>
-  <!-- 切口 -->
-  <line x1="100" y1="50" x2="100" y2="80" stroke-width="3" stroke="#f7811a"/>
-  <!-- 偏心 -->
-  <path d="M100 80 Q120 100 100 150" stroke="#f7811a" stroke-width="2" fill="none"/>
-  <!-- 内孔 -->
-  <circle cx="100" cy="100" r="22" fill="#11151d" stroke-width="2"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+<defs>
+    <radialGradient id="bg" cx="50%" cy="45%" r="70%">
+      <stop offset="0%" stop-color="#f6f8fb"/>
+      <stop offset="100%" stop-color="#b8c2cf"/>
+    </radialGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#bg)"/>
+<filter id="ds" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4"/>
+      <feOffset dx="0" dy="10"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.4"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+<linearGradient id="shaft" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3a4250"/>
+      <stop offset="25%" stop-color="#7e8896"/>
+      <stop offset="50%" stop-color="#e0e6ee"/>
+      <stop offset="75%" stop-color="#7e8896"/>
+      <stop offset="100%" stop-color="#3a4250"/>
+    </linearGradient>
+<ellipse cx="256" cy="455" rx="115" ry="14" fill="#000" opacity="0.25" filter="url(#ds)"/>
+<g filter="url(#ds)">
+  <!-- 弹簧垫圈：斜切圆环 -->
+  <path d="M 256 130 A 130 130 0 1 1 220 250 L 256 130 Z" fill="url(#shaft)" stroke="#2a3038" stroke-width="2"/>
+  <path d="M 256 130 A 130 130 0 0 1 380 220 L 220 250 L 256 130 Z" fill="#a8b3c0" opacity="0.4"/>
+  <ellipse cx="256" cy="256" rx="100" ry="22" fill="url(#shaft)"/>
+  <ellipse cx="256" cy="254" rx="100" ry="20" fill="#fff" opacity="0.15"/>
+  <line x1="220" y1="250" x2="256" y2="130" stroke="#1a1e25" stroke-width="2"/>
+  <ellipse cx="256" cy="256" rx="60" ry="12" fill="#1a1e25"/>
 </g>
-
 </svg>

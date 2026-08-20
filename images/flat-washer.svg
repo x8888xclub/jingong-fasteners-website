@@ -1,20 +1,35 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
-<rect width="200" height="200" fill="#11151d" rx="8"/>
-
-<g stroke="#7ba7d4" stroke-width="2.5" fill="none">
-  <!-- 外圆 -->
-  <circle cx="100" cy="100" r="55" fill="#1a2535"/>
-  <!-- 内孔 -->
-  <circle cx="100" cy="100" r="22" fill="#11151d" stroke-width="2"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+<defs>
+    <radialGradient id="bg" cx="50%" cy="45%" r="70%">
+      <stop offset="0%" stop-color="#f6f8fb"/>
+      <stop offset="100%" stop-color="#b8c2cf"/>
+    </radialGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#bg)"/>
+<filter id="ds" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4"/>
+      <feOffset dx="0" dy="10"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.4"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+<linearGradient id="shaft" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3a4250"/>
+      <stop offset="25%" stop-color="#7e8896"/>
+      <stop offset="50%" stop-color="#e0e6ee"/>
+      <stop offset="75%" stop-color="#7e8896"/>
+      <stop offset="100%" stop-color="#3a4250"/>
+    </linearGradient>
+<ellipse cx="256" cy="455" rx="115" ry="14" fill="#000" opacity="0.25" filter="url(#ds)"/>
+<g filter="url(#ds)">
+  <!-- 平垫圈：圆环 3D -->
+  <ellipse cx="256" cy="220" rx="170" ry="38" fill="url(#shaft)" stroke="#2a3038" stroke-width="2"/>
+  <ellipse cx="256" cy="218" rx="170" ry="38" fill="#fff" opacity="0.2"/>
+  <ellipse cx="256" cy="290" rx="170" ry="38" fill="#3a4250" opacity="0.6"/>
+  <rect x="86" y="220" width="340" height="70" fill="url(#shaft)"/>
+  <line x1="86" y1="220" x2="426" y2="220" stroke="#fff" stroke-width="1.5" opacity="0.4"/>
+  <line x1="86" y1="290" x2="426" y2="290" stroke="#000" stroke-width="1.5" opacity="0.3"/>
+  <!-- 中心孔 -->
+  <ellipse cx="256" cy="256" rx="80" ry="14" fill="#1a1e25"/>
+  <ellipse cx="256" cy="254" rx="80" ry="12" fill="#0a0d14"/>
 </g>
-<!-- 透视厚度 -->
-<g stroke="#7ba7d4" stroke-width="1" fill="none" opacity="0.5">
-  <ellipse cx="100" cy="105" rx="55" ry="5"/>
-  <ellipse cx="100" cy="95" rx="55" ry="5"/>
-</g>
-<g stroke="#5a89bd" stroke-width="0.5" fill="#5a89bd" font-family="monospace" font-size="7">
-  <line x1="100" y1="45" x2="100" y2="78"/>
-  <text x="105" y="62">Ød</text>
-</g>
-
 </svg>

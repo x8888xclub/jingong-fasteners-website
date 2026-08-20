@@ -1,33 +1,64 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
-<rect width="200" height="200" fill="#11151d" rx="8"/>
-
-<g stroke="#7ba7d4" stroke-width="2.5" fill="none">
-  <!-- 中间杆（光杆）-->
-  <rect x="60" y="92" width="80" height="16" fill="#1a2535"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+<defs>
+    <radialGradient id="bg" cx="50%" cy="45%" r="70%">
+      <stop offset="0%" stop-color="#f6f8fb"/>
+      <stop offset="100%" stop-color="#b8c2cf"/>
+    </radialGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#bg)"/>
+<filter id="ds" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4"/>
+      <feOffset dx="0" dy="10"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.4"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+<linearGradient id="shaft" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3a4250"/>
+      <stop offset="25%" stop-color="#7e8896"/>
+      <stop offset="50%" stop-color="#e0e6ee"/>
+      <stop offset="75%" stop-color="#7e8896"/>
+      <stop offset="100%" stop-color="#3a4250"/>
+    </linearGradient>
+<ellipse cx="256" cy="455" rx="115" ry="14" fill="#000" opacity="0.25" filter="url(#ds)"/>
+<g filter="url(#ds)">
+  <rect x="226" y="120" width="60" height="100" fill="url(#shaft)"/>
+  <line x1="226" y1="130" x2="286" y2="132" stroke="#2a3038" stroke-width="1.5" opacity="0.65"/>
+  <line x1="226" y1="142" x2="286" y2="144" stroke="#2a3038" stroke-width="1.5" opacity="0.65"/>
+  <line x1="226" y1="154" x2="286" y2="156" stroke="#2a3038" stroke-width="1.5" opacity="0.65"/>
+  <line x1="226" y1="166" x2="286" y2="168" stroke="#2a3038" stroke-width="1.5" opacity="0.65"/>
+  <line x1="226" y1="178" x2="286" y2="180" stroke="#2a3038" stroke-width="1.5" opacity="0.65"/>
+  <line x1="226" y1="190" x2="286" y2="192" stroke="#2a3038" stroke-width="1.5" opacity="0.65"/>
+  <line x1="226" y1="202" x2="286" y2="204" stroke="#2a3038" stroke-width="1.5" opacity="0.65"/>
+  <line x1="226" y1="214" x2="286" y2="216" stroke="#2a3038" stroke-width="1.5" opacity="0.65"/>
+  <line x1="230" y1="132" x2="282" y2="134" stroke="#fff" stroke-width="0.8" opacity="0.35"/>
+  <line x1="230" y1="144" x2="282" y2="146" stroke="#fff" stroke-width="0.8" opacity="0.35"/>
+  <line x1="230" y1="156" x2="282" y2="158" stroke="#fff" stroke-width="0.8" opacity="0.35"/>
+  <line x1="230" y1="168" x2="282" y2="170" stroke="#fff" stroke-width="0.8" opacity="0.35"/>
+  <line x1="230" y1="180" x2="282" y2="182" stroke="#fff" stroke-width="0.8" opacity="0.35"/>
+  <line x1="230" y1="192" x2="282" y2="194" stroke="#fff" stroke-width="0.8" opacity="0.35"/>
+  <line x1="230" y1="204" x2="282" y2="206" stroke="#fff" stroke-width="0.8" opacity="0.35"/>
+  <line x1="230" y1="216" x2="282" y2="218" stroke="#fff" stroke-width="0.8" opacity="0.35"/>
+  <rect x="226" y="225" width="60" height="80" fill="url(#shaft)"/>
+  <rect x="226" y="310" width="60" height="130" fill="url(#shaft)"/>
+  <line x1="226" y1="320" x2="286" y2="322" stroke="#2a3038" stroke-width="1.5" opacity="0.65"/>
+  <line x1="226" y1="332" x2="286" y2="334" stroke="#2a3038" stroke-width="1.5" opacity="0.65"/>
+  <line x1="226" y1="344" x2="286" y2="346" stroke="#2a3038" stroke-width="1.5" opacity="0.65"/>
+  <line x1="226" y1="356" x2="286" y2="358" stroke="#2a3038" stroke-width="1.5" opacity="0.65"/>
+  <line x1="226" y1="368" x2="286" y2="370" stroke="#2a3038" stroke-width="1.5" opacity="0.65"/>
+  <line x1="226" y1="380" x2="286" y2="382" stroke="#2a3038" stroke-width="1.5" opacity="0.65"/>
+  <line x1="226" y1="392" x2="286" y2="394" stroke="#2a3038" stroke-width="1.5" opacity="0.65"/>
+  <line x1="226" y1="404" x2="286" y2="406" stroke="#2a3038" stroke-width="1.5" opacity="0.65"/>
+  <line x1="226" y1="416" x2="286" y2="418" stroke="#2a3038" stroke-width="1.5" opacity="0.65"/>
+  <line x1="226" y1="428" x2="286" y2="430" stroke="#2a3038" stroke-width="1.5" opacity="0.65"/>
+  <line x1="230" y1="322" x2="282" y2="324" stroke="#fff" stroke-width="0.8" opacity="0.35"/>
+  <line x1="230" y1="334" x2="282" y2="336" stroke="#fff" stroke-width="0.8" opacity="0.35"/>
+  <line x1="230" y1="346" x2="282" y2="348" stroke="#fff" stroke-width="0.8" opacity="0.35"/>
+  <line x1="230" y1="358" x2="282" y2="360" stroke="#fff" stroke-width="0.8" opacity="0.35"/>
+  <line x1="230" y1="370" x2="282" y2="372" stroke="#fff" stroke-width="0.8" opacity="0.35"/>
+  <line x1="230" y1="382" x2="282" y2="384" stroke="#fff" stroke-width="0.8" opacity="0.35"/>
+  <line x1="230" y1="394" x2="282" y2="396" stroke="#fff" stroke-width="0.8" opacity="0.35"/>
+  <line x1="230" y1="406" x2="282" y2="408" stroke="#fff" stroke-width="0.8" opacity="0.35"/>
+  <line x1="230" y1="418" x2="282" y2="420" stroke="#fff" stroke-width="0.8" opacity="0.35"/>
+  <line x1="230" y1="430" x2="282" y2="432" stroke="#fff" stroke-width="0.8" opacity="0.35"/>
 </g>
-<!-- 左端螺纹 -->
-<g stroke="#f7811a" stroke-width="1.5" fill="none">
-  <line x1="25" y1="92" x2="30" y2="108"/>
-  <line x1="35" y1="92" x2="40" y2="108"/>
-  <line x1="45" y1="92" x2="50" y2="108"/>
-  <line x1="55" y1="92" x2="60" y2="108"/>
-</g>
-<!-- 右端螺纹 -->
-<g stroke="#f7811a" stroke-width="1.5" fill="none">
-  <line x1="140" y1="92" x2="145" y2="108"/>
-  <line x1="150" y1="92" x2="155" y2="108"/>
-  <line x1="160" y1="92" x2="165" y2="108"/>
-  <line x1="170" y1="92" x2="175" y2="108"/>
-</g>
-<!-- 端面圆角 -->
-<g stroke="#7ba7d4" stroke-width="2" fill="none">
-  <path d="M20 92 Q15 100 20 108"/>
-  <path d="M180 92 Q185 100 180 108"/>
-</g>
-<g stroke="#5a89bd" stroke-width="0.5" fill="#5a89bd" font-family="monospace" font-size="7">
-  <text x="40" y="80">thread</text>
-  <text x="155" y="80">thread</text>
-  <text x="85" y="80">shank</text>
-</g>
-
 </svg>

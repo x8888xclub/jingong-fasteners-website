@@ -1,28 +1,36 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
-<rect width="200" height="200" fill="#11151d" rx="8"/>
-
-<g stroke="#7ba7d4" stroke-width="2.5" fill="none">
-  <!-- U 形 -->
-  <path d="M50 70 Q50 30 100 30 Q150 30 150 70 L150 170 L130 170 L130 75 Q130 50 100 50 Q70 50 70 75 L70 170 L50 170 Z" fill="#1a2535"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+<defs>
+    <radialGradient id="bg" cx="50%" cy="45%" r="70%">
+      <stop offset="0%" stop-color="#f6f8fb"/>
+      <stop offset="100%" stop-color="#b8c2cf"/>
+    </radialGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#bg)"/>
+<filter id="ds" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4"/>
+      <feOffset dx="0" dy="10"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.4"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+<linearGradient id="shaft" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3a4250"/>
+      <stop offset="25%" stop-color="#7e8896"/>
+      <stop offset="50%" stop-color="#e0e6ee"/>
+      <stop offset="75%" stop-color="#7e8896"/>
+      <stop offset="100%" stop-color="#3a4250"/>
+    </linearGradient>
+<ellipse cx="256" cy="455" rx="115" ry="14" fill="#000" opacity="0.25" filter="url(#ds)"/>
+<g filter="url(#ds)">
+  <!-- U 型：两个杆 + 弧顶 -->
+  <path d="M 180 200 Q 256 100 332 200 L 332 450 L 312 450 L 312 215 Q 256 145 200 215 L 200 450 L 180 450 Z" fill="url(#shaft)" stroke="#2a3038" stroke-width="1.5"/>
+  <!-- 螺纹 -->
+  <line x1="180" y1="350" x2="180" y2="445" stroke="#2a3038" stroke-width="1.5" opacity="0.7"/>
+  <line x1="180" y1="352" x2="180" y2="445" stroke="#fff" stroke-width="0.8" opacity="0.4"/>
+  <line x1="184" y1="354" x2="184" y2="445" stroke="#fff" stroke-width="0.5" opacity="0.5"/>
+  <line x1="332" y1="350" x2="332" y2="445" stroke="#2a3038" stroke-width="1.5" opacity="0.7"/>
+  <line x1="332" y1="352" x2="332" y2="445" stroke="#fff" stroke-width="0.8" opacity="0.4"/>
+  <line x1="328" y1="354" x2="328" y2="445" stroke="#fff" stroke-width="0.5" opacity="0.5"/>
+  <!-- 顶部高光 -->
+  <path d="M 190 200 Q 256 115 322 200" fill="none" stroke="#fff" stroke-width="2" opacity="0.4"/>
 </g>
-<!-- 螺纹 -->
-<g stroke="#f7811a" stroke-width="1.5" fill="none">
-  <line x1="50" y1="90" x2="70" y2="90"/>
-  <line x1="50" y1="100" x2="70" y2="100"/>
-  <line x1="50" y1="110" x2="70" y2="110"/>
-  <line x1="50" y1="120" x2="70" y2="120"/>
-  <line x1="50" y1="130" x2="70" y2="130"/>
-  <line x1="50" y1="140" x2="70" y2="140"/>
-  <line x1="50" y1="150" x2="70" y2="150"/>
-  <line x1="50" y1="160" x2="70" y2="160"/>
-  <line x1="130" y1="90" x2="150" y2="90"/>
-  <line x1="130" y1="100" x2="150" y2="100"/>
-  <line x1="130" y1="110" x2="150" y2="110"/>
-  <line x1="130" y1="120" x2="150" y2="120"/>
-  <line x1="130" y1="130" x2="150" y2="130"/>
-  <line x1="130" y1="140" x2="150" y2="140"/>
-  <line x1="130" y1="150" x2="150" y2="150"/>
-  <line x1="130" y1="160" x2="150" y2="160"/>
-</g>
-
 </svg>

@@ -1,20 +1,32 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
-<rect width="200" height="200" fill="#11151d" rx="8"/>
-
-<g stroke="#7ba7d4" stroke-width="2.5" fill="none">
-  <!-- 圆顶 -->
-  <path d="M55 110 Q55 80 70 70 L130 70 Q145 80 145 110 L145 130 L55 130 Z" fill="#1a2535"/>
-  <!-- 六角底部 -->
-  <line x1="60" y1="125" x2="60" y2="145" stroke-width="2"/>
-  <line x1="140" y1="125" x2="140" y2="145" stroke-width="2"/>
-  <polygon points="60,145 140,145 130,158 70,158" fill="#1a2535"/>
-  <!-- 中心 -->
-  <circle cx="100" cy="90" r="18" fill="#11151d" stroke-width="2"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+<defs>
+    <radialGradient id="bg" cx="50%" cy="45%" r="70%">
+      <stop offset="0%" stop-color="#f6f8fb"/>
+      <stop offset="100%" stop-color="#b8c2cf"/>
+    </radialGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#bg)"/>
+<filter id="ds" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4"/>
+      <feOffset dx="0" dy="10"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.4"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+<linearGradient id="shaft" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3a4250"/>
+      <stop offset="25%" stop-color="#7e8896"/>
+      <stop offset="50%" stop-color="#e0e6ee"/>
+      <stop offset="75%" stop-color="#7e8896"/>
+      <stop offset="100%" stop-color="#3a4250"/>
+    </linearGradient>
+<ellipse cx="256" cy="455" rx="115" ry="14" fill="#000" opacity="0.25" filter="url(#ds)"/>
+<g filter="url(#ds)">
+  <polygon points="106,240 256,170 406,240 256,310" fill="#3a4250" opacity="0.7"/>
+  <polygon points="106,240 256,310 406,240 406,310 256,380 106,310" fill="url(#shaft)" stroke="#2a3038" stroke-width="1.5"/>
+  <polygon points="256,170 406,240 256,310 106,240" fill="#c8d0dc" stroke="#2a3038" stroke-width="1.5"/>
+  <polygon points="256,180 396,242 256,302" fill="#fff" opacity="0.3"/>
+  <!-- 圆顶封盖 -->
+  <ellipse cx="256" cy="170" rx="150" ry="34" fill="url(#shaft)" stroke="#2a3038" stroke-width="1.5"/>
+  <ellipse cx="256" cy="166" rx="150" ry="34" fill="#fff" opacity="0.25"/>
 </g>
-<g stroke="#7ba7d4" stroke-width="1" fill="none" opacity="0.5">
-  <line x1="60" y1="110" x2="60" y2="125"/>
-  <line x1="140" y1="110" x2="140" y2="125"/>
-</g>
-<line x1="82" y1="90" x2="118" y2="90" stroke="#f7811a" stroke-width="1"/>
-
 </svg>
