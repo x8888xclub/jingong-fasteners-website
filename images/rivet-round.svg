@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<rect width="200" height="200" fill="#11151d" rx="8"/>
+
+<g stroke="#7ba7d4" stroke-width="2.5" fill="none">
+  <!-- 圆头 -->
+  <ellipse cx="100" cy="55" rx="22" ry="22" fill="#1a2535"/>
+  <!-- 杆部 -->
+  <rect x="92" y="77" width="16" height="85" fill="#1a2535"/>
+</g>
+<g stroke="#7ba7d4" stroke-width="2.5" fill="none">
+  <path d="M92 162 Q92 175 100 175 Q108 175 108 162" fill="#1a2535"/>
+</g>
+
+</svg>

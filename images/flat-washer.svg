@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<rect width="200" height="200" fill="#11151d" rx="8"/>
+
+<g stroke="#7ba7d4" stroke-width="2.5" fill="none">
+  <!-- 外圆 -->
+  <circle cx="100" cy="100" r="55" fill="#1a2535"/>
+  <!-- 内孔 -->
+  <circle cx="100" cy="100" r="22" fill="#11151d" stroke-width="2"/>
+</g>
+<!-- 透视厚度 -->
+<g stroke="#7ba7d4" stroke-width="1" fill="none" opacity="0.5">
+  <ellipse cx="100" cy="105" rx="55" ry="5"/>
+  <ellipse cx="100" cy="95" rx="55" ry="5"/>
+</g>
+<g stroke="#5a89bd" stroke-width="0.5" fill="#5a89bd" font-family="monospace" font-size="7">
+  <line x1="100" y1="45" x2="100" y2="78"/>
+  <text x="105" y="62">Ød</text>
+</g>
+
+</svg>

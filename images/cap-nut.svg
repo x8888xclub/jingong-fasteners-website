@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<rect width="200" height="200" fill="#11151d" rx="8"/>
+
+<g stroke="#7ba7d4" stroke-width="2.5" fill="none">
+  <!-- 圆顶 -->
+  <path d="M55 110 Q55 80 70 70 L130 70 Q145 80 145 110 L145 130 L55 130 Z" fill="#1a2535"/>
+  <!-- 六角底部 -->
+  <line x1="60" y1="125" x2="60" y2="145" stroke-width="2"/>
+  <line x1="140" y1="125" x2="140" y2="145" stroke-width="2"/>
+  <polygon points="60,145 140,145 130,158 70,158" fill="#1a2535"/>
+  <!-- 中心 -->
+  <circle cx="100" cy="90" r="18" fill="#11151d" stroke-width="2"/>
+</g>
+<g stroke="#7ba7d4" stroke-width="1" fill="none" opacity="0.5">
+  <line x1="60" y1="110" x2="60" y2="125"/>
+  <line x1="140" y1="110" x2="140" y2="125"/>
+</g>
+<line x1="82" y1="90" x2="118" y2="90" stroke="#f7811a" stroke-width="1"/>
+
+</svg>

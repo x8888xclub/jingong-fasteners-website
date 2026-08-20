@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<rect width="200" height="200" fill="#11151d" rx="8"/>
+
+<g stroke="#7ba7d4" stroke-width="2.5" fill="none">
+  <!-- L 形弯钩 -->
+  <path d="M50 30 L100 30 Q150 30 150 80 Q150 130 100 130 L100 175" stroke-width="3" fill="none"/>
+  <rect x="92" y="40" width="16" height="20" fill="#1a2535" stroke="none"/>
+</g>
+<!-- 螺纹 -->
+<g stroke="#f7811a" stroke-width="1.5" fill="none">
+  <line x1="92" y1="65" x2="108" y2="65"/>
+  <line x1="92" y1="75" x2="108" y2="75"/>
+  <line x1="92" y1="85" x2="108" y2="85"/>
+  <line x1="92" y1="95" x2="108" y2="95"/>
+  <line x1="92" y1="105" x2="108" y2="105"/>
+  <line x1="92" y1="115" x2="108" y2="115"/>
+  <line x1="92" y1="125" x2="108" y2="125"/>
+  <line x1="92" y1="135" x2="108" y2="135"/>
+  <line x1="92" y1="145" x2="108" y2="145"/>
+  <line x1="92" y1="155" x2="108" y2="155"/>
+</g>
+<g stroke="#7ba7d4" stroke-width="2" fill="none">
+  <line x1="92" y1="165" x2="100" y2="178"/>
+  <line x1="108" y1="165" x2="100" y2="178"/>
+</g>
+
+</svg>

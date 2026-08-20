@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<rect width="200" height="200" fill="#11151d" rx="8"/>
+
+<g stroke="#7ba7d4" stroke-width="2.5" fill="none">
+  <!-- 外环 -->
+  <circle cx="100" cy="100" r="55" fill="#1a2535"/>
+  <!-- 切口 -->
+  <line x1="50" y1="80" x2="50" y2="120" stroke="#f7811a" stroke-width="3"/>
+  <!-- 螺栓 -->
+  <rect x="35" y="93" width="30" height="14" fill="#1a2535"/>
+  <!-- 螺母 -->
+  <circle cx="42" cy="100" r="6" fill="#1a2535" stroke-width="1.5"/>
+</g>
+<!-- 螺纹 -->
+<g stroke="#f7811a" stroke-width="0.8" fill="none">
+  <line x1="35" y1="93" x2="65" y2="93"/>
+  <line x1="35" y1="107" x2="65" y2="107"/>
+</g>
+
+</svg>

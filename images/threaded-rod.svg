@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<rect width="200" height="200" fill="#11151d" rx="8"/>
+
+<g stroke="#7ba7d4" stroke-width="2.5" fill="none">
+  <!-- 杆部 -->
+  <rect x="20" y="92" width="160" height="16" fill="#1a2535"/>
+</g>
+<!-- 全螺纹 -->
+<g stroke="#f7811a" stroke-width="1.5" fill="none">
+  <line x1="25" y1="92" x2="30" y2="108"/>
+  <line x1="35" y1="92" x2="40" y2="108"/>
+  <line x1="45" y1="92" x2="50" y2="108"/>
+  <line x1="55" y1="92" x2="60" y2="108"/>
+  <line x1="65" y1="92" x2="70" y2="108"/>
+  <line x1="75" y1="92" x2="80" y2="108"/>
+  <line x1="85" y1="92" x2="90" y2="108"/>
+  <line x1="95" y1="92" x2="100" y2="108"/>
+  <line x1="105" y1="92" x2="110" y2="108"/>
+  <line x1="115" y1="92" x2="120" y2="108"/>
+  <line x1="125" y1="92" x2="130" y2="108"/>
+  <line x1="135" y1="92" x2="140" y2="108"/>
+  <line x1="145" y1="92" x2="150" y2="108"/>
+  <line x1="155" y1="92" x2="160" y2="108"/>
+  <line x1="165" y1="92" x2="170" y2="108"/>
+</g>
+<!-- 端面圆角 -->
+<g stroke="#7ba7d4" stroke-width="2" fill="none">
+  <path d="M20 92 Q15 100 20 108"/>
+  <path d="M180 92 Q185 100 180 108"/>
+</g>
+<!-- 尺寸标注 -->
+<g stroke="#5a89bd" stroke-width="0.5" fill="#5a89bd" font-family="monospace" font-size="8">
+  <line x1="20" y1="130" x2="180" y2="130"/>
+  <line x1="20" y1="125" x2="20" y2="135"/>
+  <line x1="180" y1="125" x2="180" y2="135"/>
+  <text x="90" y="145">L = 1000mm</text>
+</g>
+
+</svg>

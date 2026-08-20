@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<rect width="200" height="200" fill="#11151d" rx="8"/>
+
+<g stroke="#7ba7d4" stroke-width="2.5" fill="none">
+  <polygon points="100,50 145,75 145,125 100,150 55,125 55,75" fill="#1a2535"/>
+  <!-- 中心孔 -->
+  <circle cx="100" cy="100" r="20" fill="#11151d" stroke-width="2"/>
+  <!-- 尼龙环（橙色强调）-->
+  <circle cx="100" cy="100" r="13" stroke="#f7811a" stroke-width="2" fill="none"/>
+  <circle cx="100" cy="100" r="6" stroke="#f7811a" stroke-width="1" fill="none"/>
+</g>
+<g stroke="#7ba7d4" stroke-width="1" fill="none" opacity="0.5">
+  <line x1="55" y1="75" x2="55" y2="115"/>
+  <line x1="145" y1="75" x2="145" y2="115"/>
+</g>
+<!-- N 标记 -->
+<g fill="#f7811a" font-family="monospace" font-size="8" font-weight="bold">
+  <text x="93" y="103">N</text>
+</g>
+
+</svg>

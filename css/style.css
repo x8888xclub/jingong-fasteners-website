@@ -855,12 +855,58 @@ button {
 .pc-head {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.pc-image {
+    width: 100%;
+    height: 130px;
     margin-bottom: 12px;
+    background: var(--bg-deep);
+    border: 1px solid var(--border-light);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.pc-image::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, transparent 0%, rgba(247, 129, 26, 0.04) 100%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.product-card:hover .pc-image {
+    border-color: var(--border);
+    background: rgba(247, 129, 26, 0.03);
+}
+
+.product-card:hover .pc-image::before {
+    opacity: 1;
+}
+
+.pc-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 6px;
+    transition: transform 0.4s;
+}
+
+.product-card:hover .pc-img {
+    transform: scale(1.08);
 }
 
 .pc-icon {
-    font-size: 32px;
+    font-size: 48px;
     line-height: 1;
     color: var(--accent-orange);
 }
@@ -872,9 +918,10 @@ button {
     color: var(--accent-orange);
     background: rgba(247, 129, 26, 0.08);
     border: 1px solid rgba(247, 129, 26, 0.25);
-    padding: 2px 7px;
+    padding: 3px 8px;
     border-radius: 3px;
     letter-spacing: 0.5px;
+    flex-shrink: 0;
 }
 
 .pc-name {
@@ -882,7 +929,7 @@ button {
     font-weight: 700;
     color: var(--text-primary);
     line-height: 1.4;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     min-height: 38px;
 }
 
@@ -1046,8 +1093,9 @@ button {
         grid-template-columns: repeat(2, 1fr);
         gap: 12px;
     }
-    .product-card { padding: 14px; }
-    .pc-icon { font-size: 24px; }
+    .product-card { padding: 12px; }
+    .pc-image { height: 100px; }
+    .pc-icon { font-size: 32px; }
     .pc-name { font-size: 12px; min-height: 32px; }
     .pc-info { display: none; }
     .pc-action { padding-top: 8px; }

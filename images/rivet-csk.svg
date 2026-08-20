@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<rect width="200" height="200" fill="#11151d" rx="8"/>
+
+<g stroke="#7ba7d4" stroke-width="2.5" fill="none">
+  <!-- 锥头 -->
+  <polygon points="80,60 120,60 100,40" fill="#1a2535"/>
+  <!-- 杆部 -->
+  <rect x="92" y="60" width="16" height="100" fill="#1a2535"/>
+</g>
+<!-- 底部铆头 -->
+<g stroke="#7ba7d4" stroke-width="2.5" fill="none">
+  <path d="M92 160 Q92 175 100 175 Q108 175 108 160" fill="#1a2535"/>
+</g>
+
+</svg>

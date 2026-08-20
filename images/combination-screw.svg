@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<rect width="200" height="200" fill="#11151d" rx="8"/>
+
+<g stroke="#7ba7d4" stroke-width="2.5" fill="none">
+  <!-- 六角头 -->
+  <polygon points="75,40 125,40 140,55 140,70 125,85 75,85 60,70 60,55" fill="#1a2535"/>
+  <!-- 弹簧垫圈 -->
+  <path d="M55 95 Q45 100 55 110 L145 110 Q155 100 145 95" fill="#1a2535"/>
+  <!-- 平垫圈 -->
+  <ellipse cx="100" cy="125" rx="48" ry="10" fill="#1a2535"/>
+  <ellipse cx="100" cy="125" rx="48" ry="10" stroke-width="2"/>
+  <!-- 中心孔 -->
+  <circle cx="100" cy="125" r="20" fill="#11151d" stroke-width="2"/>
+  <!-- 杆 -->
+  <rect x="93" y="125" width="14" height="50" fill="#1a2535"/>
+</g>
+<g stroke="#f7811a" stroke-width="1.5" fill="none">
+  <line x1="93" y1="135" x2="107" y2="135"/>
+  <line x1="93" y1="142" x2="107" y2="142"/>
+  <line x1="93" y1="149" x2="107" y2="149"/>
+  <line x1="93" y1="156" x2="107" y2="156"/>
+  <line x1="93" y1="163" x2="107" y2="163"/>
+</g>
+
+</svg>

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<rect width="200" height="200" fill="#11151d" rx="8"/>
+
+<g stroke="#7ba7d4" stroke-width="2.5" fill="none">
+  <!-- 中间杆（光杆）-->
+  <rect x="60" y="92" width="80" height="16" fill="#1a2535"/>
+</g>
+<!-- 左端螺纹 -->
+<g stroke="#f7811a" stroke-width="1.5" fill="none">
+  <line x1="25" y1="92" x2="30" y2="108"/>
+  <line x1="35" y1="92" x2="40" y2="108"/>
+  <line x1="45" y1="92" x2="50" y2="108"/>
+  <line x1="55" y1="92" x2="60" y2="108"/>
+</g>
+<!-- 右端螺纹 -->
+<g stroke="#f7811a" stroke-width="1.5" fill="none">
+  <line x1="140" y1="92" x2="145" y2="108"/>
+  <line x1="150" y1="92" x2="155" y2="108"/>
+  <line x1="160" y1="92" x2="165" y2="108"/>
+  <line x1="170" y1="92" x2="175" y2="108"/>
+</g>
+<!-- 端面圆角 -->
+<g stroke="#7ba7d4" stroke-width="2" fill="none">
+  <path d="M20 92 Q15 100 20 108"/>
+  <path d="M180 92 Q185 100 180 108"/>
+</g>
+<g stroke="#5a89bd" stroke-width="0.5" fill="#5a89bd" font-family="monospace" font-size="7">
+  <text x="40" y="80">thread</text>
+  <text x="155" y="80">thread</text>
+  <text x="85" y="80">shank</text>
+</g>
+
+</svg>

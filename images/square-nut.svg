@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<rect width="200" height="200" fill="#11151d" rx="8"/>
+
+<g stroke="#7ba7d4" stroke-width="2.5" fill="none">
+  <!-- 顶面 -->
+  <polygon points="60,55 140,55 140,145 60,145" fill="#1a2535"/>
+  <!-- 透视边 -->
+  <line x1="60" y1="55" x2="75" y2="40" stroke-width="1" opacity="0.5"/>
+  <line x1="140" y1="55" x2="155" y2="40" stroke-width="1" opacity="0.5"/>
+  <line x1="155" y1="40" x2="155" y2="130" stroke-width="1" opacity="0.5"/>
+  <line x1="75" y1="40" x2="155" y2="40" stroke-width="1" opacity="0.5"/>
+  <line x1="60" y1="145" x2="75" y2="130" stroke-width="1" opacity="0.5"/>
+  <line x1="140" y1="145" x2="155" y2="130" stroke-width="1" opacity="0.5"/>
+  <!-- 中心孔 -->
+  <circle cx="100" cy="100" r="22" fill="#11151d" stroke-width="2"/>
+</g>
+<line x1="78" y1="100" x2="122" y2="100" stroke="#f7811a" stroke-width="1"/>
+
+</svg>

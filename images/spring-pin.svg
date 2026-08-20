@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<rect width="200" height="200" fill="#11151d" rx="8"/>
+
+<g stroke="#7ba7d4" stroke-width="2.5" fill="none">
+  <!-- 主体管 -->
+  <rect x="30" y="90" width="140" height="20" rx="10" fill="#1a2535"/>
+  <!-- 卷边（锥形）-->
+  <path d="M30 90 Q40 95 30 100" stroke-width="2"/>
+  <path d="M170 90 Q160 95 170 100" stroke-width="2"/>
+  <!-- 切口 -->
+  <line x1="40" y1="95" x2="160" y2="95" stroke="#f7811a" stroke-width="1.5"/>
+  <line x1="40" y1="105" x2="160" y2="105" stroke="#f7811a" stroke-width="1.5"/>
+</g>
+
+</svg>

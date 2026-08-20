@@ -222,17 +222,21 @@ const pcSurfaceLabel = () => translations[currentLang]['pc.surface'] || '表面'
 const pcSpecLabel = () => translations[currentLang]['pc.spec'] || '规格';
 const pcInquireLabel = () => translations[currentLang]['pc.inquire'] || '询价';
 
-// 渲染产品卡片
+// 渲染产品卡片（含 SVG 图片）
 function renderProductCard(p) {
     const name = currentLang === 'en' ? p.name_en : p.name_zh;
+    const imgPath = (typeof productImages !== 'undefined' && productImages[p.id]) || null;
+    const imgHtml = imgPath
+        ? `<img src="${imgPath}" alt="${name}" class="pc-img" loading="lazy" onerror="this.outerHTML='<span class=\'pc-icon\'>${p.icon || '\u{1F529}'}</span>'">`
+        : `<span class="pc-icon">${p.icon || '\u{1F529}'}</span>`;
     return `
         <article class="product-card" data-id="${p.id}">
+            <div class="pc-image">${imgHtml}</div>
             <div class="pc-head">
-                <span class="pc-icon">${p.icon || '🔩'}</span>
                 <span class="pc-sku">${p.id}</span>
+                <span class="pc-std">${p.std}</span>
             </div>
             <h3 class="pc-name">${name}</h3>
-            <span class="pc-std">${p.std}</span>
             <ul class="pc-info">
                 <li><strong>${pcSpecLabel()}</strong><span>${p.spec}</span></li>
                 <li><strong>${pcMaterialLabel()}</strong><span>${p.mat}</span></li>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<rect width="200" height="200" fill="#11151d" rx="8"/>
+
+<g stroke="#7ba7d4" stroke-width="2.5" fill="none">
+  <!-- 主体 -->
+  <rect x="20" y="95" width="160" height="10" rx="5" fill="#1a2535"/>
+  <!-- 弯头 -->
+  <path d="M20 100 Q15 90 25 80 Q35 75 30 85" stroke-width="2"/>
+  <!-- 另一头分叉 -->
+  <path d="M180 100 L185 90 M180 100 L185 110" stroke-width="2"/>
+</g>
+
+</svg>

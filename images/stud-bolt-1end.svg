@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<rect width="200" height="200" fill="#11151d" rx="8"/>
+
+<g stroke="#7ba7d4" stroke-width="2.5" fill="none">
+  <rect x="40" y="92" width="120" height="16" fill="#1a2535"/>
+</g>
+<!-- 右端螺纹 -->
+<g stroke="#f7811a" stroke-width="1.5" fill="none">
+  <line x1="120" y1="92" x2="125" y2="108"/>
+  <line x1="130" y1="92" x2="135" y2="108"/>
+  <line x1="140" y1="92" x2="145" y2="108"/>
+  <line x1="150" y1="92" x2="155" y2="108"/>
+  <line x1="160" y1="92" x2="165" y2="108"/>
+  <line x1="170" y1="92" x2="175" y2="108"/>
+</g>
+<g stroke="#7ba7d4" stroke-width="2" fill="none">
+  <path d="M40 92 Q35 100 40 108"/>
+  <path d="M160 92 Q165 100 160 108"/>
+</g>
+<g stroke="#5a89bd" stroke-width="0.5" fill="#5a89bd" font-family="monospace" font-size="7">
+  <text x="55" y="80">shank</text>
+  <text x="140" y="80">thread</text>
+</g>
+
+</svg>

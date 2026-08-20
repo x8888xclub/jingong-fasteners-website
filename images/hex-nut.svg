@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<rect width="200" height="200" fill="#11151d" rx="8"/>
+
+<g stroke="#7ba7d4" stroke-width="2.5" fill="none">
+  <!-- 顶面六边形 -->
+  <polygon points="100,50 145,75 145,125 100,150 55,125 55,75" fill="#1a2535"/>
+  <!-- 中心孔 -->
+  <circle cx="100" cy="100" r="20" fill="#11151d" stroke-width="2"/>
+  <!-- 螺纹孔示意 -->
+  <line x1="80" y1="100" x2="120" y2="100" stroke="#f7811a" stroke-width="1"/>
+</g>
+<!-- 侧面厚度 -->
+<g stroke="#7ba7d4" stroke-width="1" fill="none" opacity="0.5">
+  <line x1="55" y1="75" x2="55" y2="115"/>
+  <line x1="145" y1="75" x2="145" y2="115"/>
+  <line x1="145" y1="125" x2="145" y2="135"/>
+  <line x1="55" y1="125" x2="55" y2="135"/>
+</g>
+<!-- 尺寸标注 -->
+<g stroke="#5a89bd" stroke-width="0.5" fill="#5a89bd" font-family="monospace" font-size="7">
+  <line x1="155" y1="75" x2="165" y2="75"/>
+  <line x1="155" y1="125" x2="165" y2="125"/>
+  <line x1="163" y1="75" x2="163" y2="125"/>
+  <text x="167" y="103">S</text>
+</g>
+
+</svg>

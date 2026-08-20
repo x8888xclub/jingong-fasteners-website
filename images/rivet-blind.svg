@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<rect width="200" height="200" fill="#11151d" rx="8"/>
+
+<g stroke="#7ba7d4" stroke-width="2.5" fill="none">
+  <!-- 圆头 -->
+  <ellipse cx="100" cy="50" rx="20" ry="20" fill="#1a2535"/>
+  <!-- 外壳 -->
+  <rect x="85" y="70" width="30" height="80" fill="#1a2535"/>
+  <!-- 内拉杆 -->
+  <line x1="100" y1="150" x2="100" y2="180" stroke-width="3" stroke="#f7811a"/>
+  <!-- 拉杆头 -->
+  <ellipse cx="100" cy="180" rx="6" ry="3" fill="#f7811a" stroke="#f7811a"/>
+</g>
+<!-- �接后变形（虚线）-->
+<g stroke="#7ba7d4" stroke-width="1" fill="none" stroke-dasharray="2,2" opacity="0.4">
+  <path d="M85 150 Q90 165 100 165 Q110 165 115 150"/>
+</g>
+
+</svg>

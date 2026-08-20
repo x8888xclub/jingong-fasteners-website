@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<rect width="200" height="200" fill="#11151d" rx="8"/>
+
+<g stroke="#7ba7d4" stroke-width="2.5" fill="none">
+  <!-- 六角头 -->
+  <polygon points="65,55 135,55 155,75 155,95 135,115 65,115 45,95 45,75" fill="#1a2535"/>
+  <polygon points="73,68 127,68 142,82 142,88 127,102 73,102 58,88 58,82" stroke-width="1" opacity="0.4"/>
+  <!-- 法兰盘（带齿）-->
+  <ellipse cx="100" cy="125" rx="40" ry="10" fill="#1a2535"/>
+  <ellipse cx="100" cy="125" rx="40" ry="10" stroke-width="1.5"/>
+  <!-- 杆部 -->
+  <rect x="92" y="125" width="16" height="50" fill="#1a2535"/>
+</g>
+<g stroke="#f7811a" stroke-width="1.5" fill="none">
+  <line x1="92" y1="130" x2="108" y2="130"/>
+  <line x1="92" y1="138" x2="108" y2="138"/>
+  <line x1="92" y1="146" x2="108" y2="146"/>
+  <line x1="92" y1="154" x2="108" y2="154"/>
+  <line x1="92" y1="162" x2="108" y2="162"/>
+</g>
+<g stroke="#7ba7d4" stroke-width="2" fill="none">
+  <line x1="92" y1="175" x2="100" y2="185"/>
+  <line x1="108" y1="175" x2="100" y2="185"/>
+</g>
+
+</svg>

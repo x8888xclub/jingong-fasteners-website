@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<rect width="200" height="200" fill="#11151d" rx="8"/>
+
+<g stroke="#7ba7d4" stroke-width="2.5" fill="none">
+  <rect x="20" y="92" width="160" height="16" rx="8" fill="#1a2535"/>
+</g>
+<!-- 端面倒角 -->
+<g stroke="#7ba7d4" stroke-width="2" fill="none">
+  <line x1="20" y1="92" x2="30" y2="100"/>
+  <line x1="20" y1="108" x2="30" y2="100"/>
+  <line x1="180" y1="92" x2="170" y2="100"/>
+  <line x1="180" y1="108" x2="170" y2="100"/>
+</g>
+<g stroke="#5a89bd" stroke-width="0.5" fill="#5a89bd" font-family="monospace" font-size="7">
+  <text x="80" y="85">Ø8 × 40</text>
+</g>
+
+</svg>
