@@ -99,7 +99,7 @@ const specTableHeaders = {
         major: '大径 (mm)',
         pitch: '螺距 (mm)',
         tap: '攻丝 (mm)',
-        strength: '推荐强度'
+        strength: 'Recommended Strength'
     },
     en: {
         size: 'Size',
