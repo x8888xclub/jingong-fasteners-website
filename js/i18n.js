@@ -662,6 +662,26 @@ function tMat(zh) { return (currentLang === 'en' && matEnMap[zh]) || zh; }
 function tSurface(zh) { return (currentLang === 'en' && surfaceEnMap[zh]) || zh; }
 function tMatFilter(zh) { return (currentLang === 'en' && matFilterEnMap[zh]) || zh; }
 
+/* ===== 产品 spec 翻译（处理 配用/级/轴用/孔用 等） ===== */
+function tSpec(zh) {
+    if (currentLang !== 'en' || !zh) return zh || '';
+    const map = [
+        ['配用', 'Match'],
+        ['轴用', 'Shaft'],
+        ['孔用', 'Bore'],
+        ['平+弹垫', 'Flat+Spring Washer'],
+        ['平+弹', 'Flat+Spring'],
+        ['华司', 'Washer']
+    ];
+    const gradeMap = {'4级':'Grade 4','8级':'Grade 8','10级':'Grade 10'};
+    let s = zh;
+    for (const [zh, en] of map) {
+        s = s.split(zh).join(en);
+    }
+    s = s.replace(/(\d+)级/g, (m, n) => gradeMap[m] || `Grade ${n}`);
+    return s;
+}
+
 
 function setLanguage(lang) {
     if (!translations[lang]) return;

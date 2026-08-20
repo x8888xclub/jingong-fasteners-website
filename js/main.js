@@ -238,7 +238,7 @@ function renderProductCard(p) {
             </div>
             <h3 class="pc-name">${name}</h3>
             <ul class="pc-info">
-                <li><strong>${pcSpecLabel()}</strong><span>${p.spec}</span></li>
+                <li><strong>${pcSpecLabel()}</strong><span>${tSpec(p.spec)}</span></li>
                 <li><strong>${pcMaterialLabel()}</strong><span>${tMat(p.mat)}</span></li>
                 <li><strong>${pcSurfaceLabel()}</strong><span>${tSurface(p.surface)}</span></li>
             </ul>
