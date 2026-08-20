@@ -268,6 +268,24 @@ const translations = {
         'footer.col2.l4': '材质等级',
         'footer.col3.t': '联系',
         'footer.copyright': '© 2026 精工固件 Jingong Fasteners. All rights reserved. · 浙ICP备XXXXXXXX号',
+        'pc.shown': '已显示 {shown} / {total} · {remain} 个待显示',
+        'pc.empty': '没有匹配筛选条件的产品',
+        'cap.unit': 'T/月',
+        'cap.unit.en': 'T/Month',
+        'filter.mat.carbon': '碳钢',
+        'filter.mat.alloy': '合金钢',
+        'filter.mat.ss': '不锈钢',
+        'filter.mat.other': '其他',
+        'footer.address': '📍 浙江省嘉兴市秀洲区 (待更新)',
+        'footer.address.en': '📍 Jiaxing, Zhejiang, China (placeholder)',
+        'calc.mat.8.8.steel': '8.8 级 合金钢',
+        'calc.mat.10.9.steel': '10.9 级 合金钢',
+        'calc.mat.12.9.steel': '12.9 级 合金钢',
+        'calc.mat.4.8.steel': '4.8 级 碳钢',
+        'calc.mat.b7': 'B7 合金钢',
+        'calc.mat.a2-70': 'A2-70 不锈钢',
+        'calc.mat.a4-80': 'A4-80 不锈钢',
+        'calc.mat.c1022': 'C1022 碳钢',
     },
 
     en: {
@@ -537,10 +555,113 @@ const translations = {
         'footer.col2.l4': 'Strength Grades',
         'footer.col3.t': 'Contact',
         'footer.copyright': '© 2026 Jingong Fasteners. All rights reserved.',
+        'pc.shown': 'Showing {shown} / {total} · {remain} more available',
+        'pc.empty': 'No products match your filters.',
+        'cap.unit': 'T/Month',
+        'cap.unit.en': 'T/Month',
+        'filter.mat.carbon': 'Carbon Steel',
+        'filter.mat.alloy': 'Alloy Steel',
+        'filter.mat.ss': 'Stainless Steel',
+        'filter.mat.other': 'Other',
+        'footer.address': '📍 Jiaxing, Zhejiang, China (placeholder)',
+        'footer.address.en': '📍 Jiaxing, Zhejiang, China (placeholder)',
+        'calc.mat.8.8.steel': '8.8 Grade Alloy Steel',
+        'calc.mat.10.9.steel': '10.9 Grade Alloy Steel',
+        'calc.mat.12.9.steel': '12.9 Grade Alloy Steel',
+        'calc.mat.4.8.steel': '4.8 Grade Carbon Steel',
+        'calc.mat.b7': 'B7 Alloy Steel',
+        'calc.mat.a2-70': 'A2-70 Stainless Steel',
+        'calc.mat.a4-80': 'A4-80 Stainless Steel',
+        'calc.mat.c1022': 'C1022 Carbon Steel',
     }
+        'brand.cn': '精工固件',
+        'brand.en': 'Jingong Fasteners',
 };
 
 let currentLang = localStorage.getItem('jingong-lang') || 'zh';
+
+
+/* ===== 材质/表面翻译映射 ===== */
+const matEnMap = {
+    '10.9级 合金钢': '10.9 Grade Alloy Steel',
+    '10级 合金钢': '10 Grade Alloy Steel',
+    '12.9级 合金钢': '12.9 Grade Alloy Steel',
+    '140HV 碳钢': '140HV Carbon Steel',
+    '4.8级 碳钢': '4.8 Grade Carbon Steel',
+    '4级 碳钢': '4 Grade Carbon Steel',
+    '8.8级 合金钢': '8.8 Grade Alloy Steel',
+    '8.8级 碳钢': '8.8 Grade Carbon Steel',
+    '8级 碳钢': '8 Grade Carbon Steel',
+    'A2 不锈钢': 'A2 Stainless Steel',
+    'A4 不锈钢': 'A4 Stainless Steel',
+    'B7 合金钢': 'B7 Alloy Steel',
+    'C1022 碳钢': 'C1022 Carbon Steel',
+    'Grade 2 碳钢': 'Grade 2 Carbon Steel',
+    'Grade 5 碳钢': 'Grade 5 Carbon Steel',
+    'Grade 8 合金钢': 'Grade 8 Alloy Steel',
+    'Grade B7 合金钢': 'Grade B7 Alloy Steel',
+    '不锈钢 + 镀锌': 'Stainless + Zinc Plated',
+    '不锈钢 304': '304 Stainless Steel',
+    '低碳钢': 'Low Carbon Steel',
+    '工具钢': 'Tool Steel',
+    '弹簧钢': 'Spring Steel',
+    '碳钢': 'Carbon Steel',
+    '铝 + 钢钉': 'Aluminum + Steel Mandrel',
+    '铝合金': 'Aluminum Alloy'
+};
+const surfaceEnMap = {
+    '发黑': 'Black Oxide',
+    '本色': 'Plain (Mill Finish)',
+    '热浸镀锌': 'Hot-Dip Galvanized',
+    '磷化 + 涂油': 'Phosphated + Oiled',
+    '达克罗': 'Dacromet',
+    '镀锌': 'Zinc Plated'
+};
+const matFilterEnMap = {
+    '碳钢': 'Carbon Steel',
+    '合金钢': 'Alloy Steel',
+    '不锈钢': 'Stainless Steel',
+    '其他': 'Other'
+};
+
+function t(key, params) {
+    let v = (translations[currentLang] || {})[key] || key;
+    if (params && typeof v === 'string') {
+        for (const k in params) {
+            v = v.split('{' + k + '}').join(params[k]);
+        }
+    }
+    return v;
+}
+
+
+/* ===== Select 选项翻译映射 ===== */
+const i18nOptionMap = {
+    'calc.materials': {
+        '8.8': { zh: '8.8 级 合金钢', en: '8.8 Grade Alloy Steel' },
+        '10.9': { zh: '10.9 级 合金钢', en: '10.9 Grade Alloy Steel' },
+        '12.9': { zh: '12.9 级 合金钢', en: '12.9 Grade Alloy Steel' },
+        '4.8': { zh: '4.8 级 碳钢', en: '4.8 Grade Carbon Steel' },
+        'b7': { zh: 'B7 合金钢', en: 'B7 Alloy Steel' },
+        'a2-70': { zh: 'A2-70 不锈钢', en: 'A2-70 Stainless Steel' },
+        'a4-80': { zh: 'A4-80 不锈钢', en: 'A4-80 Stainless Steel' },
+        'c1022': { zh: 'C1022 碳钢', en: 'C1022 Carbon Steel' },
+        '8': { zh: '8 级 碳钢', en: '8 Grade Carbon Steel' },
+        '10': { zh: '10 级 合金钢', en: '10 Grade Alloy Steel' },
+        'a2': { zh: 'A2 不锈钢', en: 'A2 Stainless Steel' },
+        '140hv': { zh: '140HV 碳钢', en: '140HV Carbon Steel' }
+    },
+    'filter.materials': {
+        'carbon': { zh: '碳钢', en: 'Carbon Steel' },
+        'alloy': { zh: '合金钢', en: 'Alloy Steel' },
+        'ss': { zh: '不锈钢', en: 'Stainless Steel' },
+        'other': { zh: '其他', en: 'Other' }
+    }
+};
+function tMat(zh) { return (currentLang === 'en' && matEnMap[zh]) || zh; }
+function tSurface(zh) { return (currentLang === 'en' && surfaceEnMap[zh]) || zh; }
+function tMatFilter(zh) { return (currentLang === 'en' && matFilterEnMap[zh]) || zh; }
+
 
 function setLanguage(lang) {
     if (!translations[lang]) return;
@@ -560,6 +681,24 @@ function setLanguage(lang) {
             el.innerHTML = translations[lang][key];
         }
     });
+
+    // 翻译 select option 文本
+    document.querySelectorAll('select[data-i18n-options]').forEach(sel => {
+        const key = sel.dataset.i18nOptions;
+        const map = i18nOptionMap[key] || {};
+        Array.from(sel.options).forEach(opt => {
+            const lookup = opt.getAttribute('data-i18n-opt') || opt.value;
+            if (map[lookup]) {
+                const v = map[lookup][lang] || map[lookup].zh;
+                opt.textContent = v;
+            }
+        });
+    });
+
+    // 触发产品卡重渲染（mat/surface 等动态字段）
+    if (typeof renderProducts === 'function') {
+        renderProducts(true);
+    }
 
     document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
         const key = el.dataset.i18nPlaceholder;

@@ -239,12 +239,12 @@ function renderProductCard(p) {
             <h3 class="pc-name">${name}</h3>
             <ul class="pc-info">
                 <li><strong>${pcSpecLabel()}</strong><span>${p.spec}</span></li>
-                <li><strong>${pcMaterialLabel()}</strong><span>${p.mat}</span></li>
-                <li><strong>${pcSurfaceLabel()}</strong><span>${p.surface}</span></li>
+                <li><strong>${pcMaterialLabel()}</strong><span>${tMat(p.mat)}</span></li>
+                <li><strong>${pcSurfaceLabel()}</strong><span>${tSurface(p.surface)}</span></li>
             </ul>
             <div class="pc-action">
-                <a href="#rfq" class="pc-btn pc-btn-outline" data-sku="${p.id}">${currentLang === 'en' ? 'Detail' : '详情'}</a>
-                <a href="#rfq" class="pc-btn pc-btn-primary" data-sku="${p.id}">${currentLang === 'en' ? 'Inquire' : '询价'}</a>
+                <a href="#rfq" class="pc-btn pc-btn-outline" data-sku="${p.id}">${t('pc.detail')}</a>
+                <a href="#rfq" class="pc-btn pc-btn-primary" data-sku="${p.id}">${t('pc.inquire')}</a>
             </div>
         </article>
     `;
@@ -265,7 +265,7 @@ function renderProducts(reset = false) {
 
     if (displayedCount === 0 && next.length === 0) {
         const emptyIcon = currentLang === 'en' ? '🔍' : '🔍';
-        const emptyText = currentLang === 'en' ? 'No products match your filters.' : '没有匹配筛选条件的产品';
+        const emptyText = t('pc.empty');
         grid.innerHTML = `
             <div class="product-empty">
                 <div class="product-empty-icon">${emptyIcon}</div>
@@ -293,16 +293,13 @@ function renderProducts(reset = false) {
     if (displayedCount >= filteredProducts.length) {
         loadBtn.style.display = 'none';
         const total = filteredProducts.length;
-        hint.textContent = currentLang === 'en'
-            ? `Showing all ${total} products`
-            : `已显示全部 ${total} 个产品`;
+        hint.textContent = t('pc.shown', {shown: displayedCount, total: total, remain: 0});
     } else {
         loadBtn.style.display = '';
         const remaining = filteredProducts.length - displayedCount;
         const showing = currentLang === 'en' ? 'Showing' : '已显示';
         const total = filteredProducts.length;
-        const remainText = currentLang === 'en' ? 'remaining' : '个待显示';
-        hint.textContent = `${showing} ${displayedCount} / ${total} · ${remaining} ${remainText}`;
+        hint.textContent = t('pc.shown', {shown: displayedCount, total: total, remain: total - displayedCount});
     }
 }
 
